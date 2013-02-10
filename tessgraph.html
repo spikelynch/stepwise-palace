@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tesseract</title>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+    <script type="text/javascript" src="tess_fg_data.js"></script>
+    <script type="text/javascript" src="tessgraph.js"></script>
+    <link type="text/css" rel="stylesheet" href="tessgraph.css">
+  </head>
+  <body>
+
+    <form name="controls">
+     <p>Order: <input id="ctrl_constrain" type="checkbox" name="constrain" checked="true" /></p>
+     </form>
+
+    <div id="graph">
+    </div>
+
+    <script lang="javascript">
+
+      draw_force_graph("div#graph", 800, 800);
+
+
+    </script>
+
+
+
+  </body>
+</html>

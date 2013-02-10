@@ -1,0 +1,65 @@
+
+div#graph {
+    border: 1px #888 solid;
+    background-color: #fff;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    width: 800px;
+    height: 800px;
+    font-size: 10pt;
+}
+
+
+circle {
+    fill: #eee;
+    stroke: none;
+    opacity: .4;
+}
+
+circle.A { fill: #888; }
+circle.B { fill: #88f; }
+circle.C { fill: #ff8; }
+circle.D { fill: #f8f; }
+circle.E { fill: #8f8; }
+
+circle.path {
+    stroke: #000;
+    stroke-width: 2px;
+    opacity: .8;
+}
+
+circle.head {
+    stroke: #f00;
+    stroke-width: 4px;
+    opacity: 1;
+}
+
+circle.next {
+    stroke: #f00;
+    stroke-width: 2px;
+    opacity: 0.8;
+}
+
+
+line {
+    stroke: #888;
+    stroke-width: 1px;
+}
+
+line.path {
+    stroke: #000;
+    stroke-width: 2px;
+}
+
+line.next {
+    stroke: #f00;
+    stroke-width: 2px;
+} 
+
+.label {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 9pt;
+    cursor: pointer;
+}
