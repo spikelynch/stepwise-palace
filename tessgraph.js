@@ -19,9 +19,15 @@ var visited = {};
 
 var head;
 
+function intrand(n) {
+    return Math.floor(Math.random() * n);
+}
+
+
 
 function free_neighbours(d) {
     var nexts = [];
+    console.log("d = " + d + " d.links = " + d.links);
     for( var i = 0; i < d.links.length; i++ ) {
 	if( !visited[d.links[i].target] ) {
 	    nexts.push(d.links[i].target);
@@ -32,12 +38,26 @@ function free_neighbours(d) {
 
 
 function find_randumb(d) {
+    add_to_path(d);
     var nexts = free_neighbours(d);
     if( nexts.length ) {
-	var n = Math.floor(Math.random() * nexts.length);
-	find_randumb(nexts[n]);
+	var n = intrand(nexts.length);
+	var nid = "#N" + nexts[n];
+	var node = null;
+	d3.select(nid).each(function(d) { node = d } );
+	return find_randumb(node);
+    } else {
+	console.log("Dead end.");
+	if( path.length == 81 ) {
+	    return true;
+	} else {
+	    return false;
+	}
     }
 }
+
+
+
 
 
 function clear_path() {
@@ -90,7 +110,8 @@ function path_text_pop(d) {
     }
 }
 
-function click_node(d) {
+
+function add_node_to_path(d) {
     if( visited[d.id] ) {
 	if( head && d.id == head.id ) {
 	    remove_from_path(d);
@@ -100,6 +121,9 @@ function click_node(d) {
     }
 }
 
+function find_path_from_node(d) {
+    d3.timer(find_randumb, 1500);
+}
 
 
 
@@ -182,8 +206,13 @@ function draw_force_graph(elt, w, h) {
 	.data(nodes)
 	.enter().append("svg:g")
 	.attr("class", "node")
+	.attr("id", function(d) { return "N" + d.id }) 
 	.on("click", function(d) {
-	    click_node(d);
+	    if( d3.event.shiftKey ) {
+		find_path_from_node(d);
+	    } else {
+		add_node_to_path(d);
+	    }
 	    d3.event.stopPropagation();
 	})
 	.call(force.drag);
@@ -252,10 +281,6 @@ function draw_force_graph(elt, w, h) {
 	clear_path();
     });
 
-    // d3.select("#ctrl_find").on("click", function(e) {
-    // 	clear_path();
-    // 	randumb();
-    // });
 
 
     force.start();
