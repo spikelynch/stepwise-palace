@@ -23,7 +23,7 @@ var head;
 function free_neighbours(d) {
     var nexts = [];
     for( var i = 0; i < d.links.length; i++ ) {
-	if( !visited{d.links[i].target} ) {
+	if( !visited[d.links[i].target] ) {
 	    nexts.push(d.links[i].target);
 	}
     }
@@ -34,11 +34,17 @@ function free_neighbours(d) {
 function find_randumb(d) {
     var nexts = free_neighbours(d);
     if( nexts.length ) {
-	var choice = Math.floor(Math.random() * nexts.length);
-	
-    
+	var n = Math.floor(Math.random() * nexts.length);
+	find_randumb(nexts[n]);
+    }
+}
 
 
+function clear_path() {
+    while( head ) {
+	remove_from_path(head);
+    }
+}
 
 
 
@@ -82,6 +88,18 @@ function path_text_pop(d) {
     var last = elt.lastChild;
     if( last ) {
 	elt.removeChild(last);
+    }
+}
+
+function click_node(d) {
+    if( visited[d.id] ) {
+	if( head && d.id == head.id ) {
+	    remove_from_path(d);
+	} else {
+	    console.log("Clicked a path node not the head - nop");
+	}
+    } else {
+	add_to_path(d);
     }
 }
 
@@ -144,9 +162,6 @@ function click_node_old(d) {
 
 function add_to_path(d) {
     if( head ) {
-	if( d.id != head.id ) {
-	    return;
-	}
 	for( i = 0; i < head.links.length; i++ ) {
 	    if( head.links[i].target == d.id ) {
 		highlight_path(head, d, true);
