@@ -10,6 +10,17 @@ div#graph {
     font-size: 10pt;
 }
 
+div#path {
+    position: absolute;
+    background-color: #eee;
+    top: 80px;
+    left: 840px;
+    width: 120px;
+    height: 800px;
+    font-size: 9pt;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 
 circle {
     fill: #eee;

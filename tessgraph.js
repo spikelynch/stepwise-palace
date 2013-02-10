@@ -20,6 +20,27 @@ var visited = {};
 var head;
 
 
+function free_neighbours(d) {
+    var nexts = [];
+    for( var i = 0; i < d.links.length; i++ ) {
+	if( !visited{d.links[i].target} ) {
+	    nexts.push(d.links[i].target);
+	}
+    }
+    return nexts;
+}
+
+
+function find_randumb(d) {
+    var nexts = free_neighbours(d);
+    if( nexts.length ) {
+	var choice = Math.floor(Math.random() * nexts.length);
+	
+    
+
+
+
+
 
 function highlight_head(d, on) {
     d3.select("#C" + d.id).classed("head", on);
@@ -32,32 +53,51 @@ function highlight_head(d, on) {
     }
 }
 
-function highlight_path(oh, nh) {
-    d3.select("#C" + oh.id).classed("head", false);
-    d3.select("#C" + oh.id).classed("path", true);
+
+
+function highlight_path(oh, nh, on) {
+    d3.select("#C" + oh.id).classed("head", !on);
+    d3.select("#C" + oh.id).classed("path", on);
     for ( var i = 0; i < oh.links.length; i++ ) {
 	var l = oh.links[i];
-	d3.select("#L" + l.link).classed("next", false);
- 	d3.select("#C" + l.target).classed("next", false);
-	console.log("Path link " + oh.id + " to " + l.target);
+	if( on ) {
+	    d3.select("#L" + l.link).classed("next", false);
+ 	    d3.select("#C" + l.target).classed("next", false);
+	}
 	if( l.target == nh.id ) {
 	    console.log("Classing link path " + l.link);
-	    d3.select("#L" + l.link).classed("path", true);
+	    d3.select("#L" + l.link).classed("path", on);
 	}
     }
 }
 
 
+function path_text_push(d) {
+    var str = d.class + " " + d.name;
+    d3.select("#path").append("div").attr("class", d.class).text(str);
+}
 
-function click_node(d) {
+function path_text_pop(d) {
+    var elt = document.getElementById("path");
+    var last = elt.lastChild;
+    if( last ) {
+	elt.removeChild(last);
+    }
+}
+
+
+
+function click_node_old(d) {
     console.log("Clicked node " + d.id);
     if( visited[d.id] ) {
 	console.log("Node " + d.id + " is in the path");
 	if( d.id == head.id ) {
 	    console.log("This is the head node - removing");
 	    path.pop();
+	    path_text_pop();
 	    highlight_head(d, false);
 	    if( path.length ) {
+		highlight_path(path[path.length - 1], d, false);
 		head = path[path.length - 1];
 		highlight_head(head, true);
 	    } else {
@@ -74,11 +114,12 @@ function click_node(d) {
 		console.log("Link " + i + ": " + head.links[i].target);
 		if( head.links[i].target == d.id ) {
 		    console.log(d.id + " is next to head");
-		    highlight_path(head, d);
+		    highlight_path(head, d, true);
 		    highlight_head(d, true);
 		    path.push(d);
 		    visited[d.id] = true;
 		    head = d;
+		    path_text_push(head);
 		    break;
 		}
 	    }
@@ -94,11 +135,55 @@ function click_node(d) {
 	    path.push(d);
 	    visited[d.id] = true;
 	    head = d;
+	    path_text_push(head);
 	    console.log("Started path");
 	}
     }
 }
-	
+
+
+function add_to_path(d) {
+    if( head ) {
+	if( d.id != head.id ) {
+	    return;
+	}
+	for( i = 0; i < head.links.length; i++ ) {
+	    if( head.links[i].target == d.id ) {
+		highlight_path(head, d, true);
+		highlight_head(d, true);
+		path.push(d);
+		visited[d.id] = true;
+		head = d;
+		path_text_push(head);
+		break;
+	    }
+	}
+    } else {
+	highlight_head(d, true);
+	path.push(d);
+	visited[d.id] = true;
+	head = d;
+	path_text_push(head);
+    }
+}
+
+
+function remove_from_path(d) {
+    if( ! head || d.id != head.id ) {
+	return;
+    }
+    path.pop();
+    path_text_pop();
+    highlight_head(d, false);
+    if( path.length ) {
+	highlight_path(path[path.length - 1], d, false);
+	head = path[path.length - 1];
+	highlight_head(head, true);
+    } else {
+	head = null;
+    }
+    delete visited[d.id];
+}	
 	
 
 
@@ -205,6 +290,10 @@ function draw_force_graph(elt, w, h) {
 	force.start();
     });
 
+    d3.select("#ctrl_find").on("click", function(e) {
+	delete_path();
+	find_path();
+    });
 
 
     force.start();
