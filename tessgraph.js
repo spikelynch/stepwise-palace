@@ -71,7 +71,6 @@ function highlight_path(oh, nh, on) {
  	    d3.select("#C" + l.target).classed("next", false);
 	}
 	if( l.target == nh.id ) {
-	    console.log("Classing link path " + l.link);
 	    d3.select("#L" + l.link).classed("path", on);
 	}
     }
@@ -95,8 +94,6 @@ function click_node(d) {
     if( visited[d.id] ) {
 	if( head && d.id == head.id ) {
 	    remove_from_path(d);
-	} else {
-	    console.log("Clicked a path node not the head - nop");
 	}
     } else {
 	add_to_path(d);
@@ -104,60 +101,6 @@ function click_node(d) {
 }
 
 
-
-function click_node_old(d) {
-    console.log("Clicked node " + d.id);
-    if( visited[d.id] ) {
-	console.log("Node " + d.id + " is in the path");
-	if( d.id == head.id ) {
-	    console.log("This is the head node - removing");
-	    path.pop();
-	    path_text_pop();
-	    highlight_head(d, false);
-	    if( path.length ) {
-		highlight_path(path[path.length - 1], d, false);
-		head = path[path.length - 1];
-		highlight_head(head, true);
-	    } else {
-		head = null;
-	    }
-	    delete visited[d.id];
-	} else {
-	    console.log("Clicked a path node not the head - nop");
-	}
-    } else {
-	if( head ) {
-	    console.log("Head is " + head.id);
-	    for( i = 0; i < head.links.length; i++ ) {
-		console.log("Link " + i + ": " + head.links[i].target);
-		if( head.links[i].target == d.id ) {
-		    console.log(d.id + " is next to head");
-		    highlight_path(head, d, true);
-		    highlight_head(d, true);
-		    path.push(d);
-		    visited[d.id] = true;
-		    head = d;
-		    path_text_push(head);
-		    break;
-		}
-	    }
-	    if( head.id != d.id ) {
-		console.log("Node " +  d.id + " is not next");
-	    } else {
-		console.log("Path extended to " + d.id);
-	    }
-	} else {
-	    // if head's not defined, any node can start the
-	    // path
-	    highlight_head(d, true);
-	    path.push(d);
-	    visited[d.id] = true;
-	    head = d;
-	    path_text_push(head);
-	    console.log("Started path");
-	}
-    }
-}
 
 
 function add_to_path(d) {
@@ -305,10 +248,14 @@ function draw_force_graph(elt, w, h) {
 	force.start();
     });
 
-    d3.select("#ctrl_find").on("click", function(e) {
-	delete_path();
-	find_path();
+    d3.select("#ctrl_clear").on("click", function(e) {
+	clear_path();
     });
+
+    // d3.select("#ctrl_find").on("click", function(e) {
+    // 	clear_path();
+    // 	randumb();
+    // });
 
 
     force.start();
