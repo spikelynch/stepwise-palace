@@ -15,9 +15,11 @@ var constrain = true;
 
 var path = [];
 
-var backtrack = [];
-
 var visited = {};
+
+var taken = {};
+
+var pattern = "ABCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDC";
 
 var head;
 
@@ -26,13 +28,23 @@ function intrand(n) {
 }
 
 
+function next_pattern_class() {
+    var n = path.length;
+    return pattern.charAt(n + 1);
+}
+
 
 function free_neighbours(d) {
     var nexts = [];
-    console.log("d = " + d + " d.links = " + d.links);
+    var pc = pattern.charAt(path.length);
+    console.log("From " + d.id + " looking for " + pc);
     for( var i = 0; i < d.links.length; i++ ) {
-	if( !visited[d.links[i].target] ) {
-	    nexts.push(d.links[i].target);
+	var t = d.links[i].target;
+	if( !visited[t] ) {
+	    var node = id_to_node(t);
+	    if( node.class == pc ) {
+		nexts.push(t);
+	    }
 	}
     }
     return nexts;
@@ -62,6 +74,7 @@ function find_randumb(d) {
 
 
 
+
 function clear_path() {
     while( head ) {
 	remove_from_path(head);
@@ -72,11 +85,16 @@ function clear_path() {
 
 function highlight_head(d, on) {
     d3.select("#C" + d.id).classed("head", on);
+    var pc = next_pattern_class();
+    console.log("Next: " + pc);
     for ( var i = 0; i < d.links.length; i++ ) {
 	var l = d.links[i];
 	if( ! visited[l.target] ) {
-	    d3.select("#L" + l.link).classed("next", on);
-	    d3.select("#C" + l.target).classed("next", on);
+	    var n = id_to_node(l.target);
+	    if( n.class == pc ) {
+		d3.select("#L" + l.link).classed("next", on);
+		d3.select("#C" + l.target).classed("next", on);
+	    }
 	}
     }
 }
@@ -123,10 +141,6 @@ function add_node_to_path(d) {
     }
 }
 
-function find_path_from_node(d) {
-    clear_path();
-    find_randumb(d);
-}
 
 
 
@@ -211,11 +225,7 @@ function draw_force_graph(elt, w, h) {
 	.attr("class", "node")
 	.attr("id", function(d) { return "N" + d.id }) 
 	.on("click", function(d) {
-	    if( d3.event.shiftKey ) {
-		find_path_from_node(d);
-	    } else {
-		add_node_to_path(d);
-	    }
+	    add_node_to_path(d);
 	    d3.event.stopPropagation();
 	})
 	.call(force.drag);
@@ -284,6 +294,11 @@ function draw_force_graph(elt, w, h) {
 	clear_path();
     });
 
+    d3.select("#ctrl_find").on("click", function(e) {
+	clear_path();
+	var anode = id_to_node(40);
+	find_randumb(anode);
+    });
 
 
     force.start();
