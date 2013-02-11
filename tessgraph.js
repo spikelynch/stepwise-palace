@@ -15,6 +15,8 @@ var constrain = true;
 
 var path = [];
 
+var backtrack = [];
+
 var visited = {};
 
 var head;
@@ -36,23 +38,23 @@ function free_neighbours(d) {
     return nexts;
 }
 
+function id_to_node(id) {
+    var nid = "#N" + id;
+    var node = null;
+    d3.select(nid).each(function(d1) { node = d1 } );
+    return node;
+}
+
 
 function find_randumb(d) {
     add_to_path(d);
     var nexts = free_neighbours(d);
     if( nexts.length ) {
 	var n = intrand(nexts.length);
-	var nid = "#N" + nexts[n];
-	var node = null;
-	d3.select(nid).each(function(d) { node = d } );
+	var node = id_to_node(nexts[n]);
 	return find_randumb(node);
     } else {
 	console.log("Dead end.");
-	if( path.length == 81 ) {
-	    return true;
-	} else {
-	    return false;
-	}
     }
 }
 
@@ -122,7 +124,8 @@ function add_node_to_path(d) {
 }
 
 function find_path_from_node(d) {
-    d3.timer(find_randumb, 1500);
+    clear_path();
+    find_randumb(d);
 }
 
 
