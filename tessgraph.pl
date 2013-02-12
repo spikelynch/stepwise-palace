@@ -4,7 +4,7 @@ use strict;
 use JSON;
 use Data::Dumper;
 
-my $patstr = "A" . "BCDEDCDEDC" x 8;
+my $patstr = "BCDEDCDEDC" x 8;
 
 my $PRINT_JSON = 0;
 my $SEARCH = 1;
@@ -56,7 +56,7 @@ sub neighbours {
 
     my $nexts = [];
 
-    #print "From $node->{id} next class $class\n";
+    #print "From $node->{id} $node->{class} next class $class: ";
 
     LINK: for my $link ( @{$node->{links}} ) {
 	my $next = $nodes->[$link->{target}];
@@ -65,6 +65,7 @@ sub neighbours {
 	next LINK if $node->{path_taken}{$link->{target}};
 	push @$nexts, $next;
     }
+    #print nlist($nexts) . "\n";
     return $nexts;
 }
 
@@ -85,10 +86,12 @@ sub search {
 
     my $searching = 1;
     my $i = 0;
-    my $n = $MAX_BACKTRACK;
+    my $n = 0;
+    my $longest = 0;
 
-    while( $searching && @$path < 81 ) {
-	my $nexts = neighbours($head, $pat[$i + 1]);
+    SEARCH: while( $searching ) {
+	my $nexts = neighbours($head, $pat[$i]);
+
 	if( @$nexts ) {
 	    my $next = pick(@$nexts);
 	    push @$path, $head;
@@ -96,38 +99,49 @@ sub search {
 	    $head->{path_taken}{$next->{id}} = 1;
 	    $head = $next;
 	    $i++;
+	    if( $i == 81 ) {
+		print "FOUND IT!\n";
+		last SEARCH;
+	    }
 	} else {
 	    if( $SEARCH_BACKTRACK ) {
-		print "Backing up:";
+		#print "Backing up:\n";
 	      BACKTRACK: while( @$path ) {
-		  my $ohead = pop @$path;
-		  print " $ohead->{id}";
+		  $head = pop @$path;
 		  $i--;
-		  if( @$path ) {
-		      my $l = scalar(@$path);
-		      $head = $path->[$l - 1];
-		      my $nexts = neighbours($head, $pat[$i]);
-		      if( @$nexts ) {
-			  last BACKTRACK;
-		      }
-		      $head->{path_taken} = {};
+		  my $nexts = neighbours($head, $pat[$i]);
+		  if( @$nexts ) {
+		      #print "Ending backtrack at $head->{id}\n";
+		      last BACKTRACK;
 		  }
+		  delete $head->{visited};
+		  delete $head->{path_taken};
 	      }
-		print "\n";
-		$n--;
-		if( !@$path || !$n ) {
+		#print "\n";
+		$n++;
+		if( !@$path ) {
 		    $searching = 0;
 		}
 	    } else {
 		$searching = 0;
 	    }
 	}
+	if( @$path > $longest ) {
+	    $longest = scalar(@$path);
+	    print "L$longest: " . join(' ', map { $_->{id} } @$path) . "\n";
+	}
+	
     }
     return $path;
 }
 
 
 
+sub nlist {
+    my ( $n )  = @_;
+    
+    return '[ ' . join(' ', map { $_->{id} } @$n) . ' ]';
+}
 
 
 sub pick {
