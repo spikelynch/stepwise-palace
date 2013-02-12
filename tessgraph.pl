@@ -7,11 +7,11 @@ use Data::Dumper;
 my $patstr = "BCDEDCDEDC" x 8;
 
 my $PRINT_JSON = 0;
-my $SEARCH = 1;
+my $SEARCH = 1000;
 my $SEARCH_BACKTRACK = 1;
 
 
-my $MAX_BACKTRACK = 1000;
+my $MAX_BACKTRACK = 100000;
 
 my @pat = split(//, $patstr);
 
@@ -122,13 +122,19 @@ sub search {
 		if( !@$path ) {
 		    $searching = 0;
 		}
+		if( $n > $MAX_BACKTRACK ) {
+		    print "Giving up at $n\n";
+		    $searching = 0;
+		}
 	    } else {
 		$searching = 0;
 	    }
 	}
 	if( @$path > $longest ) {
 	    $longest = scalar(@$path);
-	    print "L$longest: " . join(' ', map { $_->{id} } @$path) . "\n";
+	    if( $longest > 60 ) {
+		print "L $longest:\n" . join(' ', map { $_->{id} } @$path) . "\n";
+	    }
 	}
 	
     }
