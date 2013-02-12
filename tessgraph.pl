@@ -51,6 +51,105 @@ if( $SEARCH ) {
 }
 
 
+sub neighbours { 
+    my ( $node, $class ) = @_;
+
+    my $nexts = [];
+
+    #print "From $node->{id} next class $class\n";
+
+    LINK: for my $link ( @{$node->{links}} ) {
+	my $next = $nodes->[$link->{target}];
+	next LINK if $next->{visited};
+	next LINK if $next->{class} ne $class;
+	next LINK if $node->{path_taken}{$link->{target}};
+	push @$nexts, $next;
+    }
+    return $nexts;
+}
+
+
+sub search {
+    my %params = @_;
+
+    my $start = $params{start};
+
+    my $path = [];
+
+    for my $node ( @$nodes ) {
+	delete $node->{visited};
+	delete $node->{path_taken};
+    }
+
+    my $head = $nodes->[$start];
+
+    my $searching = 1;
+    my $i = 0;
+    my $n = $MAX_BACKTRACK;
+
+    while( $searching && @$path < 81 ) {
+	my $nexts = neighbours($head, $pat[$i + 1]);
+	if( @$nexts ) {
+	    my $next = pick(@$nexts);
+	    push @$path, $head;
+	    $head->{visited} = 1;
+	    $head->{path_taken}{$next->{id}} = 1;
+	    $head = $next;
+	    $i++;
+	} else {
+	    if( $SEARCH_BACKTRACK ) {
+		print "Backing up:";
+	      BACKTRACK: while( @$path ) {
+		  my $ohead = pop @$path;
+		  print " $ohead->{id}";
+		  $i--;
+		  if( @$path ) {
+		      my $l = scalar(@$path);
+		      $head = $path->[$l - 1];
+		      my $nexts = neighbours($head, $pat[$i]);
+		      if( @$nexts ) {
+			  last BACKTRACK;
+		      }
+		      $head->{path_taken} = {};
+		  }
+	      }
+		print "\n";
+		$n--;
+		if( !@$path || !$n ) {
+		    $searching = 0;
+		}
+	    } else {
+		$searching = 0;
+	    }
+	}
+    }
+    return $path;
+}
+
+
+
+
+
+sub pick {
+    my @list = @_;
+    
+    my $n = int(rand(scalar @list));
+    
+    return $list[$n];
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
 sub build_nodes {
 
     for my $x ( -1 .. 1 ) {
@@ -152,89 +251,3 @@ sub class {
 
 
 
-sub neighbours { 
-    my ( $node, $class ) = @_;
-
-    my $nexts = [];
-
-    #print "From $node->{id} next class $class\n";
-
-    LINK: for my $link ( @{$node->{links}} ) {
-	my $next = $nodes->[$link->{target}];
-	next LINK if $next->{visited};
-	next LINK if $next->{class} ne $class;
-	next LINK if $node->{path_taken}{$link->{target}};
-	push @$nexts, $next;
-    }
-    return $nexts;
-}
-
-
-sub search {
-    my %params = @_;
-
-    my $start = $params{start};
-
-    my $path = [];
-
-    for my $node ( @$nodes ) {
-	delete $node->{visited};
-	delete $node->{path_taken};
-    }
-
-    my $head = $nodes->[$start];
-
-    my $searching = 1;
-    my $i = 0;
-    my $n = $MAX_BACKTRACK;
-
-    while( $searching && @$path < 81 ) {
-	my $nexts = neighbours($head, $pat[$i + 1]);
-	if( @$nexts ) {
-	    my $next = pick(@$nexts);
-	    push @$path, $head;
-	    $head->{visited} = 1;
-	    $head->{path_taken}{$next->{id}} = 1;
-	    $head = $next;
-	    $i++;
-	} else {
-	    if( $SEARCH_BACKTRACK ) {
-		print "Backing up:";
-	      BACKTRACK: while( @$path ) {
-		  my $ohead = pop @$path;
-		  print " $ohead->{id}";
-		  $i--;
-		  if( @$path ) {
-		      my $l = scalar(@$path);
-		      $head = $path->[$l - 1];
-		      my $nexts = neighbours($head, $pat[$i]);
-		      if( @$nexts ) {
-			  last BACKTRACK;
-		      }
-		      $head->{path_taken} = {};
-		  }
-	      }
-		print "\n";
-		$n--;
-		if( !@$path || !$n ) {
-		    $searching = 0;
-		}
-	    } else {
-		$searching = 0;
-	    }
-	}
-    }
-    return $path;
-}
-
-
-
-
-
-sub pick {
-    my @list = @_;
-    
-    my $n = int(rand(scalar @list));
-    
-    return $list[$n];
-} 
