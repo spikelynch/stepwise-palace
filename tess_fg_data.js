@@ -1,6 +1,7 @@
 var nodes = [
    {
       "name" : "-1 -1 -1 -1",
+      "label" : "E1",
       "class" : "E",
       "id" : 0,
       "links" : [
@@ -24,6 +25,7 @@ var nodes = [
    },
    {
       "name" : "-1 -1 -1 0",
+      "label" : "D1",
       "class" : "D",
       "id" : 1,
       "links" : [
@@ -51,6 +53,7 @@ var nodes = [
    },
    {
       "name" : "-1 -1 -1 1",
+      "label" : "E2",
       "class" : "E",
       "id" : 2,
       "links" : [
@@ -74,6 +77,7 @@ var nodes = [
    },
    {
       "name" : "-1 -1 0 -1",
+      "label" : "D2",
       "class" : "D",
       "id" : 3,
       "links" : [
@@ -101,6 +105,7 @@ var nodes = [
    },
    {
       "name" : "-1 -1 0 0",
+      "label" : "C1",
       "class" : "C",
       "id" : 4,
       "links" : [
@@ -132,6 +137,7 @@ var nodes = [
    },
    {
       "name" : "-1 -1 0 1",
+      "label" : "D3",
       "class" : "D",
       "id" : 5,
       "links" : [
@@ -159,6 +165,7 @@ var nodes = [
    },
    {
       "name" : "-1 -1 1 -1",
+      "label" : "E3",
       "class" : "E",
       "id" : 6,
       "links" : [
@@ -182,6 +189,7 @@ var nodes = [
    },
    {
       "name" : "-1 -1 1 0",
+      "label" : "D4",
       "class" : "D",
       "id" : 7,
       "links" : [
@@ -209,6 +217,7 @@ var nodes = [
    },
    {
       "name" : "-1 -1 1 1",
+      "label" : "E4",
       "class" : "E",
       "id" : 8,
       "links" : [
@@ -232,6 +241,7 @@ var nodes = [
    },
    {
       "name" : "-1 0 -1 -1",
+      "label" : "D5",
       "class" : "D",
       "id" : 9,
       "links" : [
@@ -259,6 +269,7 @@ var nodes = [
    },
    {
       "name" : "-1 0 -1 0",
+      "label" : "C2",
       "class" : "C",
       "id" : 10,
       "links" : [
@@ -290,6 +301,7 @@ var nodes = [
    },
    {
       "name" : "-1 0 -1 1",
+      "label" : "D6",
       "class" : "D",
       "id" : 11,
       "links" : [
@@ -317,6 +329,7 @@ var nodes = [
    },
    {
       "name" : "-1 0 0 -1",
+      "label" : "C3",
       "class" : "C",
       "id" : 12,
       "links" : [
@@ -348,6 +361,7 @@ var nodes = [
    },
    {
       "name" : "-1 0 0 0",
+      "label" : "B1",
       "class" : "B",
       "id" : 13,
       "links" : [
@@ -383,6 +397,7 @@ var nodes = [
    },
    {
       "name" : "-1 0 0 1",
+      "label" : "C4",
       "class" : "C",
       "id" : 14,
       "links" : [
@@ -414,6 +429,7 @@ var nodes = [
    },
    {
       "name" : "-1 0 1 -1",
+      "label" : "D7",
       "class" : "D",
       "id" : 15,
       "links" : [
@@ -441,6 +457,7 @@ var nodes = [
    },
    {
       "name" : "-1 0 1 0",
+      "label" : "C5",
       "class" : "C",
       "id" : 16,
       "links" : [
@@ -472,6 +489,7 @@ var nodes = [
    },
    {
       "name" : "-1 0 1 1",
+      "label" : "D8",
       "class" : "D",
       "id" : 17,
       "links" : [
@@ -499,6 +517,7 @@ var nodes = [
    },
    {
       "name" : "-1 1 -1 -1",
+      "label" : "E5",
       "class" : "E",
       "id" : 18,
       "links" : [
@@ -522,6 +541,7 @@ var nodes = [
    },
    {
       "name" : "-1 1 -1 0",
+      "label" : "D9",
       "class" : "D",
       "id" : 19,
       "links" : [
@@ -549,6 +569,7 @@ var nodes = [
    },
    {
       "name" : "-1 1 -1 1",
+      "label" : "E6",
       "class" : "E",
       "id" : 20,
       "links" : [
@@ -572,6 +593,7 @@ var nodes = [
    },
    {
       "name" : "-1 1 0 -1",
+      "label" : "D10",
       "class" : "D",
       "id" : 21,
       "links" : [
@@ -599,6 +621,7 @@ var nodes = [
    },
    {
       "name" : "-1 1 0 0",
+      "label" : "C6",
       "class" : "C",
       "id" : 22,
       "links" : [
@@ -630,6 +653,7 @@ var nodes = [
    },
    {
       "name" : "-1 1 0 1",
+      "label" : "D11",
       "class" : "D",
       "id" : 23,
       "links" : [
@@ -657,6 +681,7 @@ var nodes = [
    },
    {
       "name" : "-1 1 1 -1",
+      "label" : "E7",
       "class" : "E",
       "id" : 24,
       "links" : [
@@ -680,6 +705,7 @@ var nodes = [
    },
    {
       "name" : "-1 1 1 0",
+      "label" : "D12",
       "class" : "D",
       "id" : 25,
       "links" : [
@@ -707,6 +733,7 @@ var nodes = [
    },
    {
       "name" : "-1 1 1 1",
+      "label" : "E8",
       "class" : "E",
       "id" : 26,
       "links" : [
@@ -730,6 +757,7 @@ var nodes = [
    },
    {
       "name" : "0 -1 -1 -1",
+      "label" : "D13",
       "class" : "D",
       "id" : 27,
       "links" : [
@@ -757,6 +785,7 @@ var nodes = [
    },
    {
       "name" : "0 -1 -1 0",
+      "label" : "C7",
       "class" : "C",
       "id" : 28,
       "links" : [
@@ -788,6 +817,7 @@ var nodes = [
    },
    {
       "name" : "0 -1 -1 1",
+      "label" : "D14",
       "class" : "D",
       "id" : 29,
       "links" : [
@@ -815,6 +845,7 @@ var nodes = [
    },
    {
       "name" : "0 -1 0 -1",
+      "label" : "C8",
       "class" : "C",
       "id" : 30,
       "links" : [
@@ -846,6 +877,7 @@ var nodes = [
    },
    {
       "name" : "0 -1 0 0",
+      "label" : "B2",
       "class" : "B",
       "id" : 31,
       "links" : [
@@ -881,6 +913,7 @@ var nodes = [
    },
    {
       "name" : "0 -1 0 1",
+      "label" : "C9",
       "class" : "C",
       "id" : 32,
       "links" : [
@@ -912,6 +945,7 @@ var nodes = [
    },
    {
       "name" : "0 -1 1 -1",
+      "label" : "D15",
       "class" : "D",
       "id" : 33,
       "links" : [
@@ -939,6 +973,7 @@ var nodes = [
    },
    {
       "name" : "0 -1 1 0",
+      "label" : "C10",
       "class" : "C",
       "id" : 34,
       "links" : [
@@ -970,6 +1005,7 @@ var nodes = [
    },
    {
       "name" : "0 -1 1 1",
+      "label" : "D16",
       "class" : "D",
       "id" : 35,
       "links" : [
@@ -997,6 +1033,7 @@ var nodes = [
    },
    {
       "name" : "0 0 -1 -1",
+      "label" : "C11",
       "class" : "C",
       "id" : 36,
       "links" : [
@@ -1028,6 +1065,7 @@ var nodes = [
    },
    {
       "name" : "0 0 -1 0",
+      "label" : "B3",
       "class" : "B",
       "id" : 37,
       "links" : [
@@ -1063,6 +1101,7 @@ var nodes = [
    },
    {
       "name" : "0 0 -1 1",
+      "label" : "C12",
       "class" : "C",
       "id" : 38,
       "links" : [
@@ -1094,6 +1133,7 @@ var nodes = [
    },
    {
       "name" : "0 0 0 -1",
+      "label" : "B4",
       "class" : "B",
       "id" : 39,
       "links" : [
@@ -1129,6 +1169,7 @@ var nodes = [
    },
    {
       "name" : "0 0 0 0",
+      "label" : "A1",
       "class" : "A",
       "id" : 40,
       "links" : [
@@ -1168,6 +1209,7 @@ var nodes = [
    },
    {
       "name" : "0 0 0 1",
+      "label" : "B5",
       "class" : "B",
       "id" : 41,
       "links" : [
@@ -1203,6 +1245,7 @@ var nodes = [
    },
    {
       "name" : "0 0 1 -1",
+      "label" : "C13",
       "class" : "C",
       "id" : 42,
       "links" : [
@@ -1234,6 +1277,7 @@ var nodes = [
    },
    {
       "name" : "0 0 1 0",
+      "label" : "B6",
       "class" : "B",
       "id" : 43,
       "links" : [
@@ -1269,6 +1313,7 @@ var nodes = [
    },
    {
       "name" : "0 0 1 1",
+      "label" : "C14",
       "class" : "C",
       "id" : 44,
       "links" : [
@@ -1300,6 +1345,7 @@ var nodes = [
    },
    {
       "name" : "0 1 -1 -1",
+      "label" : "D17",
       "class" : "D",
       "id" : 45,
       "links" : [
@@ -1327,6 +1373,7 @@ var nodes = [
    },
    {
       "name" : "0 1 -1 0",
+      "label" : "C15",
       "class" : "C",
       "id" : 46,
       "links" : [
@@ -1358,6 +1405,7 @@ var nodes = [
    },
    {
       "name" : "0 1 -1 1",
+      "label" : "D18",
       "class" : "D",
       "id" : 47,
       "links" : [
@@ -1385,6 +1433,7 @@ var nodes = [
    },
    {
       "name" : "0 1 0 -1",
+      "label" : "C16",
       "class" : "C",
       "id" : 48,
       "links" : [
@@ -1416,6 +1465,7 @@ var nodes = [
    },
    {
       "name" : "0 1 0 0",
+      "label" : "B7",
       "class" : "B",
       "id" : 49,
       "links" : [
@@ -1451,6 +1501,7 @@ var nodes = [
    },
    {
       "name" : "0 1 0 1",
+      "label" : "C17",
       "class" : "C",
       "id" : 50,
       "links" : [
@@ -1482,6 +1533,7 @@ var nodes = [
    },
    {
       "name" : "0 1 1 -1",
+      "label" : "D19",
       "class" : "D",
       "id" : 51,
       "links" : [
@@ -1509,6 +1561,7 @@ var nodes = [
    },
    {
       "name" : "0 1 1 0",
+      "label" : "C18",
       "class" : "C",
       "id" : 52,
       "links" : [
@@ -1540,6 +1593,7 @@ var nodes = [
    },
    {
       "name" : "0 1 1 1",
+      "label" : "D20",
       "class" : "D",
       "id" : 53,
       "links" : [
@@ -1567,6 +1621,7 @@ var nodes = [
    },
    {
       "name" : "1 -1 -1 -1",
+      "label" : "E9",
       "class" : "E",
       "id" : 54,
       "links" : [
@@ -1590,6 +1645,7 @@ var nodes = [
    },
    {
       "name" : "1 -1 -1 0",
+      "label" : "D21",
       "class" : "D",
       "id" : 55,
       "links" : [
@@ -1617,6 +1673,7 @@ var nodes = [
    },
    {
       "name" : "1 -1 -1 1",
+      "label" : "E10",
       "class" : "E",
       "id" : 56,
       "links" : [
@@ -1640,6 +1697,7 @@ var nodes = [
    },
    {
       "name" : "1 -1 0 -1",
+      "label" : "D22",
       "class" : "D",
       "id" : 57,
       "links" : [
@@ -1667,6 +1725,7 @@ var nodes = [
    },
    {
       "name" : "1 -1 0 0",
+      "label" : "C19",
       "class" : "C",
       "id" : 58,
       "links" : [
@@ -1698,6 +1757,7 @@ var nodes = [
    },
    {
       "name" : "1 -1 0 1",
+      "label" : "D23",
       "class" : "D",
       "id" : 59,
       "links" : [
@@ -1725,6 +1785,7 @@ var nodes = [
    },
    {
       "name" : "1 -1 1 -1",
+      "label" : "E11",
       "class" : "E",
       "id" : 60,
       "links" : [
@@ -1748,6 +1809,7 @@ var nodes = [
    },
    {
       "name" : "1 -1 1 0",
+      "label" : "D24",
       "class" : "D",
       "id" : 61,
       "links" : [
@@ -1775,6 +1837,7 @@ var nodes = [
    },
    {
       "name" : "1 -1 1 1",
+      "label" : "E12",
       "class" : "E",
       "id" : 62,
       "links" : [
@@ -1798,6 +1861,7 @@ var nodes = [
    },
    {
       "name" : "1 0 -1 -1",
+      "label" : "D25",
       "class" : "D",
       "id" : 63,
       "links" : [
@@ -1825,6 +1889,7 @@ var nodes = [
    },
    {
       "name" : "1 0 -1 0",
+      "label" : "C20",
       "class" : "C",
       "id" : 64,
       "links" : [
@@ -1856,6 +1921,7 @@ var nodes = [
    },
    {
       "name" : "1 0 -1 1",
+      "label" : "D26",
       "class" : "D",
       "id" : 65,
       "links" : [
@@ -1883,6 +1949,7 @@ var nodes = [
    },
    {
       "name" : "1 0 0 -1",
+      "label" : "C21",
       "class" : "C",
       "id" : 66,
       "links" : [
@@ -1914,6 +1981,7 @@ var nodes = [
    },
    {
       "name" : "1 0 0 0",
+      "label" : "B8",
       "class" : "B",
       "id" : 67,
       "links" : [
@@ -1949,6 +2017,7 @@ var nodes = [
    },
    {
       "name" : "1 0 0 1",
+      "label" : "C22",
       "class" : "C",
       "id" : 68,
       "links" : [
@@ -1980,6 +2049,7 @@ var nodes = [
    },
    {
       "name" : "1 0 1 -1",
+      "label" : "D27",
       "class" : "D",
       "id" : 69,
       "links" : [
@@ -2007,6 +2077,7 @@ var nodes = [
    },
    {
       "name" : "1 0 1 0",
+      "label" : "C23",
       "class" : "C",
       "id" : 70,
       "links" : [
@@ -2038,6 +2109,7 @@ var nodes = [
    },
    {
       "name" : "1 0 1 1",
+      "label" : "D28",
       "class" : "D",
       "id" : 71,
       "links" : [
@@ -2065,6 +2137,7 @@ var nodes = [
    },
    {
       "name" : "1 1 -1 -1",
+      "label" : "E13",
       "class" : "E",
       "id" : 72,
       "links" : [
@@ -2088,6 +2161,7 @@ var nodes = [
    },
    {
       "name" : "1 1 -1 0",
+      "label" : "D29",
       "class" : "D",
       "id" : 73,
       "links" : [
@@ -2115,6 +2189,7 @@ var nodes = [
    },
    {
       "name" : "1 1 -1 1",
+      "label" : "E14",
       "class" : "E",
       "id" : 74,
       "links" : [
@@ -2138,6 +2213,7 @@ var nodes = [
    },
    {
       "name" : "1 1 0 -1",
+      "label" : "D30",
       "class" : "D",
       "id" : 75,
       "links" : [
@@ -2165,6 +2241,7 @@ var nodes = [
    },
    {
       "name" : "1 1 0 0",
+      "label" : "C24",
       "class" : "C",
       "id" : 76,
       "links" : [
@@ -2196,6 +2273,7 @@ var nodes = [
    },
    {
       "name" : "1 1 0 1",
+      "label" : "D31",
       "class" : "D",
       "id" : 77,
       "links" : [
@@ -2223,6 +2301,7 @@ var nodes = [
    },
    {
       "name" : "1 1 1 -1",
+      "label" : "E15",
       "class" : "E",
       "id" : 78,
       "links" : [
@@ -2246,6 +2325,7 @@ var nodes = [
    },
    {
       "name" : "1 1 1 0",
+      "label" : "D32",
       "class" : "D",
       "id" : 79,
       "links" : [
@@ -2273,6 +2353,7 @@ var nodes = [
    },
    {
       "name" : "1 1 1 1",
+      "label" : "E16",
       "class" : "E",
       "id" : 80,
       "links" : [

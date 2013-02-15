@@ -6,8 +6,8 @@ use Data::Dumper;
 
 my $patstr = "BCDEDCDEDC" x 8;
 
-my $PRINT_JSON = 0;
-my $SEARCH = 1000;
+my $PRINT_JSON = 1;
+my $SEARCH = 0;
 my $SEARCH_BACKTRACK = 1;
 
 
@@ -171,17 +171,20 @@ sub pick {
 
 
 sub build_nodes {
-
+    my $counts = {};
     for my $x ( -1 .. 1 ) {
 	for my $y ( -1 .. 1 ) {
 	    for my $z ( -1 .. 1 ) {
 		for my $w ( -1 .. 1 ) {
 		    my $name = name($x, $y, $z, $w);
+		    my $class = class($x, $y, $z, $w);
+		    $counts->{$class}++;
 		    my $node = {
 			name => $name,
 			links => [ links($x, $y, $z, $w) ],
 			id => $i,
-			class => class($x, $y, $z, $w)
+			class => $class,
+			label => $class . $counts->{$class}
 		    };
 		    push @$nodes, $node;
 		    $nodeindex->{$name} = $i;

@@ -86,7 +86,6 @@ function clear_path() {
 function highlight_head(d, on) {
     d3.select("#C" + d.id).classed("head", on);
     var pc = next_pattern_class();
-    console.log("Next: " + pc);
     for ( var i = 0; i < d.links.length; i++ ) {
 	var l = d.links[i];
 	if( ! visited[l.target] ) {
@@ -242,7 +241,8 @@ function draw_force_graph(elt, w, h) {
 	.attr("class", "label")
 	.attr("dx", 0)
 	.attr("dy", ".35em")
-	.text(function(d) { return d.name });
+	.attr("title", function(d) { return d.name })
+	.text(function(d) { return d.label });
 
 
     fg_vis.style("opacity", 1e-6)
