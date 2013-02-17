@@ -7,7 +7,7 @@ use Data::Dumper;
 
 my $PRINT_JSON = './force_graph_data.js';
 
-my $PRINT_MAPS = 1;
+my $PRINT_MAPS = './maps.';
 
 
 my $nodes = [];
@@ -19,8 +19,6 @@ my $i = 0;
 my $start = undef;
 
 build_nodes();
-
-my ( $anode ) = map { $_->{class} eq 'A' ? $_ : () } @$nodes;
 
 if( $PRINT_JSON ) {
 
@@ -39,7 +37,20 @@ if( $PRINT_JSON ) {
 }
 
 if( $PRINT_MAPS ) {
-    maps($anode);
+    
+    my $maps = {
+	from_b => maps('B', 1),
+	from_e => maps('E', -1),
+	c_out => maps('C', 1),
+	c_in => maps('C', -1),
+    };
+
+    for my $label ( keys %$maps ) {
+	open(MAPSF, ">$PRINT_MAPS${label}.txt") || die($!);
+	print MAPSF "$label\n\n$maps->{$label}\n";
+	close MAPSF;
+    }
+
 }
 
 
@@ -128,7 +139,9 @@ sub links {
 
 
 sub name {
-    return join(' ', @_);
+#    return join(' ', @_);
+    return sprintf("% 2d % 2d % 2d % 2d", @_);
+
 }				    
 		   
 
@@ -148,31 +161,81 @@ sub class {
 }
 
 
-# Recursive print of nodes by class from A -> E
+# Recursive print of nodes by class in either direction (A->E, E->A)
+
 
 sub maps {
-    my ( $node ) = @_;
+    my ( $start, $next ) = @_;
 
-    my $t = ord($node->{class}) - 64;
-    print "\t" x $t;
-    print "$node->{label}: $node->{name}\n"; 
-    if( $node->{class} eq 'E' ) {
-	return;
+    my @start = ();
+
+    for my $node ( @$nodes ) {
+	if( $node->{class} eq $start ) {
+	    push @start, $node;
+	}
     }
 
-    my $class = $node->{class};
-    $class++;
+    my $map = '';
+
+    for my $node ( @start ) {
+	$map .= map_r($node, $next);
+    }
+
+    return $map;
+}
+
+
+
+
+
+
+
+sub map_r {
+    my ( $node, $next ) = @_;
+
+    my $map = '';
+
+    my $t1 = ord($node->{class}) - 66;
+    if( $next < 0 ) {
+	$t1 = 5 - $t1;
+    }
+    my $t2 = 8 - $t1;
+    $map .= "  " x $t1;
+    $map .= sprintf("%3s", $node->{label});
+    $map .= "  " x $t2;
+    $map .= "$node->{name}\n"; 
+
+    my $nextc = next_class($node->{class}, $next);
+    
+    if( !$nextc ) {
+	return $map;
+    }
+
     my @next = ();
 
     for my $link_id ( sort keys %{$alllinks->{$node->{id}}} ) {
 	my $target = $nodes->[$link_id];
-	if( $target->{class} eq $class ) {
+	if( $target->{class} eq $nextc ) {
 	    push @next, $target;
 	}
     }
     for my $target ( sort { $a->{classi} <=> $b->{classi} } @next ) {
-	maps($target);
+	$map .= map_r($target, $next);
     }
 
+    return $map;
 
+}
+
+
+
+sub next_class {
+    my ( $class, $next ) = @_;
+
+    my $nclass = chr(ord($class) + $next);
+    if( $nclass =~ /^[B-E]$/ ) {
+	return $nclass;
+    } else {
+	return undef;
+    }
 }
