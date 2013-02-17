@@ -1,7 +1,9 @@
 
 var RADIUS = 20;
 
-var CONSTRAINT = {
+
+
+var CONSTRAIN_BULLSEYE = {
     'A' : 0,
     'B' : 80,
     'C' : 160,
@@ -9,9 +11,25 @@ var CONSTRAINT = {
     'E' : 320
 };
 
-var TOLERANCE = 0.1;
+var CONSTRAIN_LINES_X = {
+    'A' : 100,
+    'B' : 250,
+    'C' : 400,
+    'D' : 550,
+    'E' : 700
+};
 
-var constrain = true;
+var CONSTRAIN_LINES_Y = {
+    'B' : 90,
+    'C' : 30,
+    'D' : 22,
+    'E' : 45
+};
+
+var TOLERANCE = 0.1;
+var NUDGE = 0.2;
+
+var constrain = 'none';
 
 var path = [];
 
@@ -22,6 +40,47 @@ var taken = {};
 var pattern = "ABCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDC";
 
 var head;
+
+var cx, cy;
+
+
+function constrain_bullseye(d) {
+    var x = d.x - cx;
+    var y = d.y - cy;
+    var r0 = Math.sqrt(x * x + y * y);
+    var r = CONSTRAIN_BULLSEYE[d.class];
+    
+    if( Math.abs(r - r0) > TOLERANCE ) {
+	if( r0 ) {
+	    x = x * r / r0;
+	    y = y * r / r0;
+	} else {
+	    x = r;
+	    y = 0;
+	}
+	d.x = cx + x;
+	d.y = cy + y
+    }
+}
+
+
+function constrain_lines(d) {
+
+    var x0 = CONSTRAIN_LINES_X[d.class];
+    
+    if( Math.abs(d.x - x0) > TOLERANCE ) {
+	d.x = x0;
+    }
+    if( d.class != 'A' ) {
+	var y0 = CONSTRAIN_LINES_Y[d.class] * d.classi  + 40;
+	if( Math.abs(d.y - y0) > TOLERANCE ) {
+	    d.y += NUDGE * ( y0 - d.y );
+	}
+    }
+
+}
+
+
 
 function intrand(n) {
     return Math.floor(Math.random() * n);
@@ -190,8 +249,8 @@ function remove_from_path(d) {
 
 function draw_force_graph(elt, w, h) {       
 
-    var cx = 0.5 * w;
-    var cy = 0.5 * h;
+    cx = 0.5 * w;
+    cy = 0.5 * h;
 
     var fill = d3.scale.category10();
 
@@ -250,32 +309,15 @@ function draw_force_graph(elt, w, h) {
 	.duration(1000)
 	.style("opacity", 1);
 
-
+    var constraints = {
+	none: function(d) {},
+	rings: constrain_bullseye,
+	lines: constrain_lines
+    };
 
     force.on("tick", function(e) {
-
-
-	
 	nodes.attr("transform", function(d) {
-	    var r = CONSTRAINT[d.class];
-	    
-	    if( constrain ) {
-		var x = d.x - cx;
-		var y = d.y - cy;
-		var r0 = Math.sqrt(x * x + y * y);
-		
-		if( r - r0 > TOLERANCE || r - r0 < -TOLERANCE ) {
-		    if( r0 ) {
-			x = x * r / r0;
-			y = y * r / r0;
-		    } else {
-			x = r;
-			y = 0;
-		    }
-		    d.x = cx + x;
-		    d.y = cy + y
-		}
-	    }
+	    constraints[constrain](d);
 	    return "translate(" + d.x + "," + d.y + ")"
 	});
 	links.attr("x1", function(d) { return d.source.x; })
@@ -285,8 +327,9 @@ function draw_force_graph(elt, w, h) {
 
     });
 
-    d3.select("#ctrl_constrain").on("click", function(e) {
-	constrain = this.checked;
+    d3.select("#ctrl_constrain").on("change", function(e) {
+	constrain = this.value;
+	console.log("Cons " + constrain);
 	force.start();
     });
 

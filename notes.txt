@@ -1,56 +1,29 @@
-
-Have a path 
-
+Backtrack-search failed. Systematic manual search:
 
 
+Each node class (A-E) correspnds to a class of component in some
+dimension of a single hypercube:
 
+A  1 the centre of the hypercube
+B  8 cubes
+C 24 planes 
+D 32 edges
+E 16 vertices
 
+Note that the cubes, planes, edges all share points
 
+B1 0 0 0 1
 
+B2 0 0 0 -1
 
+B3 0 0 1 0
 
+B4 0 0 -1 0
 
-16 E, 32 D
+B5 0 1 0 0
 
-D -> E -> D ->  D -> E -> D ...
+B6 0 -1 0 0
 
-24 C
+B7 1 0 0 0
 
-between D -> C -> D have to repeat through some Cs
-
-Same with C -> B -> C because there are only 8 B
-
-E 16
-D 24
-C 32
-B 8
-
-E 2
-D 3
-C 4
-B 1
-
-E D C B C D C D E D  
-
-E 1 1 1 1
-D 0 1 1 1
-C 0 0 1 1
-B 0 0 0 1
-C 0 1 0 1
-D 1 1 0 1
-C 1 0 0 1
-D 1 0 1 1
-E 1 -1 1 1
-D 0 -1 1 1
-
-
-
-
-
-E -> 16
-D -> 32
-C -> 24
-B -> 8
-A -> 1
-
-
+B8 -1 0 0 0

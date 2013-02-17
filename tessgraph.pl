@@ -4,19 +4,15 @@ use strict;
 use JSON;
 use Data::Dumper;
 
-my $patstr = "BCDEDCDEDC" x 8;
 
-my $PRINT_JSON = 1;
-my $SEARCH = 0;
-my $SEARCH_BACKTRACK = 1;
+my $PRINT_JSON = './force_graph_data.js';
 
+my $PRINT_MAPS = 1;
 
-my $MAX_BACKTRACK = 100000;
-
-my @pat = split(//, $patstr);
 
 my $nodes = [];
 my $nodeindex = {};
+my $alllinks = {};
 my $links = [];
 
 my $i = 0;
@@ -24,24 +20,27 @@ my $start = undef;
 
 build_nodes();
 
+my ( $anode ) = map { $_->{class} eq 'A' ? $_ : () } @$nodes;
+
 if( $PRINT_JSON ) {
 
     my $js = JSON->new();
 
+    open(JSONF, ">$PRINT_JSON") || die("$!");
+
     my $nodes_js = $js->pretty->encode($nodes);
 
-    print "var nodes = $nodes_js;\n\n";
+    print JSONF "var nodes = $nodes_js;\n\n";
 
     my $links_js = $js->pretty->encode($links);
 
-    print $links_js;
-    print "var links = $links_js;\n\n";
-    
+    print JSONF "var links = $links_js;\n\n";
+    close(JSONF);
 }
 
-
-
-
+if( $PRINT_MAPS ) {
+    maps($anode);
+}
 
 
 sub build_nodes {
@@ -58,6 +57,7 @@ sub build_nodes {
 			links => [ links($x, $y, $z, $w) ],
 			id => $i,
 			class => $class,
+			classi => $counts->{$class},
 			label => $class . $counts->{$class}
 		    };
 		    push @$nodes, $node;
@@ -101,6 +101,7 @@ sub build_nodes {
 		$linkback->{$linkprint} = $link_id;
 		$link_id++;
 	    }
+	    $alllinks->{$source}{$target} = 1;
 	}
 	delete $node->{links};
 	$node->{links} = \@nlinks;
@@ -147,4 +148,31 @@ sub class {
 }
 
 
+# Recursive print of nodes by class from A -> E
 
+sub maps {
+    my ( $node ) = @_;
+
+    my $t = ord($node->{class}) - 64;
+    print "\t" x $t;
+    print "$node->{label}: $node->{name}\n"; 
+    if( $node->{class} eq 'E' ) {
+	return;
+    }
+
+    my $class = $node->{class};
+    $class++;
+    my @next = ();
+
+    for my $link_id ( sort keys %{$alllinks->{$node->{id}}} ) {
+	my $target = $nodes->[$link_id];
+	if( $target->{class} eq $class ) {
+	    push @next, $target;
+	}
+    }
+    for my $target ( sort { $a->{classi} <=> $b->{classi} } @next ) {
+	maps($target);
+    }
+
+
+}

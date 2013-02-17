@@ -3,14 +3,20 @@
   <head>
     <title>Tesseract</title>
     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
-    <script type="text/javascript" src="tess_fg_data.js"></script>
+    <script type="text/javascript" src="force_graph_data.js"></script>
     <script type="text/javascript" src="tessgraph.js"></script>
     <link type="text/css" rel="stylesheet" href="tessgraph.css">
   </head>
   <body>
 
     <form name="controls">
-     <span>Order: <input id="ctrl_constrain" type="checkbox" name="constrain" checked="true" /></span>
+     <span>
+       Order: <select id="ctrl_constrain" name="constrain">
+	 <option value="none">free</option>
+	 <option value="rings">rings</option>
+	 <option value="lines">lines</option>
+       </select> 
+     </span>
      <span><input id="ctrl_clear" type="button" value="Clear path" /></span>
      <span><input id="ctrl_find" type="button" value="Try to find path" /></span>
      </form>
