@@ -39,10 +39,9 @@ if( $PRINT_JSON ) {
 if( $PRINT_MAPS ) {
     
     my $maps = {
-	from_b => maps('B', 1),
-	from_e => maps('E', -1),
-	c_out => maps('C', 1),
-	c_in => maps('C', -1),
+	from_b => maps("BCDE"),
+	from_e => maps("EBCD"),
+	c_through => maps("CDEDC")
     };
 
     for my $label ( keys %$maps ) {
@@ -161,16 +160,17 @@ sub class {
 }
 
 
-# Recursive print of nodes by class in either direction (A->E, E->A)
+# Recursive print of nodes by class following a string pattern
+# (for eg CDEDC) with no self-intersection
 
 
 sub maps {
-    my ( $start, $next ) = @_;
+    my ( $pattern ) = @_;
 
     my @start = ();
 
     for my $node ( @$nodes ) {
-	if( $node->{class} eq $start ) {
+	if( $node->{class} eq substr($pattern, 0, 1) ) {
 	    push @start, $node;
 	}
     }
@@ -178,7 +178,7 @@ sub maps {
     my $map = '';
 
     for my $node ( @start ) {
-	$map .= map_r($node, $next);
+	$map .= map_r($node, substr($pattern, 1)) . "\n---\n";
     }
 
     return $map;
@@ -191,36 +191,31 @@ sub maps {
 
 
 sub map_r {
-    my ( $node, $next ) = @_;
+    my ( $node, $pattern, @visited ) = @_;
+    push @visited, $node->{label};
 
-    my $map = '';
+    my $nextc = substr($pattern, 0, 1);
 
-    my $t1 = ord($node->{class}) - 66;
-    if( $next < 0 ) {
-	$t1 = 5 - $t1;
-    }
-    my $t2 = 8 - $t1;
-    $map .= "  " x $t1;
-    $map .= sprintf("%3s", $node->{label});
-    $map .= "  " x $t2;
-    $map .= "$node->{name}\n"; 
-
-    my $nextc = next_class($node->{class}, $next);
-    
     if( !$nextc ) {
-	return $map;
+	return join(' ', @visited) . "\n";
     }
 
     my @next = ();
+    my %vhash = map { $_ => 1 } @visited;
 
     for my $link_id ( sort keys %{$alllinks->{$node->{id}}} ) {
 	my $target = $nodes->[$link_id];
-	if( $target->{class} eq $nextc ) {
+	if( $target->{class} eq $nextc && !$vhash{$target->{label}}  ) {
 	    push @next, $target;
 	}
     }
+    if( !@next ) {
+	return "<-- exhausted\n";
+    }
+    my $tab = "    " x scalar(@visited);
+    my $map = '';
     for my $target ( sort { $a->{classi} <=> $b->{classi} } @next ) {
-	$map .= map_r($target, $next);
+	$map .= map_r($target, substr($pattern, 1), @visited);
     }
 
     return $map;
