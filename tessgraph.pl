@@ -9,6 +9,7 @@ my $PRINT_JSON = './force_graph_data.js';
 
 my $PRINT_MAPS = './maps.';
 
+my $MAP_COORDS = './coords.txt';
 
 my $nodes = [];
 my $nodeindex = {};
@@ -41,7 +42,9 @@ if( $PRINT_MAPS ) {
     my $maps = {
 	from_b => maps("BCDE"),
 	from_e => maps("EBCD"),
-	c_through => maps("CDEDC")
+	c_through => maps("CDEDC"),
+	b_through => maps("BCB"),
+	bb => maps("BCDEDCDEDCB")
     };
 
     for my $label ( keys %$maps ) {
@@ -50,6 +53,21 @@ if( $PRINT_MAPS ) {
 	close MAPSF;
     }
 
+    open(COORDSF, ">$MAP_COORDS") || die($!);
+    for my $node ( sort sortnodes @$nodes ) {
+	print COORDSF "$node->{label} $node->{name}\n";
+    }
+    close(COORDSF);
+
+}
+
+
+
+sub sortnodes {
+    return ( $a->{class} cmp $b->{class}
+	     ||
+	     $a->{classi} <=> $b->{classi}
+	);
 }
 
 
@@ -197,7 +215,7 @@ sub map_r {
     my $nextc = substr($pattern, 0, 1);
 
     if( !$nextc ) {
-	return join(' ', @visited) . "\n";
+	return join(' ', map { sprintf("%-3s", $_) } @visited) . "\n";
     }
 
     my @next = ();
