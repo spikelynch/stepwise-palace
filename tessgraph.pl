@@ -11,6 +11,8 @@ my $PRINT_MAPS = './maps.';
 
 my $MAP_COORDS = './coords.txt';
 
+my $PTFMT = '%-3s';
+
 my $nodes = [];
 my $nodeindex = {};
 my $alllinks = {};
@@ -42,7 +44,9 @@ if( $PRINT_MAPS ) {
     my $maps = {
 	from_b => maps("BCDE"),
 	from_e => maps("EBCD"),
+
 	c_through => maps("CDEDC"),
+
 	b_through => maps("BCB"),
 	bb => maps("BCDEDCDEDCB")
     };
@@ -70,6 +74,18 @@ sub sortnodes {
 	);
 }
 
+sub sortlabels {
+    my $a1 = substr($a, 0, 1);
+    my $a2 = substr($a, 1);
+    my $b1 = substr($b, 0, 1);
+    my $b2 = substr($b, 1);
+    return ( $a1 cmp $b1
+	     ||
+	     $a2 <=> $b2
+	);
+}
+
+    
 
 sub build_nodes {
     my $counts = {};
@@ -181,9 +197,16 @@ sub class {
 # Recursive print of nodes by class following a string pattern
 # (for eg CDEDC) with no self-intersection
 
+sub ptfmt {
+    my ( $pt ) = @_;
+    return sprintf($PTFMT, $pt);
+}
+
 
 sub maps {
     my ( $pattern ) = @_;
+
+    my $endpoints = {};
 
     my @start = ();
 
@@ -196,10 +219,24 @@ sub maps {
     my $map = '';
 
     for my $node ( @start ) {
-	$map .= map_r($node, substr($pattern, 1)) . "\n---\n";
+	my $map0 = map_r($node, substr($pattern, 1)) . "\n---\n";
+	for my $line ( split(/\n/, $map0) ) {
+	    my @path = split(/\s+/, $line);
+	    my $end = pop @path;
+	    if( $end =~ /[A-E][0-9]/ ) {
+		$endpoints->{$node->{label}}{$end} = 1;
+	    }
+	}
+	$map .= $map0;
     }
 
-    return $map;
+    my $ends = '';
+    for my $node ( @start ) {
+	$ends .= ptfmt($node->{label}) . ": ";
+	$ends .= join(' ', map { ptfmt($_) } sort sortlabels keys %{$endpoints->{$node->{label}}}) . "\n";
+    }
+
+    return $ends . "\n---\n" . $map;
 }
 
 
@@ -215,7 +252,7 @@ sub map_r {
     my $nextc = substr($pattern, 0, 1);
 
     if( !$nextc ) {
-	return join(' ', map { sprintf("%-3s", $_) } @visited) . "\n";
+	return join(' ',  map { ptfmt($_) }  @visited) . "\n";
     }
 
     my @next = ();
