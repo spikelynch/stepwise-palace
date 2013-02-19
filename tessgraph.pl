@@ -14,16 +14,16 @@ my $MAP_COORDS = './coords.txt';
 my $PTFMT = '%-3s';
 
 my $ROUTES = {
-    from_b => 'BCDE',
-    from_e => 'EDCB',
-    c_through => 'CDEDC',
-    b_c_through => 'BCDEDC',
-    e_c => 'EDC',
-    e_d => 'ED',
-    dcd => 'DCD'
+    # from_b => 'BCDE',
+    # from_e => 'EDCB',
+    # c_through => 'CDEDC',
+    # b_c_through => 'BCDEDC',
+    # e_c => 'EDC',
+    # e_d => 'ED',
+    # dcd => 'DCD',
+    # dcbcd => 'DCBCD',
+    # dc => 'DC'
 };
-
-
 
 my $nodes = [];
 my $nodeindex = {};
