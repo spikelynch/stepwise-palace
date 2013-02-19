@@ -2,53 +2,53 @@ Toroidal map
 
 THIS ACTUALLY WORKS!
 
-Section a
+Section a                              E1 D2 E3 D4 E4 D3 E2 D1 C1
 E1  D2  E3  
 D1  C1  D4  
 E2  D3  E4  
 ==
 
-D13 C8  D15 
+D13 C8  D15                            B2 C10 D15 C8 D13 C7 D14 C9 D16
 C7  B2  C10 
 D14 C9  D16 
 ==
 
 Section b
 E9  D22 E11 
-D21 C19 D24 
+D21 C19 D24                            E12 D23 E10 D21 E9 D22 E11 D24 C19
 E10 D23 E12 
 ==
 
 D25 C21 D27 
-C20 B8  C23 
+C20 B8  C23                            B8 C20 D26 C22 D28 C23 D27 C21 D25
 D26 C22 D28 
 ==
 
 Section c
 E13 D30 E15 
-D29 C24 D32 
+D29 C24 D32                            E13 D30 E15 D32 E16 D31 E14 D29 C24
 E14 D31 E16 
 ==
 
 D17 C16 D19 
-C15 B7  C18 
+C15 B7  C18                             B7 C15 D18 C17 D20 C18 D19 C16 D17
 D18 C17 D20 
 ==
 
 Section d
 E5  D10 E7  
-D9  C6  D12 
+D9  C6  D12                            E5 D10 E7 D12 E8 D11 E6 D9 C6
 E6  D11 E8  
 ==
 
 D5  C3  D7  
-C2  B1  C5  
+C2  B1  C5                              B1 C5 D8 C4 D6 C2 D5 C3 D7
 D6  C4  D8  
 ==
 
 Section e
 C11 B4  C13 
-B3  A1  B6  
+B3  A1  B6                               C13 B4 C11 B3 C12 B5 C14 B6 A1
 C12 B5  C14 
 ==
 
