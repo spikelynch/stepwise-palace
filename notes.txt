@@ -1,4 +1,4 @@
-Backtrack-search failed. Systematic manual search:
+Systematic manual search:
 
 
 Each node class (A-E) correspnds to a class of component in some
@@ -12,18 +12,85 @@ E 16 vertices
 
 Note that the cubes, planes, edges all share points
 
-B1 0 0 0 1
+Considering the 8 subcubes
 
-B2 0 0 0 -1
+Say B1: -1 0 0 0
 
-B3 0 0 1 0
+Its cube is defined by all points having x1 = -1:
 
-B4 0 0 -1 0
+-1   0 0  0
+-1 -1  0  0
+-1 -1 -1  0
+-1 -1 -1 -1
+...
+etc.  There are 27 points here, but many are shared with other cubes.
 
-B5 0 1 0 0
 
-B6 0 -1 0 0
+What I want is a systematic way to associate a point with a cube.  As in
+lower dimensions:
 
-B7 1 0 0 0
+A  B  C
+D  E  F
+G  H  I
 
-B8 -1 0 0 0
+Line 1 = AB
+Line 2 = CF
+Line 3 = HI
+Line 4 = DG
+(E is like 0 0 0 0 - belongs to none)
+
+    A B C    J K L    R S T
+    D E F    M . N    U V W
+    G H I    O P Q    X Y Z
+
+ABC  ADG   GHI
+DEF  JMO   OPQ
+GHI  RUX   XYZ
+
+ABC  CFI   RST
+JKL  LNQ   UVW
+RST  TWZ   XYZ
+
+
+Four 3-cubes, intersecting at 4 planes - this is 72 points
+
+Cube 1
+
+E1  -1 -1 -1 -1   D1  -1 -1 -1  0   E2  -1 -1 -1  1   
+D2  -1 -1  0 -1   C1  -1 -1  0  0   D3  -1 -1  0  1   
+E3  -1 -1  1 -1   D4  -1 -1  1  0   E4  -1 -1  1  1   
+-
+D5  -1  0 -1 -1   C2  -1  0 -1  0   D6  -1  0 -1  1   
+C3  -1  0  0 -1   B1  -1  0  0  0   C4  -1  0  0  1   
+D7  -1  0  1 -1   C5  -1  0  1  0   D8  -1  0  1  1   
+-
+E5  -1  1 -1 -1   D9  -1  1 -1  0   E6  -1  1 -1  1   
+D10 -1  1  0 -1   C6  -1  1  0  0   D11 -1  1  0  1   
+E7  -1  1  1 -1   D12 -1  1  1  0   E8  -1  1  1  1   
+-
+==
+D13  0 -1 -1 -1   C7   0 -1 -1  0   D14  0 -1 -1  1   
+C8   0 -1  0 -1   B2   0 -1  0  0   C9   0 -1  0  1   
+D15  0 -1  1 -1   C10  0 -1  1  0   D16  0 -1  1  1   
+-
+C11  0  0 -1 -1   B3   0  0 -1  0   C12  0  0 -1  1   
+B4   0  0  0 -1   A1   0  0  0  0   B5   0  0  0  1   
+C13  0  0  1 -1   B6   0  0  1  0   C14  0  0  1  1   
+-
+D17  0  1 -1 -1   C15  0  1 -1  0   D18  0  1 -1  1   
+C16  0  1  0 -1   B7   0  1  0  0   C17  0  1  0  1   
+D19  0  1  1 -1   C18  0  1  1  0   D20  0  1  1  1   
+-
+==
+E9   1 -1 -1 -1   D21  1 -1 -1  0   E10  1 -1 -1  1   
+D22  1 -1  0 -1   C19  1 -1  0  0   D23  1 -1  0  1   
+E11  1 -1  1 -1   D24  1 -1  1  0   E12  1 -1  1  1   
+-
+D25  1  0 -1 -1   C20  1  0 -1  0   D26  1  0 -1  1   
+C21  1  0  0 -1   B8   1  0  0  0   C22  1  0  0  1   
+D27  1  0  1 -1   C23  1  0  1  0   D28  1  0  1  1   
+-
+E13  1  1 -1 -1   D29  1  1 -1  0   E14  1  1 -1  1   
+D30  1  1  0 -1   C24  1  1  0  0   D31  1  1  0  1   
+E15  1  1  1 -1   D32  1  1  1  0   E16  1  1  1  1   
+
