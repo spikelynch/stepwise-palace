@@ -18,6 +18,33 @@ E14: D29 D31
 E15: D27 D30      
 E16: D20 D32      
 
+So we have DEDcDEDcbcDEDcDEDcbcDED...
+
+(where capital letters are combinations we've found.)
+
+Need to find eight D-c-D and eight D-cbc-D links
+
+D1  E1  D5       
+D3  E2  D14      
+D2  E3  D7       
+D4  E4  D16      
+D9  E5  D10      
+D6  E6  D18      
+D12 E7  D19      
+D8  E8  D11      
+D1 3E9  D22      
+D21 E10 D26      
+D15 E11 D24      
+D23 E12 D28      
+D17 E13 D25      
+D29 E14 D31      
+D27 E15 D30      
+D20 E16 D32      
+
+
+
+
+
 Set 2: for each D - this is the Ds which can be reached via DCD
 
 
