@@ -30,6 +30,8 @@ my $nodeindex = {};
 my $alllinks = {};
 my $links = [];
 
+my $nodearray = {};
+
 my $i = 0;
 my $start = undef;
 
@@ -51,6 +53,9 @@ if( $PRINT_JSON ) {
     close(JSONF);
 }
 
+torus();
+
+
 if( $PRINT_MAPS ) {
     
     for my $label ( keys %$ROUTES ) {
@@ -63,10 +68,12 @@ if( $PRINT_MAPS ) {
     open(COORDSF, ">$MAP_COORDS") || die($!);
     for my $node ( sort sortnodes @$nodes ) {
 	print COORDSF "$node->{label} $node->{name}\n";
+	
     }
     close(COORDSF);
 
 }
+
 
 
 
@@ -113,6 +120,7 @@ sub build_nodes {
 			$start = $i;
 		    }
 		    $i++;
+		    $nodearray->{$x}{$y}{$z}{$w} = $node;
 		}
 	    }
 	}
@@ -291,4 +299,58 @@ sub next_class {
     } else {
 	return undef;
     }
+}
+
+
+
+sub coords_label {
+    my ( $x, $y, $z, $w ) = @_;
+    my $name = name($x, $y, $z, $w);
+    if( !exists $nodeindex->{$name} ) {
+	die("No index for $name");
+    }
+    my $i = $nodeindex->{$name};
+    return $nodes->[$i]{label};
+}
+
+
+sub torus {
+
+    print "Section a\n";
+
+    torus_slice(-1, -1);
+    torus_slice(0, -1);
+
+    print "Section b\n";
+
+    torus_slice(1, -1);
+    torus_slice(1, 0);
+
+    print "Section c\n";
+
+    torus_slice(1, 1);
+    torus_slice(0, 1);
+
+    print "Section d\n";
+
+    torus_slice(-1, 1);
+    torus_slice(-1, -0);
+
+    print "Section e\n";
+    torus_slice(0, 0);
+
+
+}
+
+sub torus_slice {
+    my ( $x, $y ) = @_;
+
+    for my $z ( -1 .. 1 ) {
+	for my $w ( -1 .. 1 ) {
+	    my $label = coords_label($x, $y, $w, $z);
+	    print ptfmt($label) . " ";
+	}
+	print "\n";
+    }
+    print "==\n\n";
 }
