@@ -13,6 +13,18 @@ my $MAP_COORDS = './coords.txt';
 
 my $PTFMT = '%-3s';
 
+my $ROUTES = {
+    from_b => 'BCDE',
+    from_e => 'EDCB',
+    c_through => 'CDEDC',
+    b_c_through => 'BCDEDC',
+    e_c => 'EDC',
+    e_d => 'ED',
+    dcd => 'DCD'
+};
+
+
+
 my $nodes = [];
 my $nodeindex = {};
 my $alllinks = {};
@@ -41,19 +53,10 @@ if( $PRINT_JSON ) {
 
 if( $PRINT_MAPS ) {
     
-    my $maps = {
-	from_b => maps("BCDE"),
-	from_e => maps("EBCD"),
-
-	c_through => maps("CDEDC"),
-
-	b_through => maps("BCB"),
-	bb => maps("BCDEDCDEDCB")
-    };
-
-    for my $label ( keys %$maps ) {
+    for my $label ( keys %$ROUTES ) {
+	my $map = maps($ROUTES->{$label});
 	open(MAPSF, ">$PRINT_MAPS${label}.txt") || die($!);
-	print MAPSF "$label\n\n$maps->{$label}\n";
+	print MAPSF "$label\n\n$map\n";
 	close MAPSF;
     }
 
