@@ -30,6 +30,7 @@ var TOLERANCE = 0.1;
 var NUDGE = 0.2;
 
 var constrain = 'none';
+var mode = 'path';
 
 var path = [];
 
@@ -37,7 +38,8 @@ var visited = {};
 
 var taken = {};
 
-var pattern = "ABCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDCBCDEDCDEDC";
+
+var nopattern = 1;
 
 var head;
 
@@ -87,23 +89,13 @@ function intrand(n) {
 }
 
 
-function next_pattern_class() {
-    var n = path.length;
-    return pattern.charAt(n + 1);
-}
-
-
+x
 function free_neighbours(d) {
     var nexts = [];
-    var pc = pattern.charAt(path.length);
-    console.log("From " + d.id + " looking for " + pc);
     for( var i = 0; i < d.links.length; i++ ) {
 	var t = d.links[i].target;
 	if( !visited[t] ) {
-	    var node = id_to_node(t);
-	    if( node.class == pc ) {
-		nexts.push(t);
-	    }
+	    nexts.push(t);
 	}
     }
     return nexts;
@@ -144,15 +136,12 @@ function clear_path() {
 
 function highlight_head(d, on) {
     d3.select("#C" + d.id).classed("head", on);
-    var pc = next_pattern_class();
     for ( var i = 0; i < d.links.length; i++ ) {
 	var l = d.links[i];
 	if( ! visited[l.target] ) {
 	    var n = id_to_node(l.target);
-	    if( n.class == pc ) {
-		d3.select("#L" + l.link).classed("next", on);
-		d3.select("#C" + l.target).classed("next", on);
-	    }
+	    d3.select("#L" + l.link).classed("next", on);
+	    d3.select("#C" + l.target).classed("next", on);
 	}
     }
 }
@@ -244,6 +233,8 @@ function remove_from_path(d) {
 	
 
 
+    
+
 
 
 
@@ -283,7 +274,11 @@ function draw_force_graph(elt, w, h) {
 	.attr("class", "node")
 	.attr("id", function(d) { return "N" + d.id }) 
 	.on("click", function(d) {
-	    add_node_to_path(d);
+	    if( mode == 'path' ) {
+		add_node_to_path(d);
+	    } else {
+		partition(d);
+	    }
 	    d3.event.stopPropagation();
 	})
 	.call(force.drag);
@@ -329,7 +324,12 @@ function draw_force_graph(elt, w, h) {
 
     d3.select("#ctrl_constrain").on("change", function(e) {
 	constrain = this.value;
-	console.log("Cons " + constrain);
+	force.start();
+    });
+
+    d3.select("#ctrl_mode").on("change", function(e) {
+	mode = this.value;
+	clear_path();
 	force.start();
     });
 
