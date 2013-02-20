@@ -15,23 +15,23 @@ D14 C9  D16
 
 Section b
 E9  D22 E11 
-D21 C19 D24                           19
+D21 C19 D24                           
 E10 D23 E12 
 ==
 
 D25 C21 D27 
-C20 B8  C23                           25
+C20 B8  C23                           
 D26 C22 D28 
 ==
 
 Section c
 E13 D30 E15 
-D29 C24 D32                           C24
+D29 C24 D32                           
 E14 D31 E16 
 ==
 
 D17 C16 D19 
-C15 B7  C18                           D17
+C15 B7  C18                           
 D18 C17 D20 
 ==
 
