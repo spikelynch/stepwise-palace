@@ -15,8 +15,6 @@ div#path {
     background-color: #eee;
     top: 80px;
     left: 840px;
-    width: 120px;
-    height: 800px;
     font-size: 9pt;
     font-family: Helvetica, Arial, sans-serif;
 }
@@ -58,7 +56,6 @@ circle.partition {
     opacity: 0.8;
 }
 
-
 line {
     stroke: #888;
     stroke-width: 1px;
@@ -80,3 +77,30 @@ line.next {
     font-size: 9pt;
     cursor: pointer;
 }
+
+/* Styles for the mat */
+
+a {
+    text-decoration: none;
+}
+
+a.path {
+    font-weight: bold;
+}
+
+a.head {
+    font-weight: bold;
+    color: #c00;
+}
+
+a.next {
+    color: #800;
+}
+
+
+td {
+    text-align: center;
+    font-size: 12pt;
+}
+
+

@@ -4,8 +4,14 @@ use strict;
 
 use Data::Dumper;
 
+my $COORDS = "coords.txt";
+
+
+
 my $stack = [];
 my $layer = [];
+
+my $coords = load_coords();
 
 while( <DATA> ) {
     chomp;
@@ -20,10 +26,21 @@ while( <DATA> ) {
     }
 }
 
+print "<table>\n";
+
 for my $row ( @$stack ) {
-    print join('   ', map { sprintf("%-3s", $_) } @$row) . "\n";
+    my @nodes = ();
+    for my $node ( @$row ) {
+	my $c1 = 'time' . $coords->{$node}[0];
+	my $c2 = 'height' . $coords->{$node}[1];
+	my $c3 = 'x' . $coords->{$node}[2];
+	my $c4 = 'y' . $coords->{$node}[3];
+	push @nodes, "   <td><a href=\"#\" class=\"mat\" id=\"M$node\">$node</a></td>\n";
+    }
+    print '<tr>' . join(' ', @nodes) . "</tr>\n";
 }
 
+print "</table>\n";
 
 
 sub uncoil {
@@ -48,6 +65,29 @@ sub uncoil {
 
     return $row;
 }
+
+
+sub load_coords {
+    open(COORDS, "<$COORDS") || die("$COORDS: $!");
+
+    my $coords = {};
+    while( <COORDS> ) {
+	chomp;
+	if( /^([A-Z][0-9]+)\s+(.*)$/ ) {	    
+	    my $label = $1;
+	    my @c = split(/\s+/, $2);
+	    $coords->{$label} = \@c; 
+	}
+    }
+    close COORDS;
+    return $coords;
+}
+
+
+
+
+
+	
 
 __DATA__
 E1  D2  E3  

@@ -89,7 +89,7 @@ function intrand(n) {
 }
 
 
-x
+
 function free_neighbours(d) {
     var nexts = [];
     for( var i = 0; i < d.links.length; i++ ) {
@@ -107,6 +107,20 @@ function id_to_node(id) {
     d3.select(nid).each(function(d1) { node = d1 } );
     return node;
 }
+
+function label_to_node(label) {
+    var node = 0;
+    d3.selectAll("g.node").each(function(d) {
+	if( d.label == label ) {
+	    node = d;
+	}
+    });
+    if( !node ) {
+	console.log("Warning, no node with label " + label);
+    }
+    return node;
+}
+
 
 
 function find_randumb(d) {
@@ -135,6 +149,7 @@ function clear_path() {
 
 
 function highlight_head(d, on) {
+    d3.select("#M" + d.label).classed("head", on);
     d3.select("#C" + d.id).classed("head", on);
     for ( var i = 0; i < d.links.length; i++ ) {
 	var l = d.links[i];
@@ -142,6 +157,7 @@ function highlight_head(d, on) {
 	    var n = id_to_node(l.target);
 	    d3.select("#L" + l.link).classed("next", on);
 	    d3.select("#C" + l.target).classed("next", on);
+	    d3.select("#M" + l.target).classed("next", on);
 	}
     }
 }
@@ -156,11 +172,13 @@ function highlight_path(oh, nh, on) {
 	if( on ) {
 	    d3.select("#L" + l.link).classed("next", false);
  	    d3.select("#C" + l.target).classed("next", false);
+	    d3.select("#M" + l.target).classed("next", false);
 	}
 	if( l.target == nh.id ) {
 	    d3.select("#L" + l.link).classed("path", on);
 	}
     }
+
 }
 
 
@@ -245,7 +263,6 @@ function draw_force_graph(elt, w, h) {
 
     var fill = d3.scale.category10();
 
-
     fg_vis = d3.select(elt).append("svg:svg")
 	.attr("width", w)
 	.attr("height", h);
@@ -274,11 +291,7 @@ function draw_force_graph(elt, w, h) {
 	.attr("class", "node")
 	.attr("id", function(d) { return "N" + d.id }) 
 	.on("click", function(d) {
-	    if( mode == 'path' ) {
-		add_node_to_path(d);
-	    } else {
-		partition(d);
-	    }
+	    add_node_to_path(d);
 	    d3.event.stopPropagation();
 	})
 	.call(force.drag);
@@ -338,13 +351,24 @@ function draw_force_graph(elt, w, h) {
     });
 
     d3.select("#ctrl_find").on("click", function(e) {
-	clear_path();
-	var anode = id_to_node(40);
-	find_randumb(anode);
+    	clear_path();
+    	var anode = id_to_node(40);
+    	find_randumb(anode);
     });
 
+    d3.selectAll(".mat").on("click", function(e) {
+	var label = this.id.substring(1);
+	var node = label_to_node(label);
+	if( node ) {
+	    add_node_to_path(node);
+	}
+    });
 
     force.start();
 }
 
+
+function matclick(e) {
+    console.log("Hi!");
+}
 
