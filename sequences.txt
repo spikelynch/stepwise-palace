@@ -1,3 +1,12 @@
+Sequence obtained by this pattern on the mat:
+
+0   1   8   9
+3   2   7  10
+4   5   6  11
+15 14  13  12
+
+Starting at A1.
+
 A 0 0 0 0
 B 0 0 0 -1
 C -1 0 0 -1
