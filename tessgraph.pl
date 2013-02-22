@@ -112,7 +112,8 @@ sub build_nodes {
 			id => $i,
 			class => $class,
 			classi => $counts->{$class},
-			label => $class . $counts->{$class}
+			label => $class . $counts->{$class},
+			coords => [ $x + 0, $y + 0, $z + 0, $w + 0 ]
 		    };
 		    push @$nodes, $node;
 		    $nodeindex->{$name} = $i;

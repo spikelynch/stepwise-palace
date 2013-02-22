@@ -26,6 +26,8 @@ var CONSTRAIN_LINES_Y = {
     'E' : 45
 };
 
+var CONSTRAIN_SPHERES = [ 80, 160, 240 ];
+
 var TOLERANCE = 0.1;
 var NUDGE = 0.2;
 
@@ -80,6 +82,23 @@ function constrain_lines(d) {
 	}
     }
 
+}
+
+
+
+function constrain_spheres(d) {
+    var base = CONSTRAIN_SPHERES[d.coords[3]];
+    var x0 = base * d.coords[0] + cx;
+    var y0 = base * d.coords[1] + cy;
+    
+    if( Math.abs(d.x - x0) > TOLERANCE ) {
+	d.x += NUDGE * ( x0 - d.x );
+    }
+
+    if( Math.abs(d.y - y0) > TOLERANCE ) {
+	d.y += NUDGE * ( y0 - d.y );
+    }
+   
 }
 
 
@@ -272,7 +291,7 @@ function draw_force_graph(elt, w, h) {
 	.nodes(nodes)
 	.links(links)
 	.size([w, h])
-	.charge(-1000)
+	.charge(-1600)
 	.gravity(0.5);
 
     links = fg_vis.selectAll("link")
@@ -320,7 +339,8 @@ function draw_force_graph(elt, w, h) {
     var constraints = {
 	none: function(d) {},
 	rings: constrain_bullseye,
-	lines: constrain_lines
+	lines: constrain_lines,
+	spheres: constrain_spheres
     };
 
     force.on("tick", function(e) {
