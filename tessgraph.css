@@ -66,8 +66,8 @@ circle.partition {
 }
 
 line {
-    stroke: #888;
-    stroke-width: 1px;
+/*    stroke: #888;  */
+    stroke: none;
 }
 
 line.path {

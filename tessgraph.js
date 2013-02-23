@@ -209,7 +209,7 @@ function highlight_path(oh, nh, on) {
 
 
 function path_text_push(d) {
-    var str = d.class + " " + d.name;
+    var str = d.label + " " + d.name;
     d3.select("#path").append("div").attr("class", d.class).text(str);
 }
 
