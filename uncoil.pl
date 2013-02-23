@@ -13,6 +13,7 @@ my $layer = [];
 
 my $coords = load_coords();
 
+
 while( <DATA> ) {
     chomp;
     if( /([A-E][0-9]+)\s+([A-E][0-9]+)\s+([A-E][0-9]+)/ ) {
@@ -41,6 +42,36 @@ for my $row ( @$stack ) {
 }
 
 print "</table>\n";
+
+print "\n\n";
+
+my $labels = {};
+
+for my $label ( keys %$coords ) {
+    my $c = $coords->{$label};
+    $labels->{$c->[0]}{$c->[1]}{$c->[2]}{$c->[3]} = $label;
+}
+
+
+print "<table>\n";
+
+for my $z ( 1, 0, -1 ) {
+    for my $y ( 1, 0, -1 ) {
+	print "<tr>\n";
+	for my $w ( -1, 0, 1 ) {
+	    for my $x ( -1, 0, 1 ) {
+		my $c = $labels->{$x}{$y}{$z}{$w};
+		print "<td><a href=\"#\" class=\"mat\" id=\"X$c\">$c</td>\n";
+	    }
+	    print "<td>&nbsp;</td>\n" if $w < 1;
+	}
+	print "</tr>\n";
+    }
+    print "<tr><td colspan=\"9\">&nbsp;</td></tr>\n" if $z > -1;
+}
+
+print "</table>\n";
+
 
 
 sub uncoil {

@@ -26,7 +26,6 @@ var CONSTRAIN_LINES_Y = {
     'E' : 45
 };
 
-var CONSTRAIN_SPHERES = [ 80, 160, 240 ];
 
 var TOLERANCE = 0.1;
 var NUDGE = 0.2;
@@ -39,7 +38,6 @@ var path = [];
 var visited = {};
 
 var taken = {};
-
 
 var nopattern = 1;
 
@@ -86,19 +84,27 @@ function constrain_lines(d) {
 
 
 
-function constrain_spheres(d) {
-    var base = CONSTRAIN_SPHERES[d.coords[3]];
-    var x0 = base * d.coords[0] + cx;
-    var y0 = base * d.coords[1] + cy;
-    
-    if( Math.abs(d.x - x0) > TOLERANCE ) {
-	d.x += NUDGE * ( x0 - d.x );
-    }
+function constrain_cubes(d) {
+    var point = cube_point(d);
+    d.x = point.x;
+    d.y = point.y;
+}
 
-    if( Math.abs(d.y - y0) > TOLERANCE ) {
-	d.y += NUDGE * ( y0 - d.y );
-    }
-   
+
+
+function cube_point(d) {
+    var point = {};
+
+    point.x = cx + 200 * d.coords[3];
+    point.x += 80 * d.coords[2];
+    point.x += 40 * d.coords[0];
+
+    point.y = cy + 170 * d.coords[3];
+    point.y += 80 * d.coords[2];
+    point.y -= 40 * d.coords[1];
+
+    return point;
+
 }
 
 
@@ -169,6 +175,7 @@ function clear_path() {
 
 function highlight_head(d, on) {
     d3.select("#M" + d.label).classed("head", on);
+    d3.select("#X" + d.label).classed("head", on);
     d3.select("#C" + d.id).classed("head", on);
     for ( var i = 0; i < d.links.length; i++ ) {
 	var l = d.links[i];
@@ -176,7 +183,6 @@ function highlight_head(d, on) {
 	    var n = id_to_node(l.target);
 	    d3.select("#L" + l.link).classed("next", on);
 	    d3.select("#C" + l.target).classed("next", on);
-	    d3.select("#M" + l.target).classed("next", on);
 	}
     }
 }
@@ -184,6 +190,8 @@ function highlight_head(d, on) {
 
 
 function highlight_path(oh, nh, on) {
+    d3.select("#M" + oh.label).classed("path", on);
+    d3.select("#X" + oh.label).classed("path", on);
     d3.select("#C" + oh.id).classed("head", !on);
     d3.select("#C" + oh.id).classed("path", on);
     for ( var i = 0; i < oh.links.length; i++ ) {
@@ -191,7 +199,6 @@ function highlight_path(oh, nh, on) {
 	if( on ) {
 	    d3.select("#L" + l.link).classed("next", false);
  	    d3.select("#C" + l.target).classed("next", false);
-	    d3.select("#M" + l.target).classed("next", false);
 	}
 	if( l.target == nh.id ) {
 	    d3.select("#L" + l.link).classed("path", on);
@@ -340,7 +347,7 @@ function draw_force_graph(elt, w, h) {
 	none: function(d) {},
 	rings: constrain_bullseye,
 	lines: constrain_lines,
-	spheres: constrain_spheres
+	cubes: constrain_cubes
     };
 
     force.on("tick", function(e) {
