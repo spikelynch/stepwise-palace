@@ -1,40 +1,16 @@
-SCI | TER | STA | 
--
-ENT | AGE | TEB | 
--
-IST | SAL | UTW | 
--
-
-
-SAN | LRE | HAT | 
--
-DSA | TUR | ALO | 
--
-GES | NST | NGT | 
--
-
-
-SAY | OIT | IME | 
--
-THA | SFI | TOW | 
--
-TAF | RST | AIT | 
--
-
-
-C6	enter	W	N	present	ground	L
-B1	S	W		present	ground	T
-C3	down	W		present	deeps	S
-D10	N	W	N	present	deeps	O
-C16	E		N	present	deeps	I
-B7	up		N	present	ground	R
-C24	E	E	N	present	ground	E
-D30	down	E	N	present	deeps	T
-E15	future	E	N	future	deeps	E
-D27	S	E		future	deeps	W
-C21	past	E		present	deeps	I
-B8	up	E		present	ground	R
-C19	S	E	S	present	ground	T
+C6	enter	W	N	present	ground	L*
+B1	S	W		present	ground	T*
+C3	down	W		present	deeps	S*
+D10	N	W	N	present	deeps	O*
+C16	E		N	present	deeps	I*
+B7	up		N	present	ground	R*
+C24	E	E	N	present	ground	E*
+D30	down	E	N	present	deeps	T*
+E15	future	E	N	future	deeps	E*
+D27	S	E		future	deeps	W*
+C21	past	E		present	deeps	I*
+B8	up	E		present	ground	R*
+C19	S	E	S	present	ground	T*
 D22	down	E	S	present	deeps	T
 E11	future	E	S	future	deeps	T
 D24	up	E	S	future	ground	T
@@ -104,3 +80,25 @@ C13	down			future	deeps	O
 B4	past			present	deeps	F
 A1	up			present	ground	U
 
+SCI | TER | STA | 
+-
+ENT | AGE | TEB | 
+-
+IST | SAL | UTW | 
+-
+
+
+SAN | LRE | HAT | 
+-
+DSA | TUR | ALO | 
+-
+GES | NST | NGT | 
+-
+
+
+SAY | OIT | IME | 
+-
+THA | SFI | TOW | 
+-
+TAF | RST | AIT | 
+-

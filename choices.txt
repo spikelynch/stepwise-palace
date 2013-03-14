@@ -1,333 +1,333 @@
-A1	enter	centre	centre	present	ground
-B4	down	centre	centre	present	deeps
-C3	west	west	centre	present	deeps
-B1	up	west	centre	present	ground
-C6	north	west	north	present	ground
-D10	down	west	north	present	deeps
-E7	future	west	north	future	deeps
-D7	south	west	centre	future	deeps
-C13	east	centre	centre	future	deeps
-B6	up	centre	centre	future	ground
-C5	west	west	centre	future	ground
-D12	north	west	north	future	ground
-C18	east	centre	north	future	ground
-D19	down	centre	north	future	deeps
-C16	past	centre	north	present	deeps
-B7	up	centre	north	present	ground
-C24	east	east	north	present	ground
-D30	down	east	north	present	deeps
-E15	future	east	north	future	deeps
-D32	up	east	north	future	ground
-E16	up	east	north	future	heaven
-D20	west	centre	north	future	heaven
-E8	west	west	north	future	heaven
-D8	south	west	centre	future	heaven
-C14	east	centre	centre	future	heaven
-B5	past	centre	centre	present	heaven
-C4	west	west	centre	present	heaven
-D11	north	west	north	present	heaven
-C17	east	centre	north	present	heaven
-D31	east	east	north	present	heaven
-C22	south	east	centre	present	heaven
-D28	future	east	centre	future	heaven
-C23	down	east	centre	future	ground
-D27	down	east	centre	future	deeps
-C21	past	east	centre	present	deeps
-B8	up	east	centre	present	ground
-C19	south	east	south	present	ground
-D22	down	east	south	present	deeps
-E11	future	east	south	future	deeps
-D24	up	east	south	future	ground
-E12	up	east	south	future	heaven
-D23	past	east	south	present	heaven
-E10	past	east	south	past	heaven
-D26	north	east	centre	past	heaven
-E14	north	east	north	past	heaven
-D18	west	centre	north	past	heaven
-E6	west	west	north	past	heaven
-D6	south	west	centre	past	heaven
-C12	east	centre	centre	past	heaven
-B3	down	centre	centre	past	ground
-C2	west	west	centre	past	ground
-D9	north	west	north	past	ground
-C15	east	centre	north	past	ground
-D29	east	east	north	past	ground
-C20	south	east	centre	past	ground
-D21	south	east	south	past	ground
-C7	west	centre	south	past	ground
-D14	up	centre	south	past	heaven
-C9	future	centre	south	present	heaven
-D16	future	centre	south	future	heaven
-C10	down	centre	south	future	ground
-D15	down	centre	south	future	deeps
-C8	past	centre	south	present	deeps
-B2	up	centre	south	present	ground
-C1	west	west	south	present	ground
-D2	down	west	south	present	deeps
-E3	future	west	south	future	deeps
-D4	up	west	south	future	ground
-E4	up	west	south	future	heaven
-D3	past	west	south	present	heaven
-E2	past	west	south	past	heaven
-D1	down	west	south	past	ground
-E1	down	west	south	past	deeps
-D13	east	centre	south	past	deeps
-E9	east	east	south	past	deeps
-D25	north	east	centre	past	deeps
-E13	north	east	north	past	deeps
-D17	west	centre	north	past	deeps
-E5	west	west	north	past	deeps
-D5	south	west	centre	past	deeps
-C11	east	centre	centre	past	deeps
+A1	enter			present	ground	
+B4	down			present	deeps	
+C3	W	W		present	deeps	
+B1	up	W		present	ground	
+C6	N	W	N	present	ground	y
+D10	down	W	N	present	deeps	E
+E7	future	W	N	future	deeps	W
+D7	S	W		future	deeps	
+C13	E			future	deeps	
+B6	up			future	ground	
+C5	W	W		future	ground	
+D12	N	W	N	future	ground	Q
+C18	E		N	future	ground	R
+D19	down		N	future	deeps	X
+C16	past		N	present	deeps	F
+B7	up		N	present	ground	z
+C24	E	E	N	present	ground	A
+D30	down	E	N	present	deeps	G
+E15	future	E	N	future	deeps	Y
+D32	up	E	N	future	ground	S
+E16	up	E	N	future	heaven	M
+D20	W		N	future	heaven	L
+E8	W	W	N	future	heaven	K
+D8	S	W		future	heaven	
+C14	E			future	heaven	
+B5	past			present	heaven	
+C4	W	W		present	heaven	
+D11	N	W	N	present	heaven	s
+C17	E		N	present	heaven	t
+D31	E	E	N	present	heaven	u
+C22	S	E		present	heaven	
+D28	future	E		future	heaven	
+C23	down	E		future	ground	
+D27	down	E		future	deeps	
+C21	past	E		present	deeps	
+B8	up	E		present	ground	
+C19	S	E	S	present	ground	D
+D22	down	E	S	present	deeps	J
+E11	future	E	S	future	deeps	1
+D24	up	E	S	future	ground	V
+E12	up	E	S	future	heaven	P
+D23	past	E	S	present	heaven	x
+E10	past	E	S	past	heaven	f
+D26	N	E		past	heaven	
+E14	N	E	N	past	heaven	c
+D18	W		N	past	heaven	b
+E6	W	W	N	past	heaven	a
+D6	S	W		past	heaven	
+C12	E			past	heaven	
+B3	down			past	ground	
+C2	W	W		past	ground	
+D9	N	W	N	past	ground	g
+C15	E		N	past	ground	h
+D29	E	E	N	past	ground	i
+C20	S	E		past	ground	
+D21	S	E	S	past	ground	l
+C7	W		S	past	ground	k
+D14	up		S	past	heaven	e
+C9	future		S	present	heaven	w
+D16	future		S	future	heaven	O
+C10	down		S	future	ground	U
+D15	down		S	future	deeps	0
+C8	past		S	present	deeps	I
+B2	up		S	present	ground	C
+C1	W	W	S	present	ground	B
+D2	down	W	S	present	deeps	H
+E3	future	W	S	future	deeps	Z
+D4	up	W	S	future	ground	T
+E4	up	W	S	future	heaven	N
+D3	past	W	S	present	heaven	v
+E2	past	W	S	past	heaven	d
+D1	down	W	S	past	ground	j
+E1	down	W	S	past	deeps	p
+D13	E		S	past	deeps	q
+E9	E	E	S	past	deeps	r
+D25	N	E		past	deeps	
+E13	N	E	N	past	deeps	o
+D17	W		N	past	deeps	n
+E5	W	W	N	past	deeps	m
+D5	S	W		past	deeps	
+C11	E			past	deeps	
 
 Slightly better 
-C6	west	west	north	present	ground
-B7	east	centre	north	present	ground
-C24	east	east	north	present	ground
-B8	south	east	centre	present	ground
-C19	south	east	south	present	ground
-B2	west	centre	south	present	ground
-C1	west	west	south	present	ground
-D2	down	west	south	present	deeps
-E3	future	west	south	future	deeps
-D4	up	west	south	future	ground
-E4	up	west	south	future	heaven
-D3	past	west	south	present	heaven
-E2	past	west	south	past	heaven
-D1	down	west	south	past	ground
-E1	down	west	south	past	deeps
-D13	east	centre	south	past	deeps
-C7	up	centre	south	past	ground
-D14	up	centre	south	past	heaven
-C9	future	centre	south	present	heaven
-D16	future	centre	south	future	heaven
-C10	down	centre	south	future	ground
-D15	down	centre	south	future	deeps
-C8	past	centre	south	present	deeps
-D22	east	east	south	present	deeps
-E11	future	east	south	future	deeps
-D24	up	east	south	future	ground
-E12	up	east	south	future	heaven
-D23	past	east	south	present	heaven
-E10	past	east	south	past	heaven
-D21	down	east	south	past	ground
-E9	down	east	south	past	deeps
-D25	north	east	centre	past	deeps
-C20	up	east	centre	past	ground
-D26	up	east	centre	past	heaven
-C22	future	east	centre	present	heaven
-D28	future	east	centre	future	heaven
-C23	down	east	centre	future	ground
-D27	down	east	centre	future	deeps
-C21	past	east	centre	present	deeps
-D30	north	east	north	present	deeps
-E15	future	east	north	future	deeps
-D32	up	east	north	future	ground
-E16	up	east	north	future	heaven
-D31	past	east	north	present	heaven
-E14	past	east	north	past	heaven
-D29	down	east	north	past	ground
-E13	down	east	north	past	deeps
-D17	west	centre	north	past	deeps
-C15	up	centre	north	past	ground
-D18	up	centre	north	past	heaven
-C17	future	centre	north	present	heaven
-D20	future	centre	north	future	heaven
-C18	down	centre	north	future	ground
-D19	down	centre	north	future	deeps
-C16	past	centre	north	present	deeps
-D10	west	west	north	present	deeps
-E7	future	west	north	future	deeps
-D12	up	west	north	future	ground
-E8	up	west	north	future	heaven
-D11	past	west	north	present	heaven
-E6	past	west	north	past	heaven
-D9	down	west	north	past	ground
-E5	down	west	north	past	deeps
-D5	south	west	centre	past	deeps
-C11	east	centre	centre	past	deeps
-B3	up	centre	centre	past	ground
-C2	west	west	centre	past	ground
-D6	up	west	centre	past	heaven
-C12	east	centre	centre	past	heaven
-B5	future	centre	centre	present	heaven
-C4	west	west	centre	present	heaven
-D8	future	west	centre	future	heaven
-C14	east	centre	centre	future	heaven
-B6	down	centre	centre	future	ground
-C5	west	west	centre	future	ground
-D7	down	west	centre	future	deeps
-C13	east	centre	centre	future	deeps
-B4	past	centre	centre	present	deeps
-C3	west	west	centre	present	deeps
-B1	up	west	centre	present	ground
-A1	east	centre	centre	present	ground
+C6	enter	W	N	present	ground	y
+B7	E		N	present	ground	z
+C24	E	E	N	present	ground	A
+B8	S	E		present	ground	
+C19	S	E	S	present	ground	D
+B2	W		S	present	ground	C
+C1	W	W	S	present	ground	B
+D2	down	W	S	present	deeps	H
+E3	future	W	S	future	deeps	Z
+D4	up	W	S	future	ground	T
+E4	up	W	S	future	heaven	N
+D3	past	W	S	present	heaven	v
+E2	past	W	S	past	heaven	d
+D1	down	W	S	past	ground	j
+E1	down	W	S	past	deeps	p
+D13	E		S	past	deeps	q
+C7	up		S	past	ground	k
+D14	up		S	past	heaven	e
+C9	future		S	present	heaven	w
+D16	future		S	future	heaven	O
+C10	down		S	future	ground	U
+D15	down		S	future	deeps	0
+C8	past		S	present	deeps	I
+D22	E	E	S	present	deeps	J
+E11	future	E	S	future	deeps	1
+D24	up	E	S	future	ground	V
+E12	up	E	S	future	heaven	P
+D23	past	E	S	present	heaven	x
+E10	past	E	S	past	heaven	f
+D21	down	E	S	past	ground	l
+E9	down	E	S	past	deeps	r
+D25	N	E		past	deeps	
+C20	up	E		past	ground	
+D26	up	E		past	heaven	
+C22	future	E		present	heaven	
+D28	future	E		future	heaven	
+C23	down	E		future	ground	
+D27	down	E		future	deeps	
+C21	past	E		present	deeps	
+D30	N	E	N	present	deeps	G
+E15	future	E	N	future	deeps	Y
+D32	up	E	N	future	ground	S
+E16	up	E	N	future	heaven	M
+D31	past	E	N	present	heaven	u
+E14	past	E	N	past	heaven	c
+D29	down	E	N	past	ground	i
+E13	down	E	N	past	deeps	o
+D17	W		N	past	deeps	n
+C15	up		N	past	ground	h
+D18	up		N	past	heaven	b
+C17	future		N	present	heaven	t
+D20	future		N	future	heaven	L
+C18	down		N	future	ground	R
+D19	down		N	future	deeps	X
+C16	past		N	present	deeps	F
+D10	W	W	N	present	deeps	E
+E7	future	W	N	future	deeps	W
+D12	up	W	N	future	ground	Q
+E8	up	W	N	future	heaven	K
+D11	past	W	N	present	heaven	s
+E6	past	W	N	past	heaven	a
+D9	down	W	N	past	ground	g
+E5	down	W	N	past	deeps	m
+D5	S	W		past	deeps	
+C11	E			past	deeps	
+B3	up			past	ground	
+C2	W	W		past	ground	
+D6	up	W		past	heaven	
+C12	E			past	heaven	
+B5	future			present	heaven	
+C4	W	W		present	heaven	
+D8	future	W		future	heaven	
+C14	E			future	heaven	
+B6	down			future	ground	
+C5	W	W		future	ground	
+D7	down	W		future	deeps	
+C13	E			future	deeps	
+B4	past			present	deeps	
+C3	W	W		present	deeps	
+B1	up	W		present	ground	
+A1	E			present	ground	
 
 Very wiggly
 
-E1	west	west	south	past	deeps
-D13	east	centre	south	past	deeps
-C7	up	centre	south	past	ground
-D1	west	west	south	past	ground
-E2	up	west	south	past	heaven
-D14	east	centre	south	past	heaven
-C9	future	centre	south	present	heaven
-D3	west	west	south	present	heaven
-E4	future	west	south	future	heaven
-D16	east	centre	south	future	heaven
-C10	down	centre	south	future	ground
-D4	west	west	south	future	ground
-E3	down	west	south	future	deeps
-D15	east	centre	south	future	deeps
-C8	past	centre	south	present	deeps
-D2	west	west	south	present	deeps
-C1	up	west	south	present	ground
-B2	east	centre	south	present	ground
-C19	east	east	south	present	ground
-B8	north	east	centre	present	ground
-C21	down	east	centre	present	deeps
-D22	south	east	south	present	deeps
-E11	future	east	south	future	deeps
-D27	north	east	centre	future	deeps
-C23	up	east	centre	future	ground
-D24	south	east	south	future	ground
-E12	up	east	south	future	heaven
-D28	north	east	centre	future	heaven
-C22	past	east	centre	present	heaven
-D23	south	east	south	present	heaven
-E10	past	east	south	past	heaven
-D26	north	east	centre	past	heaven
-C20	down	east	centre	past	ground
-D21	south	east	south	past	ground
-E9	down	east	south	past	deeps
-D25	north	east	centre	past	deeps
-E13	north	east	north	past	deeps
-D17	west	centre	north	past	deeps
-C15	up	centre	north	past	ground
-D29	east	east	north	past	ground
-E14	up	east	north	past	heaven
-D18	west	centre	north	past	heaven
-C17	future	centre	north	present	heaven
-D31	east	east	north	present	heaven
-E16	future	east	north	future	heaven
-D20	west	centre	north	future	heaven
-C18	down	centre	north	future	ground
-D32	east	east	north	future	ground
-E15	down	east	north	future	deeps
-D19	west	centre	north	future	deeps
-C16	past	centre	north	present	deeps
-D30	east	east	north	present	deeps
-C24	up	east	north	present	ground
-B7	west	centre	north	present	ground
-C6	west	west	north	present	ground
-B1	south	west	centre	present	ground
-C3	down	west	centre	present	deeps
-D10	north	west	north	present	deeps
-E7	future	west	north	future	deeps
-D7	south	west	centre	future	deeps
-C5	up	west	centre	future	ground
-D12	north	west	north	future	ground
-E8	up	west	north	future	heaven
-D8	south	west	centre	future	heaven
-C4	past	west	centre	present	heaven
-D11	north	west	north	present	heaven
-E6	past	west	north	past	heaven
-D6	south	west	centre	past	heaven
-C2	down	west	centre	past	ground
-D9	north	west	north	past	ground
-E5	down	west	north	past	deeps
-D5	south	west	centre	past	deeps
-C11	east	centre	centre	past	deeps
-B3	up	centre	centre	past	ground
-C12	up	centre	centre	past	heaven
-B5	future	centre	centre	present	heaven
-C14	future	centre	centre	future	heaven
-B6	down	centre	centre	future	ground
-C13	down	centre	centre	future	deeps
-B4	past	centre	centre	present	deeps
-A1	up	centre	centre	present	ground
+E1	enter	W	S	past	deeps	p
+D13	E		S	past	deeps	q
+C7	up		S	past	ground	k
+D1	W	W	S	past	ground	j
+E2	up	W	S	past	heaven	d
+D14	E		S	past	heaven	e
+C9	future		S	present	heaven	w
+D3	W	W	S	present	heaven	v
+E4	future	W	S	future	heaven	N
+D16	E		S	future	heaven	O
+C10	down		S	future	ground	U
+D4	W	W	S	future	ground	T
+E3	down	W	S	future	deeps	Z
+D15	E		S	future	deeps	0
+C8	past		S	present	deeps	I
+D2	W	W	S	present	deeps	H
+C1	up	W	S	present	ground	B
+B2	E		S	present	ground	C
+C19	E	E	S	present	ground	D
+B8	N	E		present	ground	
+C21	down	E		present	deeps	
+D22	S	E	S	present	deeps	J
+E11	future	E	S	future	deeps	1
+D27	N	E		future	deeps	
+C23	up	E		future	ground	
+D24	S	E	S	future	ground	V
+E12	up	E	S	future	heaven	P
+D28	N	E		future	heaven	
+C22	past	E		present	heaven	
+D23	S	E	S	present	heaven	x
+E10	past	E	S	past	heaven	f
+D26	N	E		past	heaven	
+C20	down	E		past	ground	
+D21	S	E	S	past	ground	l
+E9	down	E	S	past	deeps	r
+D25	N	E		past	deeps	
+E13	N	E	N	past	deeps	o
+D17	W		N	past	deeps	n
+C15	up		N	past	ground	h
+D29	E	E	N	past	ground	i
+E14	up	E	N	past	heaven	c
+D18	W		N	past	heaven	b
+C17	future		N	present	heaven	t
+D31	E	E	N	present	heaven	u
+E16	future	E	N	future	heaven	M
+D20	W		N	future	heaven	L
+C18	down		N	future	ground	R
+D32	E	E	N	future	ground	S
+E15	down	E	N	future	deeps	Y
+D19	W		N	future	deeps	X
+C16	past		N	present	deeps	F
+D30	E	E	N	present	deeps	G
+C24	up	E	N	present	ground	A
+B7	W		N	present	ground	z
+C6	W	W	N	present	ground	y
+B1	S	W		present	ground	
+C3	down	W		present	deeps	
+D10	N	W	N	present	deeps	E
+E7	future	W	N	future	deeps	W
+D7	S	W		future	deeps	
+C5	up	W		future	ground	
+D12	N	W	N	future	ground	Q
+E8	up	W	N	future	heaven	K
+D8	S	W		future	heaven	
+C4	past	W		present	heaven	
+D11	N	W	N	present	heaven	s
+E6	past	W	N	past	heaven	a
+D6	S	W		past	heaven	
+C2	down	W		past	ground	
+D9	N	W	N	past	ground	g
+E5	down	W	N	past	deeps	m
+D5	S	W		past	deeps	
+C11	E			past	deeps	
+B3	up			past	ground	
+C12	up			past	heaven	
+B5	future			present	heaven	
+C14	future			future	heaven	
+B6	down			future	ground	
+C13	down			future	deeps	
+B4	past			present	deeps	
+A1	up			present	ground	
 
 Final?
 
-C6	west	west	north	present	ground
-B7	east	centre	north	present	ground
-C24	east	east	north	present	ground
-B8	south	east	centre	present	ground
-C19	south	east	south	present	ground
-B2	west	centre	south	present	ground
-C1	west	west	south	present	ground
-D2	down	west	south	present	deeps
-E3	future	west	south	future	deeps
-D4	up	west	south	future	ground
-E4	up	west	south	future	heaven
-D3	past	west	south	present	heaven
-E2	past	west	south	past	heaven
-D1	down	west	south	past	ground
-E1	down	west	south	past	deeps
-D13	east	centre	south	past	deeps
-C7	up	centre	south	past	ground
-D14	up	centre	south	past	heaven
-C9	future	centre	south	present	heaven
-D16	future	centre	south	future	heaven
-C10	down	centre	south	future	ground
-D15	down	centre	south	future	deeps
-C8	past	centre	south	present	deeps
-D22	east	east	south	present	deeps
-E11	future	east	south	future	deeps
-D24	up	east	south	future	ground
-E12	up	east	south	future	heaven
-D23	past	east	south	present	heaven
-E10	past	east	south	past	heaven
-D21	down	east	south	past	ground
-E9	down	east	south	past	deeps
-D25	north	east	centre	past	deeps
-C20	up	east	centre	past	ground
-D26	up	east	centre	past	heaven
-C22	future	east	centre	present	heaven
-D28	future	east	centre	future	heaven
-C23	down	east	centre	future	ground
-D27	down	east	centre	future	deeps
-C21	past	east	centre	present	deeps
-D30	north	east	north	present	deeps
-E15	future	east	north	future	deeps
-D32	up	east	north	future	ground
-E16	up	east	north	future	heaven
-D31	past	east	north	present	heaven
-E14	past	east	north	past	heaven
-D29	down	east	north	past	ground
-E13	down	east	north	past	deeps
-D17	west	centre	north	past	deeps
-C15	up	centre	north	past	ground
-D18	up	centre	north	past	heaven
-C17	future	centre	north	present	heaven
-D20	future	centre	north	future	heaven
-C18	down	centre	north	future	ground
-D19	down	centre	north	future	deeps
-C16	past	centre	north	present	deeps
-D10	west	west	north	present	deeps
-E7	future	west	north	future	deeps
-D12	up	west	north	future	ground
-E8	up	west	north	future	heaven
-D11	past	west	north	present	heaven
-E6	past	west	north	past	heaven
-D9	down	west	north	past	ground
-E5	down	west	north	past	deeps
-D5	south	west	centre	past	deeps
-C11	east	centre	centre	past	deeps
-B3	up	centre	centre	past	ground
-C2	west	west	centre	past	ground
-D6	up	west	centre	past	heaven
-C12	east	centre	centre	past	heaven
-B5	future	centre	centre	present	heaven
-C4	west	west	centre	present	heaven
-D8	future	west	centre	future	heaven
-C14	east	centre	centre	future	heaven
-B6	down	centre	centre	future	ground
-C5	west	west	centre	future	ground
-D7	down	west	centre	future	deeps
-C13	east	centre	centre	future	deeps
-B4	past	centre	centre	present	deeps
-C3	west	west	centre	present	deeps
-B1	up	west	centre	present	ground
-A1	east	centre	centre	present	ground
+C6	enter	W	N	present	ground	y
+B7	E		N	present	ground	z
+C24	E	E	N	present	ground	A
+B8	S	E		present	ground	
+C19	S	E	S	present	ground	D
+B2	W		S	present	ground	C
+C1	W	W	S	present	ground	B
+D2	down	W	S	present	deeps	H
+E3	future	W	S	future	deeps	Z
+D4	up	W	S	future	ground	T
+E4	up	W	S	future	heaven	N
+D3	past	W	S	present	heaven	v
+E2	past	W	S	past	heaven	d
+D1	down	W	S	past	ground	j
+E1	down	W	S	past	deeps	p
+D13	E		S	past	deeps	q
+C7	up		S	past	ground	k
+D14	up		S	past	heaven	e
+C9	future		S	present	heaven	w
+D16	future		S	future	heaven	O
+C10	down		S	future	ground	U
+D15	down		S	future	deeps	0
+C8	past		S	present	deeps	I
+D22	E	E	S	present	deeps	J
+E11	future	E	S	future	deeps	1
+D24	up	E	S	future	ground	V
+E12	up	E	S	future	heaven	P
+D23	past	E	S	present	heaven	x
+E10	past	E	S	past	heaven	f
+D21	down	E	S	past	ground	l
+E9	down	E	S	past	deeps	r
+D25	N	E		past	deeps	
+C20	up	E		past	ground	
+D26	up	E		past	heaven	
+C22	future	E		present	heaven	
+D28	future	E		future	heaven	
+C23	down	E		future	ground	
+D27	down	E		future	deeps	
+C21	past	E		present	deeps	
+D30	N	E	N	present	deeps	G
+E15	future	E	N	future	deeps	Y
+D32	up	E	N	future	ground	S
+E16	up	E	N	future	heaven	M
+D31	past	E	N	present	heaven	u
+E14	past	E	N	past	heaven	c
+D29	down	E	N	past	ground	i
+E13	down	E	N	past	deeps	o
+D17	W		N	past	deeps	n
+C15	up		N	past	ground	h
+D18	up		N	past	heaven	b
+C17	future		N	present	heaven	t
+D20	future		N	future	heaven	L
+C18	down		N	future	ground	R
+D19	down		N	future	deeps	X
+C16	past		N	present	deeps	F
+D10	W	W	N	present	deeps	E
+E7	future	W	N	future	deeps	W
+D12	up	W	N	future	ground	Q
+E8	up	W	N	future	heaven	K
+D11	past	W	N	present	heaven	s
+E6	past	W	N	past	heaven	a
+D9	down	W	N	past	ground	g
+E5	down	W	N	past	deeps	m
+D5	S	W		past	deeps	
+C11	E			past	deeps	
+B3	up			past	ground	
+C2	W	W		past	ground	
+D6	up	W		past	heaven	
+C12	E			past	heaven	
+B5	future			present	heaven	
+C4	W	W		present	heaven	
+D8	future	W		future	heaven	
+C14	E			future	heaven	
+B6	down			future	ground	
+C5	W	W		future	ground	
+D7	down	W		future	deeps	
+C13	E			future	deeps	
+B4	past			present	deeps	
+C3	W	W		present	deeps	
+B1	up	W		present	ground	
+A1	E			present	ground	
 
