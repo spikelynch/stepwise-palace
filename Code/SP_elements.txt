@@ -1,0 +1,104 @@
+C6	enter	NW	Fire+Air	present	ground	LIGHTNING
+B1	S	W	Air		present	ground	TEMPEST
+C3	down	W	Air		present	deeps	SULPHUR
+D10	N	NW	Fire+Air	present	deeps	OCTAHEDRON
+C16	E	N	Fire		present	deeps	IGNITION
+B7	up	N	Fire		present	ground	REDOX
+C24	E	NE	Fire+Earth	present	ground	EARTHWORKS
+D30	down	NE	Fire+Earth	present	deeps	TINDER
+E15	future	NE	Fire+Earth	future	deeps	EVENTUALLY
+D27	S	E	Earth		future	deeps	WATCHER
+C21	past	E	Earth		present	deeps	IRON
+B8	up	E	Earth		present	ground	RECURSIVE
+C19	S	SE	Water+Earth	present	ground	TRAVERTINE
+D22	down	SE	Water+Earth	present	deeps	TROGLOBITE
+E11	future	SE	Water+Earth	future	deeps	TESTUDO
+D24	up	SE	Water+Earth	future	ground	TERRA
+C10	W	S	Water		future	ground	GLOBE
+D15	down	S	Water		future	deeps	INDOLENS
+C8	past	S	Water		present	deeps	SIPHON
+B2	up	S	Water		present	ground	SPINDRIFT
+C1	W	SW	Water+Air	present	ground	NEBEL
+D2	down	SW	Water+Air	present	deeps	RELEASE
+E3	future	SW	Water+Air	future	deeps	AMPHIBIAN
+D4	up	SW	Water+Air	future	ground	NEAT
+E4	up	SW	Water+Air	future	heaven	UNSTABLE
+D3	past	SW	Water+Air	present	heaven	SATURN
+E2	past	SW	Water+Air	past	heaven	ICES
+D1	down	SW	Water+Air	past	ground	GLACIAL
+E1	down	SW	Water+Air	past	deeps	TYCOON
+D13	E	S	Water		past	deeps	ANOMALOCARIS
+C7	up	S	Water		past	ground	EVENTIDE
+D14	up	S	Water		past	heaven	SHORELINE
+C9	future	S	Water		present	heaven	ANNALS
+D16	future	S	Water		future	heaven	TIRYNS
+E12	E	SE	Water+Earth	future	heaven	WORLD-TREE
+D23	past	SE	Water+Earth	present	heaven	LONE
+E10	past	SE	Water+Earth	past	heaven	TRIPLE-ALPHA
+D21	down	SE	Water+Earth	past	ground	SOUP
+E9	down	SE	Water+Earth	past	deeps	FUMAROLE
+D25	N	E	Earth		past	deeps	AMMONITE
+E13	N	NE	Fire+Earth	past	deeps	YIELD
+D17	W	N	Fire		past	deeps	ASH
+E5	W	NW	Fire+Air	past	deeps	SIDEROPHILE
+D5	S	W	Air		past	deeps	TUNNEL 
+C11	E		Void		past	deeps	HOLLOW
+B3	up		Void		past	ground	STERILE
+C2	W	W	Air		past	ground	DECANTER
+D9	N	NW	Fire+Air	past	ground	STRIKE
+C15	E	N	Fire		past	ground	APOCALYPSE
+D29	E	NE	Fire+Earth	past	ground	NILGIRI
+C20	S	E	Earth		past	ground	ASTHENOSPHERE
+D26	up	E	Earth		past	heaven	TYCHO'S STAR
+C22	future	E	Earth		present	heaven	ERIDANIA
+D28	future	E	Earth		future	heaven	BARYONIC
+C23	down	E	Earth		future	ground	ORBIT
+D32	N	NE	Fire+Earth	future	ground	TEPID
+E16	up	NE	Fire+Earth	future	heaven	ACCRETION
+D31	past	NE	Fire+Earth	present	heaven	RETROGRADE
+E14	past	NE	Fire+Earth	past	heaven	IMPACT
+D18	W	N	Fire		past	heaven	CONTINUUM
+C17	future	N	Fire		present	heaven	EXTREMES
+D20	future	N	Fire		future	heaven	TELOS
+C18	down	N	Fire		future	ground	ACOUSTIC
+D19	down	N	Fire		future	deeps	MÉLANGE
+E7	W	NW	Fire+Air	future	deeps	IMMATERIAL
+D7	S	W	Air		future	deeps	TANGERE
+C5	up	W	Air		future	ground	APPETITE
+D12	N	NW	Fire+Air	future	ground	HUBBUB
+E8	up	NW	Fire+Air	future	heaven	SOCIETY
+D8	S	W	Air		future	heaven	TEMPERATE
+C4	past	W	Air		present	heaven	AIRY
+D11	N	NW	Fire+Air	present	heaven	TONANS
+E6	past	NW	Fire+Air	past	heaven	SUPERMASSIVE
+D6	S	W	Air		past	heaven	EMISSION
+C12	E		Void		past	heaven	NOCTURNE
+B5	future		Void		present	heaven	GOLDEN
+C14	future		Void		future	heaven	EINSTEIN
+B6	down		Void		future	ground	LIFE
+C13	down		Void		future	deeps	OBLITERATE
+B4	past		Void		present	deeps	FAINT
+A1	up		Void		present	ground	VIVAMUS
+
+SCI | TER | STA | 
+-
+ENT | AGE | TEB | 
+-
+IST | SAL | UTW | 
+-
+
+
+SAN | LRE | HAT | 
+-
+DSA | TUR | ALO | 
+-
+GES | NST | NGT | 
+-
+
+
+SAY | OIT | IME | 
+-
+THA | SFI | TOW | 
+-
+TAF | RST | AIT | 
+-

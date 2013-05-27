@@ -1,0 +1,104 @@
+C6	enter	W	N	present	ground	L*
+B1	S	W		present	ground	T*
+C3	down	W		present	deeps	S*
+D10	N	W	N	present	deeps	O*
+C16	E		N	present	deeps	I*
+B7	up		N	present	ground	R*
+C24	E	E	N	present	ground	E*
+D30	down	E	N	present	deeps	T*
+E15	future	E	N	future	deeps	E*
+D27	S	E		future	deeps	W*
+C21	past	E		present	deeps	I*
+B8	up	E		present	ground	R*
+C19	S	E	S	present	ground	T*
+D22	down	E	S	present	deeps	T*
+E11	future	E	S	future	deeps	T*
+D24	up	E	S	future	ground	T*
+C10	W		S	future	ground	G*
+D15	down		S	future	deeps	I*
+C8	past		S	present	deeps	S*
+B2	up		S	present	ground	    S*
+C1	W	W	S	present	ground	    N*
+D2	down	W	S	present	deeps	R*
+E3	future	W	S	future	deeps	A*
+D4	up	W	S	future	ground	    N*
+E4	up	W	S	future	heaven	    U*
+D3	past	W	S	present	heaven	S*
+E2	past	W	S	past	heaven	I*
+D1	down	W	S	past	ground	G*
+E1	down	W	S	past	deeps	T*
+D13	E		S	past	deeps	    A*
+C7	up		S	past	ground	    E*
+D14	up		S	past	heaven	    S*
+C9	future		S	present	heaven	A*
+D16	future		S	future	heaven	T*
+E12	E	E	S	future	heaven	    W*
+D23	past	E	S	present	heaven	L*
+E10	past	E	S	past	heaven	T*
+D21	down	E	S	past	ground	S*
+E9	down	E	S	past	deeps	F*
+D25	N	E		past	deeps	    A
+E13	N	E	N	past	deeps	    Y
+D17	W		N	past	deeps	    A
+E5	W	W	N	past	deeps	    S
+D5	S	W		past	deeps	    T
+C11	E			past	deeps	    H
+B3	up			past	ground	    S
+C2	W	W		past	ground	    D
+D9	N	W	N	past	ground	    S
+C15	E		N	past	ground	    A
+D29	E	E	N	past	ground	    N
+C20	S	E		past	ground	    A
+D26	up	E		past	heaven	    T
+C22	future	E		present	heaven	E
+D28	future	E		future	heaven	B
+C23	down	E		future	ground	O
+D32	N	E	N	future	ground	    T
+E16	up	E	N	future	heaven	    A
+D31	past	E	N	present	heaven	R
+E14	past	E	N	past	heaven	I
+D18	W		N	past	heaven	    C
+C17	future		N	present	heaven	E
+D20	future		N	future	heaven	T
+C18	down		N	future	ground	A
+D19	down		N	future	deeps	M
+E7	W	W	N	future	deeps	    I
+D7	S	W		future	deeps	    T
+C5	up	W		future	ground	    A
+D12	N	W	N	future	ground	    H
+E8	up	W	N	future	heaven	    S
+D8	S	W		future	heaven	    T
+C4	past	W		present	heaven	A
+D11	N	W	N	present	heaven	    T
+E6	past	W	N	past	heaven	S
+D6	S	W		past	heaven	    E
+C12	E			past	heaven	    N
+B5	future			present	heaven	G
+C14	future			future	heaven	E
+B6	down			future	ground	L
+C13	down			future	deeps	O
+B4	past			present	deeps	F
+A1	up			present	ground	    U
+
+SCI | TER | STA | 
+-
+ENT | AGE | TEB | 
+-
+IST | SAL | UTW | 
+-
+
+
+SAN | LRE | HAT | 
+-
+DSA | TUR | ALO | 
+-
+GES | NST | NGT | 
+-
+
+
+SAY | OIT | IME | 
+-
+THA | SFI | TOW | 
+-
+TAF | RST | AIT | 
+-
