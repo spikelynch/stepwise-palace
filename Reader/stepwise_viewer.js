@@ -31,6 +31,7 @@ function render(set_cx, set_cy, set_cz, set_cw, set_z, set_w) {
             $(id).html(html);
         }
     }
+    $("#note").text('[' + cx + ', ' + cy + ', ' + cz + ', ' + cw + '] - ' + z + ', ' + w);
 }
 
 
@@ -46,3 +47,29 @@ function cell(x, y) {
     return coords[key];
 }
 
+
+function random_slice(e) {
+    var coords = permute4();
+    var sl1 = randint(3);
+    var sl2 = randint(3);
+    console.log(coords);
+    console.log(sl1 + ' ' + sl2);
+    render(coords[0], coords[1], coords[2], coords[3], sl1, sl2);
+}
+
+    
+
+
+
+function permute4() {
+    var c = [ 0, 1, 2, 3 ];
+    var p = [];
+    while( c.length ) {
+        p.push(c.splice(randint(c.length), 1));
+    }
+    return p;
+}
+
+function randint(n) {
+    return Math.floor(Math.random() * n);
+}
