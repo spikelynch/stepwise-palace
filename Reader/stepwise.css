@@ -1,0 +1,9 @@
+td.stanza {
+    width: 300px;
+    height: 200px;
+    background-color: #efe;
+    vertical-align: top;
+    font-face: serif;
+    font-size: 12pt;
+    padding: 1em;
+}
