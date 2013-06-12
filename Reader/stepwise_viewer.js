@@ -14,6 +14,10 @@ var cw = 3;
 var z = 1;
 var w = 1;
 
+var rot90 = [ [ 0, -1 ], [ 1, 0 ] ];
+var rot270 = [ [ 0, 1 ], [ -1, 0 ] ];
+
+
 function render(set_cx, set_cy, set_cz, set_cw, set_z, set_w) {
     cx = set_cx;
     cy = set_cy;
@@ -34,6 +38,32 @@ function render(set_cx, set_cy, set_cz, set_cw, set_z, set_w) {
     $("#note").text('[' + cx + ', ' + cy + ', ' + cz + ', ' + cw + '] - ' + z + ', ' + w);
 }
 
+
+function rotate_render(c1, c2) {
+    plane_rotate(c1, c2, 1);
+    render_slice(1, 1);
+}
+ 
+
+function render_slice(z, w) {
+    var slice = pick_slice(z, w);
+    console.log(slice);
+    for ( var y = 0; y < 3; y++ ) {
+        for ( var x = 0; x < 3; x++ ) {
+            var id = 'r' + y + 'c' + x;
+            var f = slice[id];
+            if( f ) {
+                var html = stanzas[f].join('<br />');
+                $('#' + id).html(html);
+            } else {
+                $('#' + id).text(id + '???');
+            }
+        }
+    }
+}
+ 
+
+    
 
 
 
@@ -72,4 +102,41 @@ function permute4() {
 
 function randint(n) {
     return Math.floor(Math.random() * n);
+}
+
+
+
+function plane_rotate(c1, c2, dir) {
+    var m;
+
+    if( dir > 0 ) {
+        m = rot90;
+    } else {
+        m = rot270;
+    }
+
+    for ( var k in coords ) {
+        var x = coords[k][c1];
+        var y = coords[k][c2];
+        var x1 = m[0][0] * x + m[0][1] * y;
+        var y1 = m[1][0] * x + m[1][1] * y;
+        coords[k][c1] = x1;
+        coords[k][c2] = y1;
+    }
+    
+}
+
+
+function pick_slice(z, w) {
+    var slice = {};
+    for ( var k in coords ) {
+        var c = coords[k];
+        if( c[2] == z && c[3] == w ) {
+            var x = c[0] + 1;
+            var y = c[1] + 1;
+            var t = 'r' + x + 'c' + y;
+            slice[t] = k;
+        }
+    }
+    return slice;
 }

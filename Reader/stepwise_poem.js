@@ -2,7 +2,7 @@
 
 var stanzas = {
    "E15" : [
-      "Figure E15: EVENTUALLY",
+      "Figure E15: EVENTUALLY (1, 1, -1, 1)",
       "Our path now in a new direction lies,",
       "No longer spatial: time-like is our way",
       "Hidden down here from the spinning skies",
@@ -14,7 +14,7 @@ var stanzas = {
       "Their race at last is run: there'll be no more \"And then...\""
    ],
    "E13" : [
-      "Figure E13: YIELD",
+      "Figure E13: YIELD (1, 1, -1, -1)",
       "Through a rude tunnel, north once more we fare",
       "Into a chamber perilous indeed:",
       "Here, deep in Afric stone, a crystal rare,",
@@ -26,7 +26,7 @@ var stanzas = {
       "Or outward sign, a grim Prometheus yet bound."
    ],
    "B6" : [
-      "Figure B6: LIFE",
+      "Figure B6: LIFE (0, 0, 0, 1)",
       "Endless futures branch, redoubling,",
       "But life begins with jugglings so rare,",
       "So subtle that the butterflyâs soft wing",
@@ -38,7 +38,7 @@ var stanzas = {
       "The only UNIVERSE in which you came to be."
    ],
    "E8" : [
-      "Figure E8: SOCIETY\r",
+      "Figure E8: SOCIETY\r (-1, 1, 1, 1)",
       "Ascending to a chamber high and bright\r",
       "In which a hundred thousand worlds are shown\r",
       "Communing each to each: for in the night\r",
@@ -50,7 +50,7 @@ var stanzas = {
       "Or blurt inanities, then wonder why theyâre shunned.\r"
    ],
    "C11" : [
-      "Figure C11: HOLLOW",
+      "Figure C11: HOLLOW (0, 0, -1, -1)",
       "We tread a fungous lawn as the wind dies.",
       "The surface? No, but see a cavern vast,",
       "A world inverse, with continental skies,",
@@ -62,7 +62,7 @@ var stanzas = {
       "Low palaces beneath the starless heavenâs shroud."
    ],
    "C1" : [
-      "Figure C1: NEBEL",
+      "Figure C1: NEBEL (-1, -1, 0, 0)",
       "Westward from that shore, we see a wall",
       "Frozen but indistinct, as if a cloud",
       "Were still and square: through a ghostly hall",
@@ -74,7 +74,7 @@ var stanzas = {
       "A smoke made solid, that no wind can e'er dispel."
    ],
    "C18" : [
-      "Figure C18: ACOUSTIC\r",
+      "Figure C18: ACOUSTIC\r (0, 1, 0, 1)",
       "Descend to utter dark, where we can see\r",
       "Nothing but black, yet feel the open air.\r",
       "A future time where fire's energy\r",
@@ -86,7 +86,7 @@ var stanzas = {
       "And warm your hands before a brazier of noise.\r"
    ],
    "D13" : [
-      "Figure D13: ANOMALOCARIS",
+      "Figure D13: ANOMALOCARIS (0, -1, -1, -1)",
       "Eastward to a warmer, shallow sea,",
       "The womb of Nature: in its sunny brine",
       "Greet multicellular perplexity.",
@@ -98,7 +98,7 @@ var stanzas = {
       "For each shape that survived, a thousand more were born.\""
    ],
    "E9" : [
-      "Figure E9: FUMAROLE",
+      "Figure E9: FUMAROLE (1, -1, -1, -1)",
       "Long ere upper ocean was alive",
       "Hidden from the light of Earth's first day",
       "Along a ridge volcanic, creatures thrive",
@@ -110,7 +110,7 @@ var stanzas = {
       "A heavy metal snail, a mollusc fit for HELL."
    ],
    "C8" : [
-      "Figure C8: SIPHON",
+      "Figure C8: SIPHON (0, -1, -1, 0)",
       "To present, now, in a low chamber, moist",
       "And busy, full of engines intertwined",
       "Lever and waterwheel, pulley and joist",
@@ -122,7 +122,7 @@ var stanzas = {
       "Is turned by little drops, a Juggernaut of steel."
    ],
    "D24" : [
-      "Figure D24: TERRA",
+      "Figure D24: TERRA (1, -1, 0, 1)",
       "Upward now, but not to scorching skies",
       "Futures, by nature manifold, not one",
       "An odour as of clay that bakes and dries",
@@ -134,7 +134,7 @@ var stanzas = {
       "Revert to an unhealthy purple-brownish shade."
    ],
    "C2" : [
-      "Figure C2: DECANTER",
+      "Figure C2: DECANTER (-1, 0, 0, -1)",
       "Towards the west, a fair pavilion trace:",
       "We enter through an arch of metal bright.",
       "Though row on row of shelving fills the space,",
@@ -146,7 +146,7 @@ var stanzas = {
       "The archives of the the sky, a library of air."
    ],
    "D21" : [
-      "Figure D21: SOUP",
+      "Figure D21: SOUP (1, -1, 0, -1)",
       "Now to another beach, far harsher than",
       "A bow of crystal sand and ocean blue.",
       "The noisome shores of Earth, long before Man:",
@@ -158,7 +158,7 @@ var stanzas = {
       "And all its rival molecules are soon devour'd."
    ],
    "D18" : [
-      "Figure D18: CONTINUUM\r",
+      "Figure D18: CONTINUUM\r (0, 1, 1, -1)",
       "As we peer still deeper into space\r",
       "The scholar reads a panoply of signs\r",
       "That tell each epoch's story, keeping pace\r",
@@ -170,7 +170,7 @@ var stanzas = {
       "Mad furnace of the quasar shows a billion years of light.\r"
    ],
    "E7" : [
-      "Figure E7: IMMATERIAL\r",
+      "Figure E7: IMMATERIAL\r (-1, 1, -1, 1)",
       "Westward away from this choking stench,\r",
       "We pass into a vast, transparent void,\r",
       "Where minds no longer held in bodiesâ clench\r",
@@ -182,7 +182,7 @@ var stanzas = {
       "But go as mystic monads, ever seeing clear.\r"
    ],
    "B1" : [
-      "Figure B1: TEMPEST",
+      "Figure B1: TEMPEST (-1, 0, 0, 0)",
       "South thro' lofty arches we repair",
       "Onto a broad pavillion looking out",
       "From a high prospect: this the realm of Air",
@@ -194,7 +194,7 @@ var stanzas = {
       "Which, nesting here, begrime the marble with their Turds."
    ],
    "E6" : [
-      "Figure E6: SUPERMASSIVE",
+      "Figure E6: SUPERMASSIVE (-1, 1, 1, -1)",
       "The second form of light that ever shone,",
       "After a million years of neutral dark,",
       "As matter screamed to show where it had goneâ",
@@ -206,7 +206,7 @@ var stanzas = {
       "Each galaxy was once a door of Hell ajar."
    ],
    "E2" : [
-      "Figure E2: ICES",
+      "Figure E2: ICES (-1, -1, 1, -1)",
       "Still backward run the clock, until we see",
       "(In inward vision of the heavens past)",
       "A maelstrom of nebulosity",
@@ -218,7 +218,7 @@ var stanzas = {
       "The FROST-LINE great from small partitions, cool from warm."
    ],
    "C17" : [
-      "Figure C17: EXTREMES\r",
+      "Figure C17: EXTREMES\r (0, 1, 1, 0)",
       "From such a distant past, the present seems\r",
       "To dazzle and confuse us. Rocky walls\r",
       "Rough-hewn glow white in horizontal beams\r",
@@ -230,7 +230,7 @@ var stanzas = {
       "Its polar craters in eternal winter's vise.\r"
    ],
    "D6" : [
-      "Figure D6: EMISSION",
+      "Figure D6: EMISSION (-1, 0, 1, -1)",
       "Southward, substituting time for space:",
       "Back before the force of gravity",
       "Had kindled fire: darkness on the face",
@@ -242,7 +242,7 @@ var stanzas = {
       "We hear the TWENTY-ONE LINE ring out clear and strong."
    ],
    "D15" : [
-      "Figure D15: INDOLENS ",
+      "Figure D15: INDOLENS  (0, -1, -1, 1)",
       "Down where nameless horrors wind and slurp,",
       "Dreaming on a dark abyssal plain",
       "Of punishing those apes who dared usurp",
@@ -254,7 +254,7 @@ var stanzas = {
       "Alas, o Elder One, thou hast long overslept."
    ],
    "C12" : [
-      "Figure C12: NOCTURNE",
+      "Figure C12: NOCTURNE (0, 0, 1, -1)",
       "Back, further back, we see the Cosmic Void,",
       "The space surrounding and preceding ALL.",
       "With giddiness, our sense of scale destroyed,",
@@ -266,7 +266,7 @@ var stanzas = {
       "Safe from disturbance by our overheated brains."
    ],
    "D26" : [
-      "Figure D26: TYCHO'S STAR",
+      "Figure D26: TYCHO'S STAR (1, 0, 1, -1)",
       "Ascending now, the Northern heavens view:",
       "In Cassiopeia, a star burns bright,",
       "Unknown to living memory. A new",
@@ -278,7 +278,7 @@ var stanzas = {
       "The carbon of a star transmuted into gold."
    ],
    "D20" : [
-      "Figure D20: TELOS\r",
+      "Figure D20: TELOS\r (0, 1, 1, 1)",
       "From this small fire, to an end of days.\r",
       "If universal growth had been subdued\r",
       "By gravity, to fall back in a blaze,\r",
@@ -290,7 +290,7 @@ var stanzas = {
       "A richer world. No meagre consolation, this.\r"
    ],
    "C19" : [
-      "Figure C19: TRAVERTINE",
+      "Figure C19: TRAVERTINE (1, -1, 0, 0)",
       "Toward the south, our vision blocked by steam.",
       "A whiff of sulphur and the sound of drops;",
       "A gust of wind unveils, and, like a dream,",
@@ -302,7 +302,7 @@ var stanzas = {
       "Flowing, liquid, stony, lovely beyond compare."
    ],
    "E14" : [
-      "Figure E14: IMPACT\r",
+      "Figure E14: IMPACT\r (1, 1, 1, -1)",
       "Quitting Venus, torrid yet serene,\r",
       "We shift once more into the deeper past\r",
       "To gaze upon a cataclysmic scene:\r",
@@ -314,7 +314,7 @@ var stanzas = {
       "See Luna's blemishes, a testament to rock.\r"
    ],
    "D14" : [
-      "Figure D14: SHORELINE",
+      "Figure D14: SHORELINE (0, -1, 1, -1)",
       "As Selene her orbit roundabout",
       "Draws now down, now up, the oceans' sides,",
       "So does the Milky Way breathe in and out,",
@@ -326,7 +326,7 @@ var stanzas = {
       "Along the margins of an interstellar sea."
    ],
    "D8" : [
-      "Figure D8: TEMPERATE\r",
+      "Figure D8: TEMPERATE\r (-1, 0, 1, 1)",
       "We travel south, to a black room so cold\r",
       "Our breath emerges as a freezing fog.\r",
       "The Universe, immeasurably old,\r",
@@ -338,7 +338,7 @@ var stanzas = {
       "Little suspect that we dwelt in the Big Bangâs blaze.\r"
    ],
    "E3" : [
-      "Figure E3: AMPHIBIAN",
+      "Figure E3: AMPHIBIAN (-1, -1, -1, 1)",
       "Take us now far from this tipping point",
       "Into a future, cavernous, dim, with stink",
       "Ammoniack and rank: without joint,",
@@ -350,7 +350,7 @@ var stanzas = {
       "Such living submarines will ply their finny way."
    ],
    "D11" : [
-      "Figure D11: TONANS\r",
+      "Figure D11: TONANS\r (-1, 1, 1, 0)",
       "Northward to an onyx-marbled court\r",
       "Whose floor is an enormous ruddy eye.\r",
       "To JUPITER devote, and these his sport:\r",
@@ -362,7 +362,7 @@ var stanzas = {
       "Is ofttimes like his thunder, in falsetto voice.\r"
    ],
    "D19" : [
-      "Figure D19: MÃLANGE\r",
+      "Figure D19: MÃLANGE\r (0, 1, -1, 1)",
       "Not long that darkened future we disturb\r",
       "But climb a stair down to a furnace-room\r",
       "Whose coal is not of ancient buried herb\r",
@@ -374,7 +374,7 @@ var stanzas = {
       "As if the sins of Earth were gathered in a smell.\r"
    ],
    "D22" : [
-      "Figure D22: TROGLOBITE",
+      "Figure D22: TROGLOBITE (1, -1, -1, 0)",
       "Spiraling down a sinkhole ringed with stairs",
       "We descend once more into the ground.",
       "A watery cave we find, with humid airs",
@@ -386,7 +386,7 @@ var stanzas = {
       "Obscene and pallid worm, best hidden from the day."
    ],
    "B7" : [
-      "Figure B7: REDOX",
+      "Figure B7: REDOX (0, 1, 0, 0)",
       "A winding stair leads from this solemn scene",
       "Upward to daylight, and a steely gate",
       "All red with rust and twined with tendrils green",
@@ -398,7 +398,7 @@ var stanzas = {
       "In cycles their electrons remit and return."
    ],
    "D7" : [
-      "Figure D7: TANGERE\r",
+      "Figure D7: TANGERE\r (-1, 0, -1, 1)",
       "Southward now, material once more,\r",
       "To a great hall, echoing and chill,\r",
       "Nothing is here, it seems, but walls and floor,\r",
@@ -410,7 +410,7 @@ var stanzas = {
       "Bereft of every power save to touch or feel.\r"
    ],
    "D32" : [
-      "Figure D32: TEPID\r",
+      "Figure D32: TEPID\r (1, 1, 0, 1)",
       "A simple fence surrounding ashy meads,\r",
       "And in their midst, a tuffet dark and low\r",
       "Lies steaming in the mud. A notice reads:\r",
@@ -422,7 +422,7 @@ var stanzas = {
       "\"EXIGUUS, the last volcano of them all.\"\r"
    ],
    "B3" : [
-      "Figure B3: STERILE",
+      "Figure B3: STERILE (0, 0, 0, -1)",
       "Here we may not linger â down a stair,",
       "Which halfway turns to up, or so it seems,",
       "Climb to a lonely strand. The briny air",
@@ -434,7 +434,7 @@ var stanzas = {
       "The first brave plants begin to populate the shore."
    ],
    "D10" : [
-      "Figure D10: OCTAHEDRON",
+      "Figure D10: OCTAHEDRON (-1, 1, -1, 0)",
       "Welcome relief for the indignant Nose",
       "In the next dark chamber we have found.",
       "Sulphur a transformation undergoes",
@@ -446,7 +446,7 @@ var stanzas = {
       "So heaviness by light is told, and does behave."
    ],
    "C15" : [
-      "Figure C15: APOCALYPSE",
+      "Figure C15: APOCALYPSE (0, 1, 0, -1)",
       "By such a narrow pathway leading east",
       "That we perforce must walk in single file",
       "Between steep cliffs of ice. Here was the least",
@@ -458,7 +458,7 @@ var stanzas = {
       "Thy shadow long, that near snuffed out the human race."
    ],
    "A1" : [
-      "Figure A1: VIVAMUS",
+      "Figure A1: VIVAMUS (0, 0, 0, 0)",
       "A simple chamber, fresh with morning AIR,",
       "A cheery FIRE burning in its grate.",
       "Of EARTHEN flags the floor, well-swept and bare,",
@@ -470,7 +470,7 @@ var stanzas = {
       "All elements meet here, in equilibrium."
    ],
    "B4" : [
-      "Figure B4: FAINT",
+      "Figure B4: FAINT (0, 0, -1, 0)",
       "The truth is at the bottom of a well:",
       "So said the Atomist in ancient days.",
       "Yet here is fungus and an awful smell.",
@@ -482,7 +482,7 @@ var stanzas = {
       "To where, if not an end, at least there will be light."
    ],
    "D28" : [
-      "Figure D28: BARYONIC",
+      "Figure D28: BARYONIC (1, 0, 1, 1)",
       "Kalpa upon Kalpa of cosmic time",
       "Has passed for us: the stars no longer glow,",
       "But orbit through a velvet night sublime,",
@@ -494,7 +494,7 @@ var stanzas = {
       "Each star in time becomes a mighty CANNON-BALL."
    ],
    "D25" : [
-      "Figure D25: AMMONITE",
+      "Figure D25: AMMONITE (1, 0, -1, -1)",
       "Northward from this gloomy deep, into",
       "A sombre cavern, paved with spiral stones:",
       "\"Once we sail'd in sunny oceans blue,",
@@ -506,7 +506,7 @@ var stanzas = {
       "\"Will cast and turn to stone on holy Whitby's strand.\""
    ],
    "D16" : [
-      "Figure D16: TIRYNS",
+      "Figure D16: TIRYNS (0, -1, 1, 1)",
       "in a distant future, now we see",
       "Our Milky Way is monstrously deployed",
       "To smash into a neighbour galaxy.",
@@ -518,7 +518,7 @@ var stanzas = {
       "Shall save ANDROMEDA in this her hour of need?"
    ],
    "D31" : [
-      "Figure D31: RETROGRADE\r",
+      "Figure D31: RETROGRADE\r (1, 1, 1, 0)",
       "Murmurs the wind as lightly as a dove,\r",
       "We enter a high chamber, well endowed\r",
       "With all the soft accoutrements of love,\r",
@@ -530,7 +530,7 @@ var stanzas = {
       "And make thine Evening Star a slander on thy sex.\r"
    ],
    "D5" : [
-      "Figure D5: TUNNEL",
+      "Figure D5: TUNNEL (-1, 0, -1, -1)",
       "From pricking ozone glare, toward the south,",
       "We tread a steep defile: a rising howl",
       "Of wind is heard to fret the cavernâs mouth:",
@@ -542,7 +542,7 @@ var stanzas = {
       "The stuttered gale portends that we approach a VOID."
    ],
    "E11" : [
-      "Figure E11: TESTUDO",
+      "Figure E11: TESTUDO (1, -1, -1, 1)",
       "Move we again to far futurity",
       "(Potential, as all such visions are):",
       "Deep below the crust, a sunless sea",
@@ -554,7 +554,7 @@ var stanzas = {
       "So life within continues though the shell be dead."
    ],
    "E4" : [
-      "Figure E4: UNSTABLE",
+      "Figure E4: UNSTABLE (-1, -1, 1, 1)",
       "Around great limbs, a winding stair ascend",
       "Up to a lofty chamber. Here, the fate",
       "Of space itself is pondered; if it tend,",
@@ -566,7 +566,7 @@ var stanzas = {
       "That if or when it happen, none can ever know."
    ],
    "C16" : [
-      "Figure C16: IGNITION",
+      "Figure C16: IGNITION (0, 1, -1, 0)",
       "Obsidian the walls of the next vault",
       "Circled around a single sacred flame",
       "From a jagged crack, a riven fault",
@@ -578,7 +578,7 @@ var stanzas = {
       "Of Ares' wrath will spur undending battles' blaze."
    ],
    "C6" : [
-      "Figure C6: LIGHTNING",
+      "Figure C6: LIGHTNING (-1, 1, 0, 0)",
       "Brazen the gate to Lightning's airy room",
       "Northwest it faces, son of Air and Fire.",
       "Amber and glass reflect the ruddy gloom",
@@ -590,7 +590,7 @@ var stanzas = {
       "And our rebellious garments to our members cling."
    ],
    "D9" : [
-      "Figure D9: STRIKE",
+      "Figure D9: STRIKE (-1, 1, 0, -1)",
       "Northward to a garden, spare and clean,",
       "Where, between raked vortices of sand,",
       "Bare branches, with a smooth and glassy sheen,",
@@ -602,7 +602,7 @@ var stanzas = {
       "Of ancient thunderclaps' most echoing reports."
    ],
    "C5" : [
-      "Figure C5: APPETITE\r",
+      "Figure C5: APPETITE\r (-1, 0, 0, 1)",
       "Ascending now to a great banquet hall\r",
       "We see a table, laden with a feast\r",
       "Delicious in aroma: on each wall\r",
@@ -614,7 +614,7 @@ var stanzas = {
       "And, with our end in sight, sit gratefully to dine.\r"
    ],
    "C24" : [
-      "Figure C24: EARTHWORKS",
+      "Figure C24: EARTHWORKS (1, 1, 0, 0)",
       "Eastward next, into a chamber strange,",
       "Filled with what seems a bulky mass of earth.",
       "Only about its edges may we range,",
@@ -626,7 +626,7 @@ var stanzas = {
       "The daintiest of rooms, for them, but fodder stalls."
    ],
    "C4" : [
-      "Figure C4: AIRY\r",
+      "Figure C4: AIRY\r (-1, 0, 1, 0)",
       "From this chill future to the present day,\r",
       "A tower room of lapis and azure\r",
       "With books and instruments. LE VERRIER\r",
@@ -638,7 +638,7 @@ var stanzas = {
       "Just at the turning point of its apparent dance.)\r"
    ],
    "D23" : [
-      "Figure D23: LONE",
+      "Figure D23: LONE (1, -1, 1, 0)",
       "A chamber paved with marble and azure",
       "And dedicated to a mystery:",
       "Stubborn as stone, where life will long endure",
@@ -650,7 +650,7 @@ var stanzas = {
       "From only one example, hard to judge the worth."
    ],
    "C10" : [
-      "Figure C10: GLOBE",
+      "Figure C10: GLOBE (0, -1, 0, 1)",
       "By a crude door westward, to a pier",
       "Of rough-hewn coral blocks amid a sea",
       "Calm and shallow, marvellously clear.",
@@ -662,7 +662,7 @@ var stanzas = {
       "No longer by the tides of earthly passions whirl'd."
    ],
    "C13" : [
-      "Figure C13: OBLITERATE",
+      "Figure C13: OBLITERATE (0, 0, -1, 1)",
       "Descending for the last time into Earth",
       "We reach a solemn catacomb of stone",
       "Marked in an unknown script. Of little worth",
@@ -674,7 +674,7 @@ var stanzas = {
       "In a confused expression or a dirty look."
    ],
    "C20" : [
-      "Figure C20: ASTHENOSPHERE",
+      "Figure C20: ASTHENOSPHERE (1, 0, 0, -1)",
       "A hallway grand leads south, all dressed in stone",
       "Of many shades: here is remembered by",
       "Its native rocks, each continental zone",
@@ -686,7 +686,7 @@ var stanzas = {
       "Beneath the southern waves a home to Neptune's car."
    ],
    "C22" : [
-      "Figure C22: ERIDANIA",
+      "Figure C22: ERIDANIA (1, 0, 1, 0)",
       "Now in the present day, in a high room",
       "As cold as ice with walls as red as rust,",
       "With tapestries wove by no earthly loom",
@@ -698,7 +698,7 @@ var stanzas = {
       "The planet named for WAR, eternally at peace."
    ],
    "C9" : [
-      "Figure C9: ANNALS",
+      "Figure C9: ANNALS (0, -1, 1, 0)",
       "Moving to the present, here the floor",
       "Of bland and glossy celadon is made.",
       "GEORGE'S STAR, which Herschel's glass first saw,",
@@ -710,7 +710,7 @@ var stanzas = {
       "The giggling of all the ages' little boys. "
    ],
    "E12" : [
-      "Figure E12: WORLD-TREE",
+      "Figure E12: WORLD-TREE (1, -1, 1, 1)",
       "Just as the minute polyp, year on year,",
       "Erects beneath the wave a mighty reef,",
       "So, though measured 'gainst the heavens' sphere,",
@@ -722,7 +722,7 @@ var stanzas = {
       "In countless bio-spheres of adamant and steel."
    ],
    "D2" : [
-      "Figure D2: RELEASE",
+      "Figure D2: RELEASE (-1, -1, -1, 0)",
       "Downward to a well sunk deep below",
       "The ocean's surface, in a rattling cage",
       "Of iron barsâhere, as white as snow,",
@@ -734,7 +734,7 @@ var stanzas = {
       "A fearful form of feedback, this, the CLATHRATE-GUN."
    ],
    "D3" : [
-      "Figure D3: SATURN",
+      "Figure D3: SATURN (-1, -1, 1, 0)",
       "These upper rooms are to celestial spheres",
       "Devoted: present, now, a cork-lined room",
       "Sacred to SATURNUS, long of years.",
@@ -746,7 +746,7 @@ var stanzas = {
       "And round a giant bathtub leave a mighty ring."
    ],
    "E1" : [
-      "Figure E1: TYCOON",
+      "Figure E1: TYCOON (-1, -1, -1, -1)",
       "Descend we now into a deep crevasse",
       "To see, beneath the surface bleak and frore,",
       "The oxygen that made the chilly mass",
@@ -758,7 +758,7 @@ var stanzas = {
       "Antipodean magnate strike the lyre and sing."
    ],
    "D27" : [
-      "Figure D27: WATCHER",
+      "Figure D27: WATCHER (1, 0, -1, 1)",
       "Sobered, we leave that mournful place",
       "Southward to an adamantine cell",
       "A myriad of mirrors shows each face",
@@ -770,7 +770,7 @@ var stanzas = {
       "Until the very protons shimmer and disperse."
    ],
    "C14" : [
-      "Figure C14: EINSTEIN",
+      "Figure C14: EINSTEIN (0, 0, 1, 1)",
       "All spinning like a jewelled orrery:",
       "But Mercury precessing, year to year,",
       "Abrogates NEWTON'S laws, and presently",
@@ -782,7 +782,7 @@ var stanzas = {
       "At fleeting visions that our minds can barely grasp."
    ],
    "B2" : [
-      "Figure B2: SPINDRIFT",
+      "Figure B2: SPINDRIFT (0, -1, 0, 0)",
       "In daylight, now, see breakers crash and hiss,",
       "They bring ambiguous gifts, long afloat:",
       "This fetid mass, the precious AMBERGRIS,",
@@ -794,7 +794,7 @@ var stanzas = {
       "Art and nature blend as mermaid's top and tail."
    ],
    "B8" : [
-      "Figure B8: RECURSIVE",
+      "Figure B8: RECURSIVE (1, 0, 0, 0)",
       "On a resounding staircase we ascend",
       "To daylight and a spacious colonnade",
       "That faces hills, rolling without end",
@@ -806,7 +806,7 @@ var stanzas = {
       "All things with form from this their master-pattern take."
    ],
    "D29" : [
-      "Figure D29: NILGIRI",
+      "Figure D29: NILGIRI (1, 1, 0, -1)",
       "Eastward still, into a stony square",
       "Made of setts all in a honeycomb.",
       "Here, on a time, from its plutonic lair",
@@ -818,7 +818,7 @@ var stanzas = {
       "SHIVA, the Destroyer, blessed be thy dance."
    ],
    "B5" : [
-      "Figure B5: GOLDEN",
+      "Figure B5: GOLDEN (0, 0, 1, 0)",
       "A marble rooftop, open to the sky,",
       "Surrounded by eight towers, seen before:",
       "Mercury hot and cold, and Venus dry,",
@@ -830,7 +830,7 @@ var stanzas = {
       "All circling about their mighty mother SUN."
    ],
    "D30" : [
-      "Figure D30: TINDER",
+      "Figure D30: TINDER (1, 1, -1, 0)",
       "Down to a cellar, filled with a bracing air,",
       "Crisp, as when a child dashes a stone",
       "Down upon boulders and the sparks leap where",
@@ -842,7 +842,7 @@ var stanzas = {
       "Resources for mankind in humble madrepores."
    ],
    "C7" : [
-      "Figure C7: EVENTIDE",
+      "Figure C7: EVENTIDE (0, -1, 0, -1)",
       "A dusky strand beneath a twilit wood",
       "Where no birds sing, heavy with moss and fern:",
       "In a warm age: never has forest stood",
@@ -854,7 +854,7 @@ var stanzas = {
       "Above, the Southern Lights in majesty arrayed."
    ],
    "D1" : [
-      "Figure D1: GLACIAL",
+      "Figure D1: GLACIAL (-1, -1, 0, -1)",
       "As we descend, with clouds of foggy breath",
       "We enter a bleak citadel of ice",
       "Facing a frozen plain. Nothing but death,",
@@ -866,7 +866,7 @@ var stanzas = {
       "Thus see a world transformed by the very small."
    ],
    "D4" : [
-      "Figure D4: NEAT",
+      "Figure D4: NEAT (-1, -1, 0, 1)",
       "Disgorged like Jonah from the living barque",
       "Wading through a foaming, busy sea",
       "We pass between great buttresses and dark,",
@@ -878,7 +878,7 @@ var stanzas = {
       "See, the children play in waves that effervesce."
    ],
    "E10" : [
-      "Figure E10: TRIPLE-ALPHA",
+      "Figure E10: TRIPLE-ALPHA (1, -1, 1, -1)",
       "In the deep past, all was primal gas,",
       "The exhalation of the fading roar",
       "Of Universe's birth, but soon the mass",
@@ -890,7 +890,7 @@ var stanzas = {
       "How many ancient stars are nestled in your hand?"
    ],
    "C3" : [
-      "Figure C3: SULPHUR",
+      "Figure C3: SULPHUR (-1, 0, -1, 0)",
       "Down a steep stair we fly the feath'ry stench",
       "In vain, for in the stony room below",
       "Wrung from the rock by stubborn nature's clench",
@@ -902,7 +902,7 @@ var stanzas = {
       "So to the northern door we turn an eager leg."
    ],
    "D12" : [
-      "Figure D12: HUBBUB\r",
+      "Figure D12: HUBBUB\r (-1, 1, 0, 1)",
       "Our hunger sated, northward, to a cage\r",
       "Of burnished copper. In the centre, see\r",
       "A speaking pillar: âYe of ancient age,\r",
@@ -914,7 +914,7 @@ var stanzas = {
       "âSeeking refuge in the silences of SPACE.â\r"
    ],
    "C23" : [
-      "Figure C23: ORBIT\r",
+      "Figure C23: ORBIT\r (1, 0, 0, 1)",
       "Descend from that high vision, dark and chill\r",
       "To Earth once more. The Sun, no more the bud\r",
       "Of blinding white we know, has bloomed until\r",
@@ -926,7 +926,7 @@ var stanzas = {
       "As Earth skips like a stone across the photosphere.\r"
    ],
    "E5" : [
-      "Figure E5: SIDEROPHILE",
+      "Figure E5: SIDEROPHILE (-1, 1, -1, -1)",
       "A glowing spheroid, uniform and mixed,",
       "Was Earth when first from nebula congealed",
       "But soon it was in ordered layers fixed,",
@@ -938,7 +938,7 @@ var stanzas = {
       "Like to a rainbow, or the lasers at a RAVE."
    ],
    "C21" : [
-      "Figure C21: IRON",
+      "Figure C21: IRON (1, 0, -1, 0)",
       "Flow back now, Time, and from the future long",
       "Return us to our era: walls and floor",
       "Of Iron now, corruptible and strong.",
@@ -950,7 +950,7 @@ var stanzas = {
       "Spinaches and liver, foodstuffs most revil'd."
    ],
    "D17" : [
-      "Figure D17: ASH",
+      "Figure D17: ASH (0, 1, -1, -1)",
       "From that ill chamber, in the solar track--",
       "But still below, where never sun has shone--",
       "And still in ancient time, we find a black",
@@ -962,7 +962,7 @@ var stanzas = {
       "The cooling of the crust to them a a funeral pyre."
    ],
    "E16" : [
-      "Figure E16: ACCRETION\r",
+      "Figure E16: ACCRETION\r (1, 1, 1, 1)",
       "Ascend: to see the monster at the heart,\r",
       "Devourer of suns, a DARKLING STAR.\r",
       "Although it seem that it must be the part\r",
@@ -977,87 +977,492 @@ var stanzas = {
 ;
 
 var coords = {
-   "0101" : "C3",
-   "1120" : "C12",
-   "1202" : "D19",
-   "0121" : "C4",
-   "1221" : "C17",
-   "2012" : "D24",
-   "1200" : "D17",
-   "2022" : "E12",
-   "1020" : "D14",
-   "0212" : "D12",
-   "0112" : "C5",
-   "0100" : "D5",
-   "1122" : "C14",
-   "2120" : "D26",
-   "1012" : "C10",
-   "2001" : "D22",
-   "1001" : "C8",
-   "1212" : "C18",
-   "1011" : "B2",
-   "2211" : "C24",
-   "1021" : "C9",
-   "0120" : "D6",
-   "0102" : "D7",
-   "0202" : "E7",
-   "1222" : "D20",
-   "2121" : "C22",
-   "1022" : "D16",
-   "0122" : "D8",
-   "1010" : "C7",
-   "2000" : "E9",
-   "0020" : "E2",
-   "0001" : "D2",
-   "0021" : "D3",
-   "1201" : "C16",
-   "0221" : "D11",
-   "0111" : "B1",
-   "1002" : "D15",
-   "0012" : "D4",
-   "0201" : "D10",
-   "2021" : "D23",
-   "1111" : "A1",
-   "0211" : "C6",
-   "2020" : "E10",
-   "0220" : "E6",
-   "0222" : "E8",
-   "0210" : "D9",
-   "1110" : "B3",
-   "0010" : "D1",
-   "2122" : "D28",
-   "2202" : "E15",
-   "1121" : "B5",
-   "2010" : "D21",
-   "0110" : "C2",
-   "1210" : "C15",
-   "0200" : "E5",
-   "0022" : "E4",
-   "2210" : "D29",
-   "2111" : "B8",
-   "2222" : "E16",
-   "1112" : "B6",
-   "1220" : "D18",
-   "2201" : "D30",
-   "0000" : "E1",
-   "2002" : "E11",
-   "2100" : "D25",
-   "2011" : "C19",
-   "1100" : "C11",
-   "1101" : "B4",
-   "2110" : "C20",
-   "0011" : "C1",
-   "1102" : "C13",
-   "2200" : "E13",
-   "2112" : "C23",
-   "2212" : "D32",
-   "0002" : "E3",
-   "1211" : "B7",
-   "2221" : "D31",
-   "2101" : "C21",
-   "1000" : "D13",
-   "2102" : "D27",
-   "2220" : "E14"
+   "E15" : [
+      1,
+      1,
+      -1,
+      1
+   ],
+   "E13" : [
+      1,
+      1,
+      -1,
+      -1
+   ],
+   "B6" : [
+      0,
+      0,
+      0,
+      1
+   ],
+   "E8" : [
+      -1,
+      1,
+      1,
+      1
+   ],
+   "C18" : [
+      0,
+      1,
+      0,
+      1
+   ],
+   "C11" : [
+      0,
+      0,
+      -1,
+      -1
+   ],
+   "C1" : [
+      -1,
+      -1,
+      0,
+      0
+   ],
+   "D13" : [
+      0,
+      -1,
+      -1,
+      -1
+   ],
+   "E9" : [
+      1,
+      -1,
+      -1,
+      -1
+   ],
+   "C8" : [
+      0,
+      -1,
+      -1,
+      0
+   ],
+   "D24" : [
+      1,
+      -1,
+      0,
+      1
+   ],
+   "C2" : [
+      -1,
+      0,
+      0,
+      -1
+   ],
+   "D18" : [
+      0,
+      1,
+      1,
+      -1
+   ],
+   "D21" : [
+      1,
+      -1,
+      0,
+      -1
+   ],
+   "E7" : [
+      -1,
+      1,
+      -1,
+      1
+   ],
+   "B1" : [
+      -1,
+      0,
+      0,
+      0
+   ],
+   "E6" : [
+      -1,
+      1,
+      1,
+      -1
+   ],
+   "C17" : [
+      0,
+      1,
+      1,
+      0
+   ],
+   "E2" : [
+      -1,
+      -1,
+      1,
+      -1
+   ],
+   "D6" : [
+      -1,
+      0,
+      1,
+      -1
+   ],
+   "D15" : [
+      0,
+      -1,
+      -1,
+      1
+   ],
+   "C12" : [
+      0,
+      0,
+      1,
+      -1
+   ],
+   "D26" : [
+      1,
+      0,
+      1,
+      -1
+   ],
+   "D20" : [
+      0,
+      1,
+      1,
+      1
+   ],
+   "C19" : [
+      1,
+      -1,
+      0,
+      0
+   ],
+   "E14" : [
+      1,
+      1,
+      1,
+      -1
+   ],
+   "D14" : [
+      0,
+      -1,
+      1,
+      -1
+   ],
+   "D8" : [
+      -1,
+      0,
+      1,
+      1
+   ],
+   "E3" : [
+      -1,
+      -1,
+      -1,
+      1
+   ],
+   "D11" : [
+      -1,
+      1,
+      1,
+      0
+   ],
+   "D19" : [
+      0,
+      1,
+      -1,
+      1
+   ],
+   "D22" : [
+      1,
+      -1,
+      -1,
+      0
+   ],
+   "B7" : [
+      0,
+      1,
+      0,
+      0
+   ],
+   "D7" : [
+      -1,
+      0,
+      -1,
+      1
+   ],
+   "D32" : [
+      1,
+      1,
+      0,
+      1
+   ],
+   "B3" : [
+      0,
+      0,
+      0,
+      -1
+   ],
+   "C15" : [
+      0,
+      1,
+      0,
+      -1
+   ],
+   "D10" : [
+      -1,
+      1,
+      -1,
+      0
+   ],
+   "A1" : [
+      0,
+      0,
+      0,
+      0
+   ],
+   "B4" : [
+      0,
+      0,
+      -1,
+      0
+   ],
+   "D25" : [
+      1,
+      0,
+      -1,
+      -1
+   ],
+   "D28" : [
+      1,
+      0,
+      1,
+      1
+   ],
+   "D16" : [
+      0,
+      -1,
+      1,
+      1
+   ],
+   "D5" : [
+      -1,
+      0,
+      -1,
+      -1
+   ],
+   "D31" : [
+      1,
+      1,
+      1,
+      0
+   ],
+   "E11" : [
+      1,
+      -1,
+      -1,
+      1
+   ],
+   "E4" : [
+      -1,
+      -1,
+      1,
+      1
+   ],
+   "C16" : [
+      0,
+      1,
+      -1,
+      0
+   ],
+   "C6" : [
+      -1,
+      1,
+      0,
+      0
+   ],
+   "C5" : [
+      -1,
+      0,
+      0,
+      1
+   ],
+   "D9" : [
+      -1,
+      1,
+      0,
+      -1
+   ],
+   "C24" : [
+      1,
+      1,
+      0,
+      0
+   ],
+   "C4" : [
+      -1,
+      0,
+      1,
+      0
+   ],
+   "C13" : [
+      0,
+      0,
+      -1,
+      1
+   ],
+   "C10" : [
+      0,
+      -1,
+      0,
+      1
+   ],
+   "D23" : [
+      1,
+      -1,
+      1,
+      0
+   ],
+   "C20" : [
+      1,
+      0,
+      0,
+      -1
+   ],
+   "C22" : [
+      1,
+      0,
+      1,
+      0
+   ],
+   "C9" : [
+      0,
+      -1,
+      1,
+      0
+   ],
+   "D2" : [
+      -1,
+      -1,
+      -1,
+      0
+   ],
+   "E12" : [
+      1,
+      -1,
+      1,
+      1
+   ],
+   "D3" : [
+      -1,
+      -1,
+      1,
+      0
+   ],
+   "E1" : [
+      -1,
+      -1,
+      -1,
+      -1
+   ],
+   "C14" : [
+      0,
+      0,
+      1,
+      1
+   ],
+   "D27" : [
+      1,
+      0,
+      -1,
+      1
+   ],
+   "B2" : [
+      0,
+      -1,
+      0,
+      0
+   ],
+   "B8" : [
+      1,
+      0,
+      0,
+      0
+   ],
+   "D29" : [
+      1,
+      1,
+      0,
+      -1
+   ],
+   "B5" : [
+      0,
+      0,
+      1,
+      0
+   ],
+   "D30" : [
+      1,
+      1,
+      -1,
+      0
+   ],
+   "C7" : [
+      0,
+      -1,
+      0,
+      -1
+   ],
+   "D1" : [
+      -1,
+      -1,
+      0,
+      -1
+   ],
+   "D4" : [
+      -1,
+      -1,
+      0,
+      1
+   ],
+   "E10" : [
+      1,
+      -1,
+      1,
+      -1
+   ],
+   "D12" : [
+      -1,
+      1,
+      0,
+      1
+   ],
+   "C3" : [
+      -1,
+      0,
+      -1,
+      0
+   ],
+   "C23" : [
+      1,
+      0,
+      0,
+      1
+   ],
+   "E5" : [
+      -1,
+      1,
+      -1,
+      -1
+   ],
+   "C21" : [
+      1,
+      0,
+      -1,
+      0
+   ],
+   "D17" : [
+      0,
+      1,
+      -1,
+      -1
+   ],
+   "E16" : [
+      1,
+      1,
+      1,
+      1
+   ]
 }
 ;
 

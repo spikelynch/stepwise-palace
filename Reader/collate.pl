@@ -11,10 +11,10 @@ my $VERSES_RE = qr/^SP[A-I]/;
 my $POEM_JS = 'stepwise_poem.js';
 
 
-my $XMAP = { W => 0, C => 1, E => 2 };
-my $YMAP = { S => 0, C => 1, N => 2 };
-my $ZMAP = { deeps => 0, ground => 1, heaven => 2 };
-my $TMAP = { past => 0, present => 1, future => 2 };
+my $XMAP = { W => -1, C => 0, E => 1 };
+my $YMAP = { S => -1, C => 0, N => 1 };
+my $ZMAP = { deeps => -1, ground => 0, heaven => 1 };
+my $TMAP = { past => -1, present => 0, future => 1 };
 
 
 my ( $figures, $coords ) = read_path();
@@ -22,9 +22,15 @@ my ( $figures, $coords ) = read_path();
 my $stanzas = read_stanzas();
 
 
+
 my $json = JSON->new();
+my $coords_js = $json->pretty->encode($figures);
+
+for my $k ( keys %$stanzas ) {
+    $stanzas->{$k}[0] .= " (" . join(', ', @{$figures->{$k}}) . ")";
+}
+
 my $stanzas_js = $json->pretty->encode($stanzas);
-my $coords_js = $json->pretty->encode($coords);
 
 
 open(my $fh, ">:encoding(utf8)", $POEM_JS) || die("Couldn't write to $POEM_JS: $!");
@@ -57,7 +63,6 @@ sub read_path {
         my ( $fig, $dir, $x, $y, $t, $z, $l ) = split(/\t/);
         $x ||= 'C';
         $y ||= 'C';
-        $fig_coords->{$fig} = [ $x, $y, $z, $t ];
         
         die("Bad x '$x' at $fig") unless defined $XMAP->{$x};
         die("Bad y '$y' at $fig") unless defined $YMAP->{$y};
@@ -69,7 +74,9 @@ sub read_path {
         my $cz = $ZMAP->{$z};
         my $ct = $TMAP->{$t};
         
-        my $key = join('', $cx, $cy, $cz, $ct);
+        my $key = join(',', $cx, $cy, $cz, $ct);
+
+        $fig_coords->{$fig} = [ $cx + 0, $cy + 0, $cz + 0, $ct + 0 ];
 
         $coords->{$key} = $fig;
     }
