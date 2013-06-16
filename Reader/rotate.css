@@ -1,12 +1,17 @@
 
 rect.cell-1 {
-    fill: #00f;
+    fill: #bbf;
 }
 
 rect.cell0 {
-    fill: #0f0;
+    fill: #bfb;
 }
 
 rect.cell1 {
-    fill: #f00;
+    fill: #fbb;
+}
+
+text.poem {
+    font-size: 8pt;
+    font-family: Times, serif;
 }
