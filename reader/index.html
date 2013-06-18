@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Stepwise Palace reader</title>
+<script src="jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+    <script type="text/javascript" src="stepwise_rooms.js"></script>
+    <script type="text/javascript" src="stepwise_rotate.js"></script>
+    <link type="text/css" rel="stylesheet" href="rotate.css">
+  </head>
+  <body>
+
+<form name="controls">
+<input id="ctrl_xy" type="button" value="Rot x,y" />
+<input id="ctrl_xz" type="button" value="Rot x,z" />
+<input id="ctrl_xw" type="button" value="Rot x,w" />
+<input id="ctrl_yz" type="button" value="Rot y,z" />
+<input id="ctrl_yw" type="button" value="Rot y,w" />
+<input id="ctrl_zw" type="button" value="Rot z,w" />
+</form>
+
+    <div id="graph">
+    </div>
+
+
+    <script lang="javascript">
+$('#ctrl_xy').on('click', function (e) { rotate_render(0, 1) });
+$('#ctrl_xz').on('click', function (e) { rotate_render(0, 2) });
+$('#ctrl_xw').on('click', function (e) { rotate_render(0, 3) });
+$('#ctrl_yz').on('click', function (e) { rotate_render(1, 2) });
+$('#ctrl_yw').on('click', function (e) { rotate_render(1, 3) });
+$('#ctrl_zw').on('click', function (e) { rotate_render(2, 3) });
+
+
+      hypercube("div#graph");
+    </script>
+
+
+
+  </body>
+</html>
