@@ -2,10 +2,36 @@ Design for a first public view of the poem.
 
 Principles -
 
-It should be possibly to read the poem in the order in which it was published.
+It should be possibly to read the poem in the order in which it was
+published. Unless otherwise stated, "next" in this doc means the next stanza
+in this order
 
 The view at any one time is a slice of nine stanzas.
 
 One stanza at a time should be highlighted (or easily readable)
 
-The most basic behavioural 
+The most basic behaviour is to move to the next stanza, but it should
+also be possible to do other "natural" moves - a move is a step to an
+adjacent node.
+
+There should be a few design hints as to the meanings of the four
+dimensions (2 = elements, temporal, and high/low) but nothing too
+explicit
+
+----------
+
+Most obvious design is a 3x3 slice with the current stanza in normal 
+style
+
+For the dimensions:
+
+low-middle-high: Y axis
+
+past-present-future: X axis
+
+Elements: colours
+
+Fire (N)   - red     (S red, orange)
+Earth (E)  - yellow  (N brown, green)
+Water (S)  - green   (W blue)
+Air (W)    - blue   - (E light blue, white, bright yellow
