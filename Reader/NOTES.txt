@@ -1,0 +1,11 @@
+Design for a first public view of the poem.
+
+Principles -
+
+It should be possibly to read the poem in the order in which it was published.
+
+The view at any one time is a slice of nine stanzas.
+
+One stanza at a time should be highlighted (or easily readable)
+
+The most basic behavioural 
