@@ -60,6 +60,22 @@ A   *  *  *  *  *  *  = 6
 B  
 
 
+-------------------------
+After a swim:
+
+Every room can be found in a vertical slice with the screen y-axis
+corresponding to the heavens / ground / deeps axis.  The only thing
+that changes is what to map the x-axis onto, and where to slice the 
+cube.
+
+A heuristic for a natural path:  when moving to room A, look for the
+next one in the sequence - B - and find a vertical slice which contains
+both A and B (if one exists).  
+
+If one exists, rotate to move that slice to the display.
+
+If not, stay on this slice and rotate to B after the user is ready to 
+move on.
 
 
 
