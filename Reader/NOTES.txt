@@ -29,9 +29,58 @@ low-middle-high: Y axis
 
 past-present-future: X axis
 
-Elements: colours
+Elements: colours (see below)
+
+Here are the coordinate names
+
+X  air-null-earth
+Y  water-null-fire
+Z  low-ground-high
+T  past-present-future
+
+Screen coords are U (X) and V (Y)
+
+Options for slices
+Free       Constrained          Map to screen
+X Y        Z and T constant     U = X   V = Y
+X Z        Y and T constant     U = X   V = Z
+X T        Y and Z constant     U = T   V = X
+Y Z        X and T constant     U = Y   V = Z
+Y T        X and Z constant     U = T   V = Y
+Z T        X and Y constant     U = T	V = Z
+
+How many slices are possible for a given cell?
+
+By class (A to E, where A is the centre and E are the corners)
+
+  
+   XY XZ XT YZ YT ZT
+
+A   *  *  *  *  *  *  = 6
+B  
+
+
+
+
+
+
+
+
+Notes on color choices
 
 Fire (N)   - red     (S red, orange)
 Earth (E)  - yellow  (N brown, green)
 Water (S)  - green   (W blue)
 Air (W)    - blue   - (E light blue, white, bright yellow
+
+
+
+Electricity   Fire         Lava
+(violet)     (orange)     (red)
+
+Air                        Earth
+(lt blue)                 (dk red)
+
+Ice           Water        Mud
+(white)      (green)      (brown)
+
