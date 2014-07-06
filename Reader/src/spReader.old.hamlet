@@ -1,0 +1,24 @@
+$doctype 5
+<html>
+    <head>
+        <title>Stepwise Palace
+        <link rel=stylesheet href=@{Stylesheet}>
+        <script type=text/javascript src=@{JQuery}>
+        <script type=text/javascript src=@{Javascript}>
+    <body>
+        <h1>Stepwise Palace
+        <div .main>
+            $forall Stanza fig title slines scoords <- stanzas
+                <div .stanza>
+                     <h2>
+                         <a name=#{fig}>Figure #{fig} #{title}
+                     <div .ctrl>
+                         <svg width=#{width} height=#{height}>
+                             $forall (c1, c2) <- allcoords
+                                  <rect class=#{c2classTime scoords c2 c1} x=#{c2svgTBox c2} y=#{c2svgDBox c1} width=#{c2size} height=#{c2size}> 
+                                  <text class="label" x=#{c2svgTLab c2} y=#{c2svgDLab c1}>#{c2clickTime rooms scoords c2 c1}
+                                  <rect class=#{c2classElements scoords c1 c2} x=#{c2svgAEBox c1} y=#{c2svgFWBox c2} width=#{c2size} height=#{c2size}>
+                                  <text class="label" x=#{c2svgAELab c1} y=#{c2svgFWLab c2}>#{c2clickElements rooms scoords c1 c2}
+                     <p .lines>
+                         $forall line <- slines
+                             <div .line>#{line}

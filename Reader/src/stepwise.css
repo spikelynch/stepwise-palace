@@ -1,0 +1,58 @@
+
+div.main {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+}
+
+div.stanza {
+    width: 100%;
+}
+
+
+
+h2 {
+   color: gray;
+   font-size: 100%;
+   font-family: Garamond, Times New Roman;
+   margin-top: 72pt;
+}
+
+p.stanza {
+   font-size: 150%;
+   font-family: Garamond, Times New Roman;
+}
+
+div.next {
+   cursor: pointer;
+   align: right;
+}
+
+div.ctrl {
+    float: right;
+}
+
+svg {
+}
+
+text.label {
+    color: #000033;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 50%;
+}
+
+rect {
+}
+
+rect.off {
+    stroke: black;
+    fill: none;
+    opacity: 0.4;
+}
+
+rect.on {
+    stroke: black;
+    fill: #1010aa;
+    opacity: 0.4;
+}
+

@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>The Stepwise Palace</title>
+    <script src="jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="path.js"></script>
+    <script type="text/javascript" src="controls.js"></script>
+    <link type="text/css" rel="stylesheet" href="stepwise.css" />
+  </head>
+
+  <body>
+
+  <h1>The Stepwise Palace</h1>
+
+  [% FOREACH stanzas %]
+
+    <div class="stanza" id="[% fig %]">
+      <h3 class="title">Figure [% fig %] [% title %]</h3>
+
+      <p class="stanza">
+      [% lines.join("<br />\n") %]
+      </p>
+    </div>
+  
+  [% END %]
+
+    <input id="nextbtn" type="button" onClick="next_stanza()" value="Next" />
+
+    <select id="jump" onChange="jumpto(this.value)">
+       [% FOREACH stanzas %]
+       <option value="[% fig %]">Figure [% fig %] [% title %]</option>
+       [% END %]
+    </select>
+
+    <script>
+       jumpto('A0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,28 @@
+
+
+Need a func that goes
+
+
+FOR X, Y -> [ Z, T ] -> Fig
+
+FOR [rs] -> [coords] -> Fig
+
+
+
+--------
+
+
+C6: Lightning
+
+Time ->
+Depth
+|
+V
+
+  past/high   high    fut/high
+
+  past                fut
+
+  past/deep   deep    fut/deep
+
+  [A/F/Pas
