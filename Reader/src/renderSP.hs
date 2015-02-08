@@ -33,6 +33,21 @@ data Room = Room {
     , coords :: [ Int ]
 } deriving (Show, Generic)
 
+-- Stanza datatype
+
+-- the spacetime and elements records are lists of lists of figures to
+-- be rendered into the two navigation controls on each stanza:
+
+
+data Stanza = Stanza {
+      fig :: T.Text
+    , title :: T.Text
+    , slines :: [ T.Text ]
+    , spacetime :: [ [ T.Text ] ]
+    , elements :: [ [ T.Text ] ]
+} deriving ( Eq, Ord, Show )
+
+
 instance FromJSON Room
 instance ToJSON Room
 
@@ -42,32 +57,47 @@ jsonFile = "coords.json"
 getJSON :: IO B.ByteString
 getJSON = B.readFile jsonFile
 
--- getCoords gets a room based on its 'figure' code
+-- figToCoords gets a room's coordinates based on its 'figure' code
 
-getCoords :: [ Room ] -> T.Text -> [ Int ]
-getCoords rooms fig = case Prelude.filter (\x -> name x == fig) rooms of
+figToCoords :: [ Room ] -> T.Text -> [ Int ]
+figToCoords rooms fig = case Prelude.filter (\x -> name x == fig) rooms of
                       [] -> [] 
                       r:rs -> coords r
 
 
--- getCoords looks up a room by its coordinates and returns the
--- figure.  This is used to populate the links in the squares (to rooms
--- in the same two slices)
+-- coordsTofig is the inverse: gets a figure based on its coordinates
 
-getRoom :: [ Room ] -> [ Int ] -> T.Text
-getRoom rooms cs = case Prelude.filter (\x -> coords x == cs) rooms of
+coordsToFig :: [ Room ] -> [ Int ] -> T.Text
+coordsToFig rooms cs = case Prelude.filter (\x -> coords x == cs) rooms of
                      [] -> ""
                      r:rs -> name r
 
--- Stanza datatype
 
-data Stanza = Stanza {
-      fig :: T.Text
-    , title :: T.Text
-    , slines :: [ T.Text ]
-    , scoords :: [ Int ]
+-- addCoords stitches the room coordinates into the spacetime and elements
+-- fields of a Stanza
 
-} deriving ( Eq, Ord, Show )
+addCoords :: [ Room ] -> Stanza -> Stanza
+addCoords rooms stanza = stanza { spacetime = st, elements = el }
+    where st = spacetimeNeighbours rooms figure 
+          el = elementsNeighbours rooms figure
+          figure = fig stanza
+
+spacetimeNeighbours :: [ Room ] -> T.Text -> [ [ T.Text ] ]
+spacetimeNeighbours rooms fig = heights
+    where x = coords !! 0
+          y = coords !! 1
+          coords = figToCoords rooms fig
+          heights = [ times z | z <- [ 1, 0, -1 ] ]
+          times z = [ coordsToFig rooms [ x, y, z, t ] | t <- [ -1, 0, 1 ] ]
+
+
+elementsNeighbours :: [ Room ] -> T.Text -> [ [ T.Text ] ]
+elementsNeighbours rooms fig = ys
+    where t = coords !! 3
+          z = coords !! 2
+          coords = figToCoords rooms fig
+          ys = [ xs y | y <- [ 1, 0, -1 ] ]
+          xs y = [ coordsToFig rooms [ x, y, z, t ] | x <- [ -1, 0, 1 ] ]
 
 -- typed-URL renderer for Hamlet
 
@@ -79,8 +109,6 @@ render Javascript _ = "stepwise.js"
 render Stylesheet _ = "stepwise.css"
 
 -- template for a list of Stanzas -> HTML
-
--- plus helper functions for the coordinates
 
 -- The coordinates of each room are rendered as a pair of 3-by-3 grids.
 -- One grid is the elements axes (N = Fire, W = Air, S = Water, E = Stone)
@@ -95,101 +123,6 @@ render Stylesheet _ = "stepwise.css"
 -- -1   West  South  Deep     Past
 --  0                Surface  Present
 --  1   East  North  Sky      Future
-
--- allcoords: a list of all ( x, y) coordinate pairs.  The template
--- uses this as the loop to render both grids.
-
-allcoords :: [ ( Int, Int ) ]
-allcoords = [ (x, y) | x <- [ -1, 0, 1 ], y <- [ 1, 0, -1 ] ]
-
-
-c2s = 40
-
-
-c2size = show c2s
-
-c2offset = 4 * c2s
-
-height = show (3 * c2s)
-width = show (7 * c2s)
-
--- two sets of c2class, c2svgx and c2svgy functions: Time/Deep and Elements
-
--- c2classTimeDeep = c2class 3 2
--- c2classElements = c2class 0 1
-
--- c2class :: Int -> Int ->  [ Int ] -> Int -> Int -> T.Text
--- c2class ox oy coords x y = case (cx == x && cy == y) of
---                               True -> "on"
---                               False -> "off" 
---    where cx = coords !! ox
---          cy = coords !! oy
-
--- c2cell is a new version of c2class which returns the Fig to 
--- link to from each non-selected stanza
-
-
-c2classTime :: [ Int ] -> Int -> Int -> T.Text
-c2classTime coords x y = c2class coords x y 3 2
-
-
-c2classElements :: [ Int ] -> Int -> Int -> T.Text
-c2classElements coords x y = c2class  coords x y 0 1
-
-
-c2class :: [ Int ] -> Int -> Int -> Int -> Int -> T.Text
-c2class coords x y ox oy = case (cx == x && cy == y) of
-                                 True -> "on"
-                                 False -> "off"
-    where cx = coords !! ox
-          cy = coords !! oy
-
-
--- Note for getRoom lookup: [ AirEarth FireWater Depth Time ]
-  
-c2clickTime :: [ Room ] -> [ Int ] -> Int -> Int -> T.Text
-c2clickTime rms coords x y = case (time == x && depth == y) of
-                               True -> ""
-                               False -> getRoom rms [ airearth, firewater, y, x ]
-    where airearth = coords !! 0
-          firewater = coords !! 1 
-          time = coords !! 3
-          depth = coords !! 2
-
-
-c2clickElements :: [ Room ] -> [ Int ] -> Int -> Int -> T.Text
-c2clickElements rms coords x y = case (airearth == x && firewater == y) of
-                               True -> ""
-                               False -> getRoom rms [ x, y, depth, time ]
-    where airearth = coords !! 0
-          firewater = coords !! 1 
-          time = coords !! 3
-          depth = coords !! 2
-
--- base coordinate functions
-
-c2svgTime x0 x = show (x0 + c2s * (1 + x))
-c2svgDeep y0 y = show (y0 + c2s * (1 - y))
-
-c2svgAirEarth x0 x = show (x0 + c2offset + c2s * (1 + x))
-c2svgFireWater y0 y = show (y0 + c2s * (1 - y))
-
--- The ones used with boxes
-
-c2svgTBox = c2svgTime 0
-c2svgDBox = c2svgDeep 0
-c2svgAEBox = c2svgAirEarth 0
-c2svgFWBox = c2svgFireWater 0
-
--- The ones used with labels
-
-xlaboff = 10
-ylaboff = 25
-
-c2svgTLab = c2svgTime xlaboff
-c2svgDLab = c2svgDeep ylaboff
-c2svgAELab = c2svgAirEarth xlaboff
-c2svgFWLab = c2svgFireWater ylaboff
 
 
 template :: [ Room ] -> [ Stanza ] -> HtmlUrl SPRoute
@@ -216,7 +149,8 @@ toStanza (header:ls) = case parseTitle header of
                                              fig = fig,
                                              title = title,
                                              slines = filter (not . T.null) ls,
-                                             scoords = []
+                                             spacetime = [],
+                                             elements = []
                                            }
                          Nothing -> Nothing
 toStanza _           = Nothing
@@ -249,22 +183,17 @@ parseFile file = do
   return ( catMaybes $ (map toStanza (splitOnHeaders $ T.lines text)))
 
 
--- addCoords stitches the room coordinates into scoords of each Stanza
-
-addCoords :: [ Room ] -> [ Stanza ] -> [ Stanza ]
-addCoords rs ss = map addroom ss
-    where addroom stanza = stanza { scoords = getCoords rs (fig stanza) }
 
 main :: IO ()
 main = do
    dircontents <- getDirectoryContents poemdir
-   poemfiles <- return (filter spfile dircontents)
-   jsonrms <- (eitherDecode <$> getJSON) :: IO(Either String [Room])
+   poemfiles <- return $ filter spfile dircontents
+   jsonrms <- (eitherDecode <$> getJSON) :: IO (Either String [Room])
    stanzas <- mapM parseFile poemfiles
    rooms <- case jsonrms of
      Left error -> fail ("Error parsing rooms" ++ error)
-     Right rs -> return (rs)
-   rstanzas <- return (addCoords rooms (concat stanzas))
+     Right rs -> return rs
+   rstanzas <- return $ map (addCoords rooms) (concat stanzas)
    putStrLn $ renderHtml $ template rooms rstanzas render
 
 -- (show stanzas)
