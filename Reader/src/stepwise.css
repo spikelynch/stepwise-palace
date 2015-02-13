@@ -6,53 +6,36 @@ div.main {
 }
 
 div.stanza {
-    width: 100%;
+    border: 1px solid gray
 }
 
 
 
 h2 {
-   color: gray;
    font-size: 100%;
    font-family: Garamond, Times New Roman;
-   margin-top: 72pt;
+   margin-top: 36pt;
 }
 
-p.stanza {
+div.lines {
    font-size: 150%;
    font-family: Garamond, Times New Roman;
+   border: 1px solid yellow;
 }
 
-div.next {
-   cursor: pointer;
-   align: right;
-}
 
 div.ctrl {
-    float: right;
+    border: 1px solid green;
 }
 
-svg {
+div.spacetime {
+    border: 1px solid blue;
 }
 
-text.label {
-    color: #000033;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 50%;
+div.elements {
+    border: 1px solid red;
 }
 
-rect {
+div.row {
+    border: 1px dotted orange;
 }
-
-rect.off {
-    stroke: black;
-    fill: none;
-    opacity: 0.4;
-}
-
-rect.on {
-    stroke: black;
-    fill: #1010aa;
-    opacity: 0.4;
-}
-

@@ -22,15 +22,17 @@ $doctype 5
                          
                         <div .spacetime>
                             $forall row <- spacetime
-                                $forall fig <- row
-                                    <div .cell>
-                                        #{fig}
+                                <div .row>
+                                    $forall fig <- row
+                                        <div .cell>
+                                            #{fig}
                          
                         <div .elements>
                             $forall row <- elements
-                                $forall fig <- row
-                                    <div .cell>
-                                        #{fig}      
+                                <div .row>
+                                    $forall fig <- row
+                                        <div .cell>
+                                            #{fig}      
 
 
 
