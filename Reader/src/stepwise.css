@@ -6,7 +6,7 @@ div.main {
 }
 
 div.stanza {
-    border: 1px solid gray
+    margin-top: 144pt;
 }
 
 
@@ -14,28 +14,34 @@ div.stanza {
 h2 {
    font-size: 100%;
    font-family: Garamond, Times New Roman;
-   margin-top: 36pt;
 }
 
-div.lines {
+div.line {
    font-size: 150%;
    font-family: Garamond, Times New Roman;
-   border: 1px solid yellow;
 }
 
 
 div.ctrl {
-    border: 1px solid green;
+    float: right;
 }
 
 div.spacetime {
-    border: 1px solid blue;
+    display: inline-block;
+    margin-left: 20px;
 }
 
 div.elements {
-    border: 1px solid red;
+    display: inline-block;
 }
 
 div.row {
-    border: 1px dotted orange;
+}
+
+div.cell {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background: #eeeeee;
+    vertical-align: middle;
 }

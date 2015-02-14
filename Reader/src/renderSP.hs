@@ -126,7 +126,7 @@ render Stylesheet _ = "stepwise.css"
 
 
 template :: [ Room ] -> [ Stanza ] -> HtmlUrl SPRoute
-template rooms stanzas = $(hamletFile "spReader.hamlet")
+template rooms stanzas = $(hamletFile "template.hamlet")
 
 
 -- code to parse the text files and create a list of Stanzas to feed

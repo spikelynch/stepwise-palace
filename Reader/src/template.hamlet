@@ -14,25 +14,29 @@ $doctype 5
                     <h2>
                         <a name=#{fig}>Figure #{fig} #{title}
 
-                    <div .lines>
-                        $forall line <- slines
-                            <div .line>#{line}
-
                     <div .ctrl>
-                         
-                        <div .spacetime>
-                            $forall row <- spacetime
-                                <div .row>
-                                    $forall fig <- row
-                                        <div .cell>
-                                            #{fig}
                          
                         <div .elements>
                             $forall row <- elements
                                 <div .row>
                                     $forall fig <- row
                                         <div .cell>
-                                            #{fig}      
+                                            <a href="##{fig}">
+                                                #{fig}
+
+                        <div .spacetime>
+                            $forall row <- spacetime
+                                <div .row>
+                                    $forall fig <- row
+                                        <div .cell>
+                                            <a href="##{fig}">
+                                                #{fig}
+
+
+                    $forall line <- slines
+                        <div .line>#{line}
+
+                         
 
 
 
