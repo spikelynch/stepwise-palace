@@ -7,12 +7,12 @@ $doctype 5
     <body>
         <h1>Stepwise Palace
         <div .main>
-            $forall Stanza fig title slines spacetime elements <- stanzas
+            $forall Stanza thisfig title slines spacetime elements <- stanzas
 
                 <div .stanza>
 
                     <h2>
-                        <a name=#{fig}>Figure #{fig} #{title}
+                        <a name=#{thisfig}>Figure #{thisfig} #{title}
 
                     <div .ctrl>
                          
@@ -20,18 +20,17 @@ $doctype 5
                             $forall row <- elements
                                 <div .row>
                                     $forall fig <- row
-                                        <div .cell>
-                                            <a href="##{fig}">
-                                                #{fig}
+                                        <div .cell :thisfig == fig:class=active>
+                                            <p .cell>
+                                                <a .room href="##{fig}">#{fig}
 
                         <div .spacetime>
                             $forall row <- spacetime
                                 <div .row>
                                     $forall fig <- row
-                                        <div .cell>
-                                            <a href="##{fig}">
-                                                #{fig}
-
+                                        <div .cell :thisfig == fig:class=active>
+                                            <p .cell>
+                                                <a .room href="##{fig}">#{fig}
 
                     $forall line <- slines
                         <div .line>#{line}

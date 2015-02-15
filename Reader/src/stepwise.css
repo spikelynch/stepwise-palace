@@ -43,5 +43,22 @@ div.cell {
     height: 50px;
     width: 50px;
     background: #eeeeee;
-    vertical-align: middle;
+    margin-top: .2em;
+    margin-botton: .2em
+    padding: 0px;
+    vertical-align: middle
 }
+
+p.cell { 
+    text-align: center;
+    font-weight: bold;
+    font-size: 80%;
+    font-family: Garamond, Times New Roman;
+}
+
+a.room {
+    text-decoration: none;
+}
+
+div.active {
+    background: #cccccc;

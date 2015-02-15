@@ -93,8 +93,8 @@ spacetimeNeighbours rooms fig = heights
 
 elementsNeighbours :: [ Room ] -> T.Text -> [ [ T.Text ] ]
 elementsNeighbours rooms fig = ys
-    where t = coords !! 3
-          z = coords !! 2
+    where z = coords !! 2
+          t = coords !! 3
           coords = figToCoords rooms fig
           ys = [ xs y | y <- [ 1, 0, -1 ] ]
           xs y = [ coordsToFig rooms [ x, y, z, t ] | x <- [ -1, 0, 1 ] ]
