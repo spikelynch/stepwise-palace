@@ -17,6 +17,7 @@ import Text.Hamlet (HtmlUrl, hamletFile)
 import qualified Data.Text as T
 import qualified Data.Text.IO as TIO
 import Text.Blaze.Html.Renderer.String (renderHtml)
+import Text.Blaze.Html as BH
 
 import Text.Regex.Posix ((=~))
 import Data.List.Split
@@ -42,10 +43,10 @@ data Room = Room {
 data Stanza = Stanza {
       fig :: T.Text
     , title :: T.Text
-    , slines :: [ T.Text ]
+    , slines :: [ BH.Html ]
     , spacetime :: [ [ T.Text ] ]
     , elements :: [ [ T.Text ] ]
-} deriving ( Eq, Ord, Show )
+} 
 
 
 instance FromJSON Room
@@ -148,7 +149,7 @@ toStanza (header:ls) = case parseTitle header of
                          Just ( fig, title ) -> Just Stanza {
                                              fig = fig,
                                              title = title,
-                                             slines = filter (not . T.null) ls,
+                                             slines = stanzaLines ls,
                                              spacetime = [],
                                              elements = []
                                            }
@@ -156,6 +157,8 @@ toStanza (header:ls) = case parseTitle header of
 toStanza _           = Nothing
 
 
+
+stanzaLines ls = map preEscapedToHtml $ filter (not . T.null) ls
 
 titleRE :: String
 titleRE = "Figure ([A-Z][0-9]+): ([A-Z]+)"
