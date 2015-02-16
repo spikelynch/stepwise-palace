@@ -1,8 +1,8 @@
 Figure E6: SUPERMASSIVE
 The second form of light that ever shone,
 After a million years of neutral dark,
-As matter screamed to show where it had gone—
-Electron stripped from atom, quark from quark—
+As matter screamed to show where it had gone&mdash;
+Electron stripped from atom, quark from quark&mdash;
 Still visible, red-shifted, clear and stark,
 The mighty cauldron of the QUASI-STAR
 Yet leaves upon the sky its blazing mark.
@@ -15,7 +15,7 @@ Back before the force of gravity
 Had kindled fire: darkness on the face
 Of all the void, a dim serenity
 Of neutral hydrogen, a sunless sea.
-But e’en the simplest atom has its song:
+But e&rsquo;en the simplest atom has its song:
 Though spin to counter-spin unlikely be
 In one, in such great numbers do they throng
 We hear the TWENTY-ONE LINE ring out clear and strong.
@@ -24,9 +24,9 @@ Figure C12: NOCTURNE
 Back, further back, we see the Cosmic Void,
 The space surrounding and preceding ALL.
 With giddiness, our sense of scale destroyed,
-What is this garden? Infinitely small—
+What is this garden? Infinitely small&mdash;
 Yet beautiful within its filmy caul,
-Cloudy with galaxies— with what great pains
+Cloudy with galaxies&mdash; with what great pains
 We hold our thoughts, lest the bauble fall
 And shatter. There our Universe remains,
 Safe from disturbance by our overheated brains.
@@ -37,27 +37,27 @@ Surrounded by eight towers, seen before:
 Mercury hot and cold, and Venus dry,
 Orthogonal Uranus, Neptune frore,
 Terra and Luna, on their temperate shore;
-The red of Mars and Jupiter's swirling dun, 
-Cold Saturn in his rings of glitt'ring hoar
+The red of Mars and Jupiter&rsquo;s swirling dun, 
+Cold Saturn in his rings of glitt&rsquo;ring hoar
 And myriads of planetesimals run
 All circling about their mighty mother SUN.
 
 Figure C14: EINSTEIN
 All spinning like a jewelled orrery:
 But Mercury precessing, year to year,
-Abrogates NEWTON'S laws, and presently
-We see the clockwork cosmos decohere.
+Abrogates NEWTON&rsquo;S laws, and presently
+We see his clockwork cosmos decohere.
 Time slips, becoming relative: we fear
-The loss of rugged mechanism's clasp.
+The loss of rugged mechanism&rsquo;s clasp.
 But now we sense a burning hypersphere,
-Spinoza's geometric God: we gasp
+Spinoza&rsquo;s geometric God: we gasp
 At fleeting visions that our minds can barely grasp.
 
 Figure B6: LIFE
 Endless futures branch, redoubling,
 But life begins with jugglings so rare,
-So subtle that the butterfly’s soft wing
-Is as Behemoth’s footfall by compare.
+So subtle that the butterfly&rsquo;s soft wing
+Is as Behemoth&rsquo;s footfall by compare.
 You need not fear that other versions share
 Your life in an alternate destiny:
 Whether this bring joy or black despair,
@@ -72,7 +72,7 @@ Our struggle, then, if we must end alone,
 Abandoning our citadel of bone.
 Yet every person we encountered took
 Impressions of us: memories are sown
-No less than in a war or learnéd book,
+No less than in a war or learn&eacute;d book,
 In a confused expression or a dirty look.
 	
 Figure B4: FAINT
@@ -80,9 +80,9 @@ The truth is at the bottom of a well:
 So said the Atomist in ancient days.
 Yet here is fungus and an awful smell.
 Is this, then, the conclusion of our maze?
-Not so, for see the dimly gleaming rays—
-That whet, but do not satiate, our sight—
-And for the last time, upward find our ways
+Not so, for see the dimly gleaming rays
+That whet, but do not satiate, our sight,
+And, for the last time, upward find our ways
 Out of damp, uncomfortable night,
 To where, if not an end, at least there will be light.
 
@@ -93,7 +93,7 @@ Of EARTHEN flags the floor, well-swept and bare,
 A table set with WATER, food and plate.
 Ancient books that all the PAST relate
 Or foreshadow the FUTURE yet to come,
-Strange instruments to scry the HEAVENS’ state
+Strange instruments to scry the HEAVENS&rsquo; state
 Or the intestine DEPTHS of matter plumb:
 All elements meet here, in equilibrium.
 

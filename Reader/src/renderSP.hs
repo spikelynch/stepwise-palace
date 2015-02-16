@@ -161,7 +161,7 @@ toStanza _           = Nothing
 stanzaLines ls = map preEscapedToHtml $ filter (not . T.null) ls
 
 titleRE :: String
-titleRE = "Figure ([A-Z][0-9]+): ([A-Z]+)"
+titleRE = "Figure ([A-Z][0-9]+): (.+)"
 
 parseTitle :: T.Text -> Maybe ( T.Text, T.Text )
 parseTitle t = case ms of
