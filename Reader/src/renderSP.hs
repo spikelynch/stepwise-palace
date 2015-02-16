@@ -42,7 +42,7 @@ data Room = Room {
 
 data Stanza = Stanza {
       fig :: T.Text
-    , title :: T.Text
+    , title :: BH.Html
     , slines :: [ BH.Html ]
     , spacetime :: [ [ T.Text ] ]
     , elements :: [ [ T.Text ] ]
@@ -148,7 +148,7 @@ toStanza :: [ T.Text ] -> Maybe Stanza
 toStanza (header:ls) = case parseTitle header of
                          Just ( fig, title ) -> Just Stanza {
                                              fig = fig,
-                                             title = title,
+                                             title = preEscapedToHtml title,
                                              slines = stanzaLines ls,
                                              spacetime = [],
                                              elements = []
