@@ -1,0 +1,45 @@
+$doctype 5
+<html>
+    <head>
+        <title>Stepwise Palace
+        <link rel=stylesheet href=@{Stylesheet}>
+        <script type=text/javascript src=@{Javascript}>
+    <body>
+        <h1>Stepwise Palace
+        <div .main>
+            $forall Stanza thisfig title slines spacetime elements <- stanzas
+
+                <div .stanza>
+
+                    <h2>
+                        <a name=#{thisfig}>Figure #{thisfig} #{title}
+
+                    <div .ctrl>
+                         
+                        <div .elements>
+                            $forall row <- elements
+                                <div .row>
+                                    $forall fig <- row
+                                        <div .cell :thisfig == fig:class=active>
+                                            <p .cell>
+                                                <a .room href="##{fig}">#{fig}
+
+                        <div .spacetime>
+                            $forall row <- spacetime
+                                <div .row>
+                                    $forall fig <- row
+                                        <div .cell :thisfig == fig:class=active>
+                                            <p .cell>
+                                                <a .room href="##{fig}">#{fig}
+
+                    $forall line <- slines
+                        <div .line>#{line}
+
+                         
+
+
+
+
+
+
+
