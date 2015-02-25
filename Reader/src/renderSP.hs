@@ -26,7 +26,8 @@ import Data.Maybe
 import System.Directory (getDirectoryContents)
 
 poemdir = "/Users/mike/Desktop/Personal/FSVO/stepwise-palace/Reader/Poem/"
-
+outputdir = "./web/"
+          
 -- Datatype to read the coords.json file using Data.Aeson and generics
 
 data Room = Room {
@@ -109,7 +110,7 @@ render :: SPRoute -> [(T.Text, T.Text)] -> T.Text
 render Javascript _ = "stepwise.js"
 render Stylesheet _ = "stepwise.css"
 
--- template for a list of Stanzas -> HTML
+-- template for Stanza -> HTML
 
 -- The coordinates of each room are rendered as a pair of 3-by-3 grids.
 -- One grid is the elements axes (N = Fire, W = Air, S = Water, E = Stone)
@@ -126,8 +127,10 @@ render Stylesheet _ = "stepwise.css"
 --  1   East  North  Sky      Future
 
 
-template :: [ Room ] -> [ Stanza ] -> HtmlUrl SPRoute
-template rooms stanzas = $(hamletFile "template.hamlet")
+template :: Stanza -> HtmlUrl SPRoute
+template stanza = do
+  (Stanza thisfig title slines spacetime elements) <- return stanza
+  $(hamletFile "template.hamlet")
 
 
 -- code to parse the text files and create a list of Stanzas to feed
@@ -186,6 +189,9 @@ parseFile file = do
   return ( catMaybes $ (map toStanza (splitOnHeaders $ T.lines text)))
 
 
+renderRoom :: Stanza -> IO ()
+renderRoom s = writeFile (fn s) $ renderHtml $ template s render
+    where fn s = outputdir ++ (T.unpack $ fig s) ++ ".html"
 
 main :: IO ()
 main = do
@@ -197,6 +203,10 @@ main = do
      Left error -> fail ("Error parsing rooms" ++ error)
      Right rs -> return rs
    rstanzas <- return $ map (addCoords rooms) (concat stanzas)
-   putStrLn $ renderHtml $ template rooms rstanzas render
+   mapM_ renderRoom rstanzas
+   putStrLn $ "Wrote poem to " ++ outputdir
+
+
+-- putStrLn $ renderHtml $ template rstanza render
 
 -- (show stanzas)
