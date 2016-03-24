@@ -28,7 +28,7 @@ We enter, footsteps muffled by the shroud
 Of the strange pavement, for nothing loud
 Can enter this blue chamber, builded well,
 Each brick is an infinitesimal crowd
-Of tiny atomies, an &Aelig;RO-GEL,
+Of tiny atomies, an &AElig;RO-GEL,
 A smoke made solid, that no wind can e&rsquo;er dispel.
 
 Figure D2: RELEASE

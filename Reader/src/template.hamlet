@@ -6,9 +6,7 @@ $doctype 5
         <script type=text/javascript src=@{Javascript}>
     <body>
         <div .main>
-<!-- thisfig title slines spacetime elements -->
             <div .stanza>
-
                 <h1>
                     Figure #{thisfig} #{title}
 
@@ -33,7 +31,13 @@ $doctype 5
                 $forall line <- slines
                     <div .line>#{line}
 
-                         
+            $maybe prev <- prevfig
+                <div .prev>
+                    <a href="#{prev}.html">#{prev}
+
+            $maybe next <- nextfig
+                <div .next>
+                    <a href="#{next}.html">#{next}
 
 
 

@@ -11,15 +11,34 @@ div.stanza {
 
 
 
-h2 {
-   font-size: 100%;
+h1 {
+   font-size: 120%;
    font-family: Garamond, Times New Roman;
+    font-weight: bold;
 }
 
 div.line {
    font-size: 150%;
    font-family: Garamond, Times New Roman;
 }
+
+div.prev {
+    float: left;
+    display: inline-block;
+    font-size: 100%;
+    font-weight: bold;
+    font-family: Garamond, Times New Roman;
+}
+
+
+div.next {
+    float: right;
+    display: inline-block;
+    font-size: 100%;
+    font-weight: bold;
+    font-family: Garamond, Times New Roman;
+}
+
 
 
 div.ctrl {
@@ -35,8 +54,6 @@ div.elements {
     display: inline-block;
 }
 
-div.row {
-}
 
 div.cell {
     display: inline-block;

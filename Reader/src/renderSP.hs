@@ -43,6 +43,8 @@ data Room = Room {
 
 data Stanza = Stanza {
       fig :: T.Text
+    , prev :: Maybe T.Text
+    , next :: Maybe T.Text
     , title :: BH.Html
     , slines :: [ BH.Html ]
     , spacetime :: [ [ T.Text ] ]
@@ -83,6 +85,21 @@ addCoords rooms stanza = stanza { spacetime = st, elements = el }
     where st = spacetimeNeighbours rooms figure 
           el = elementsNeighbours rooms figure
           figure = fig stanza
+
+
+linkStanzas :: [ Stanza ] -> [ Stanza ]
+linkStanzas (x:y:ys) = (x { next = Just (fig y) }):(linkStanzas (y:ys))
+linkStanzas (x:[])     = x:[]
+linkStanzas []         = []
+                  
+
+linkStanzas' :: [ Stanza ] -> [ Stanza ]
+linkStanzas' (x:y:ys) = xn:(linkStanzas' (yn:ys))
+  where xn = x { next = Just (fig y) }
+        yn = y { prev = Just (fig x) }
+linkStanzas' (x:[])     = x:[]
+linkStanzas' []         = []
+
 
 spacetimeNeighbours :: [ Room ] -> T.Text -> [ [ T.Text ] ]
 spacetimeNeighbours rooms fig = heights
@@ -129,7 +146,7 @@ render Stylesheet _ = "stepwise.css"
 
 template :: Stanza -> HtmlUrl SPRoute
 template stanza = do
-  (Stanza thisfig title slines spacetime elements) <- return stanza
+  (Stanza thisfig prevfig nextfig title slines spacetime elements) <- return stanza
   $(hamletFile "template.hamlet")
 
 
@@ -151,6 +168,8 @@ toStanza :: [ T.Text ] -> Maybe Stanza
 toStanza (header:ls) = case parseTitle header of
                          Just ( fig, title ) -> Just Stanza {
                                              fig = fig,
+                                             prev = Nothing,
+                                             next = Nothing,
                                              title = preEscapedToHtml title,
                                              slines = stanzaLines ls,
                                              spacetime = [],
@@ -203,7 +222,7 @@ main = do
      Left error -> fail ("Error parsing rooms" ++ error)
      Right rs -> return rs
    rstanzas <- return $ map (addCoords rooms) (concat stanzas)
-   mapM_ renderRoom rstanzas
+   mapM_ renderRoom $ linkStanzas' rstanzas
    putStrLn $ "Wrote poem to " ++ outputdir
 
 

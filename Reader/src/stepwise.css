@@ -11,7 +11,7 @@ div.stanza {
 
 
 
-h2 {
+h1 {
    font-size: 100%;
    font-family: Garamond, Times New Roman;
 }
@@ -35,8 +35,13 @@ div.elements {
     display: inline-block;
 }
 
-div.row {
+div.next {
+    float: right;
+    display: inline-block;
+    font-size: 70%;
+    font-family: Garamond, Times New Roman;
 }
+
 
 div.cell {
     display: inline-block;
